@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sistemahotel.control.produto.ControleNovoProduto">
+   <children>
+      <HBox layoutX="211.0" layoutY="126.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane prefHeight="400.0" prefWidth="73.0" style="-fx-background-color: #ab0000;">
+               <children>
+                  <VBox layoutX="34.0" layoutY="49.0" prefHeight="400.0" prefWidth="134.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <JFXButton fx:id="btConfirmar" onAction="#btConfirmarActionHandler" prefHeight="400.0" prefWidth="200.0" text="Confirmar" textFill="WHITE" />
+                        <JFXButton fx:id="btCancelar" prefHeight="400.0" prefWidth="200.0" text="Cancelar" textFill="WHITE" />
+                     </children>
+                  </VBox>
+               </children>
+               <effect>
+                  <DropShadow height="30.0" radius="14.5" width="30.0" />
+               </effect>
+            </AnchorPane>
+            <AnchorPane prefHeight="400.0" prefWidth="527.0">
+               <children>
+                  <Text fill="#ab0000" layoutX="29.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Novo Produto">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <effect>
+                        <DropShadow blurType="GAUSSIAN" offsetX="2.0" offsetY="2.0" />
+                     </effect>
+                  </Text>
+                  <Line endX="350.0" layoutX="122.0" layoutY="59.0" opacity="0.41" startX="-100.0" stroke="#6b6b6b" />
+                  <GridPane layoutX="79.0" layoutY="80.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="60.0" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="60.0" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="27.0" minHeight="0.0" prefHeight="27.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="27.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <JFXTextField fx:id="tfNome" focusColor="#ff6767" promptText="Nome" unFocusColor="#ab0000" />
+                        <JFXTextField fx:id="tfPreco" focusColor="#ff6767" promptText="Preco" unFocusColor="#ab0000" GridPane.rowIndex="2" />
+                        <JFXTextField fx:id="tfQuantidadeInicial" focusColor="#ff6767" promptText="Quantidade inicial" unFocusColor="#ab0000" GridPane.rowIndex="4" />
+                        <JFXTextField fx:id="tfAlertaDeEstoque" focusColor="#ff6767" promptText="Alerta de estoque" unFocusColor="#ab0000" GridPane.rowIndex="6" />
+                     </children>
+                  </GridPane>
+                  <JFXButton fx:id="btResetar" layoutX="448.0" layoutY="355.0" style="-fx-background-color: #ab0000;" text="Limpar" textFill="WHITE" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="23.0" />
+               </children>
+            </AnchorPane>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
