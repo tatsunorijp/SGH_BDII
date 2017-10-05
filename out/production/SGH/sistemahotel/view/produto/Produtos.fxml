@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXTreeTableView?>
+<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="apProdutos" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="480.0" prefWidth="752.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sistemahotel.control.produto.ControleTelaProdutos">
+   <children>
+      <BorderPane layoutX="329.0" layoutY="157.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <AnchorPane prefHeight="92.0" prefWidth="752.0" style="-fx-background-color: #ab0000;" BorderPane.alignment="CENTER">
+               <children>
+                  <Text fill="WHITE" layoutX="19.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Usuário conectado:" AnchorPane.leftAnchor="19.0" AnchorPane.topAnchor="11.0" />
+                  <Text fill="WHITE" layoutX="45.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Produtos" AnchorPane.bottomAnchor="16.7255859375" AnchorPane.leftAnchor="45.0">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Text>
+                  <Text fill="WHITE" layoutX="132.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="O maior hacker do mundo" />
+               </children>
+            </AnchorPane>
+         </top>
+         <bottom>
+            <AnchorPane maxWidth="1.7976931348623157E308" prefHeight="41.0" prefWidth="752.0" style="-fx-background-color: #ab0000;" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox layoutY="-18.0" prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-0.0">
+                     <children>
+                        <JFXButton prefHeight="41.0" text="Novo produto" textFill="WHITE" />
+                        <JFXButton prefHeight="41.0" text="Alterar produto" textFill="WHITE" />
+                        <JFXButton prefHeight="41.0" text="Excluir produto" textFill="WHITE" />
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+         </bottom>
+         <center>
+            <AnchorPane BorderPane.alignment="CENTER">
+               <children>
+                <AnchorPane layoutX="537.0" layoutY="-1.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="347.0" prefWidth="224.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <JFXTreeTableView prefHeight="386.0" prefWidth="224.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <columns>
+                              <TreeTableColumn prefWidth="110.0" text="Nome" />
+                              <TreeTableColumn prefWidth="113.0" text="Preco" />
+                           </columns>
+                        </JFXTreeTableView>
+                     </children>
+                  </AnchorPane>
+                <AnchorPane layoutY="-1.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="-0.0">
+                     <children>
+                        <GridPane layoutX="114.0" layoutY="32.0" prefHeight="161.0" prefWidth="230.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="30.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Text fill="#ab0000" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome:" />
+                              <Text fill="#ab0000" strokeType="OUTSIDE" strokeWidth="0.0" text="Preco:" GridPane.rowIndex="1" />
+                              <Text fill="#ab0000" strokeType="OUTSIDE" strokeWidth="0.0" text="Em estoque:" GridPane.rowIndex="2" />
+                              <Text fill="#ab0000" strokeType="OUTSIDE" strokeWidth="0.0" text="Alerta de estoque:" GridPane.rowIndex="3" />
+                              <JFXTextField focusColor="#ff5c5c" unFocusColor="#ab0000" GridPane.columnIndex="1" />
+                              <JFXTextField focusColor="#ff5c5c" unFocusColor="#ab0000" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <JFXTextField focusColor="#ff5c5c" unFocusColor="#ab0000" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <JFXTextField focusColor="#ff5c5c" unFocusColor="#ab0000" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                           </children>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>
