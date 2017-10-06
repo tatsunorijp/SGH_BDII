@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -34,5 +35,14 @@ public class ControleTelas {
     public void setFragment(String path, AnchorPane pane) throws IOException {
         AnchorPane a = (AnchorPane) FXMLLoader.load(getClass().getResource(path));
         pane.getChildren().setAll(a);
+    }
+
+    public void popupAviso(String titulo, String menssagem){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle(titulo);
+        alert.setHeaderText(null);
+        alert.setContentText(menssagem);
+
+        alert.showAndWait();
     }
 }

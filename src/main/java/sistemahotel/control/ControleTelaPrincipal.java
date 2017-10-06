@@ -27,11 +27,7 @@ public class ControleTelaPrincipal implements Initializable{
     @FXML
     private JFXButton btLocais;
     @FXML
-    ImageView ivTeste = new ImageView();
-    @FXML
-    AnchorPane apPrincipal;
-    @FXML
-    JFXHamburger btHamburguer;
+    public  AnchorPane apPrincipal;
     @FXML
     private JFXDrawer drawerMenu;
 
@@ -40,8 +36,6 @@ public class ControleTelaPrincipal implements Initializable{
     @Override
     public void initialize(URL location, ResourceBundle resources) {
     }
-
-
     public void showClientes(ActionEvent event) throws IOException {
         window.setFragment("/sistemahotel/view/pessoa/Clientes.fxml",apPrincipal);
     }
@@ -56,6 +50,10 @@ public class ControleTelaPrincipal implements Initializable{
     }
     public void exit(ActionEvent event){
         window.newWindow("/sistemahotel/view/Login.fxml",event);
+    }
+
+    public AnchorPane retorneAnchorPane(){
+        return this.apPrincipal;
     }
 
 }
