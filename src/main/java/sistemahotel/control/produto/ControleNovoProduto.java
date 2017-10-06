@@ -56,7 +56,7 @@ public class ControleNovoProduto implements Initializable{
     @FXML
     void btConfirmarActionHandler(ActionEvent event) {
         produtoDAO.NovoProduto(tfNome.getText(), tfQuantidadeInicial.getText(), tfPreco.getText(), tfAlertaDeEstoque.getText());
-        controleTelas.popupAviso("Cadastro Efetuado","Novo produto efetuado com sucesso");
+        controleTelas.notificacao("Cadastro efetuado","Novo produto adicionado ao banco de dados");
         controleTelas.newWindow("/sistemahotel/view/TelaPrincipal.fxml", event);
     }
 
@@ -66,6 +66,7 @@ public class ControleNovoProduto implements Initializable{
         tfPreco.setText("");
         tfQuantidadeInicial.setText("");
         tfAlertaDeEstoque.setText("");
+
     }
 
     @Override
