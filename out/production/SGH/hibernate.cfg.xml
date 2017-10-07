@@ -11,7 +11,7 @@
         <property name="hibernate.connection.username">gerente</property>
         <property name="hibernate.connection.password">iss123</property>
         <property name="hibernate.hbm2ddl.auto">create</property>
-        
+
 
         <!-- List of XML mapping files -->
         <mapping class="sistemahotel.model.local.Local"/>

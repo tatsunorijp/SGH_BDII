@@ -21,6 +21,7 @@ public class ProdutoDAO {
     }
 
     public void NovoProduto(String nome,String quantidade,String preco,String alertaEstoque){
+        produto = new Produto();
         produto.setNome(nome);
         produto.setQuantidade(quantidade);
         produto.setPreco(preco);

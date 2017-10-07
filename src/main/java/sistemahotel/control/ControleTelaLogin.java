@@ -24,11 +24,11 @@ public class ControleTelaLogin implements Initializable{
     private JFXButton btLogin;
     @FXML
     private JFXButton btSair;
-    ControleTelas window = new ControleTelas();
+    ControleTelas controleTelas = new ControleTelas();
 
 
     public void iniciar(ActionEvent event) throws IOException {
-        window.newWindow("/sistemahotel/view/TelaPrincipal.fxml", event);
+        controleTelas.newWindow("/sistemahotel/view/TelaPrincipal.fxml", event);
     }
     public void sair(ActionEvent event){
         System.exit(0);

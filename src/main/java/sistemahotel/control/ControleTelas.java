@@ -1,14 +1,19 @@
 package sistemahotel.control;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-
+import javafx.util.Duration;
+import org.controlsfx.control.Notifications;
+import javax.management.Notification;
 import java.io.IOException;
 
 /**
@@ -34,5 +39,30 @@ public class ControleTelas {
     public void setFragment(String path, AnchorPane pane) throws IOException {
         AnchorPane a = (AnchorPane) FXMLLoader.load(getClass().getResource(path));
         pane.getChildren().setAll(a);
+    }
+
+    public void popupAviso(String titulo, String menssagem){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle(titulo);
+        alert.setHeaderText(null);
+        alert.setContentText(menssagem);
+
+        alert.showAndWait();
+    }
+
+    public void notificacao(String titulo, String texto){
+        Notifications oie = Notifications.create()
+                .title(titulo)
+                .text(texto)
+                .graphic(null)
+                .hideAfter(Duration.seconds(3))
+                .position(Pos.BOTTOM_RIGHT);
+        oie.darkStyle();
+        Platform.runLater(new Runnable() {
+            @Override
+            public void run() {
+                oie.showInformation();
+            }
+        });
     }
 }

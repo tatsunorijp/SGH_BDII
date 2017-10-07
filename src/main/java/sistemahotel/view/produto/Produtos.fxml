@@ -34,7 +34,7 @@
                <children>
                   <HBox layoutY="-18.0" prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-0.0">
                      <children>
-                        <JFXButton prefHeight="41.0" text="Novo produto" textFill="WHITE" />
+                        <JFXButton fx:id="btNovoProduto" onAction="#btNovoProdutoActionHandler" prefHeight="41.0" text="Novo produto" textFill="WHITE" />
                         <JFXButton prefHeight="41.0" text="Alterar produto" textFill="WHITE" />
                         <JFXButton prefHeight="41.0" text="Excluir produto" textFill="WHITE" />
                      </children>

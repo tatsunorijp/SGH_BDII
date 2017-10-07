@@ -14,8 +14,8 @@
       <root url="jar://$PROJECT_DIR$/lib/hibernate-core-5.2.10.Final.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/mysql-connector-java-5.1.42-bin.jar!/" />
       <root url="jar://$USER_HOME$/Downloads/jfoenix.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../../Downloads/jfoenix.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../../Downloads/jdk1.8.0_144/jre/lib/ext/jfxrt.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/jfoenix.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/controlsfx-8.40.14.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
