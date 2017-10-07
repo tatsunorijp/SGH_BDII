@@ -46,6 +46,5 @@ public class ControleNovoProduto implements Initializable{
     public void btConfirmarActionHandler(ActionEvent event){
         produto.NovoProduto(tfNome.getText(),tfQuantidadeInicial.getText(),
                              tfPreco.getText(),tfAlertaDeEstoque.getText());
-        controleTelas.closeWindow(event);
     }
 }
