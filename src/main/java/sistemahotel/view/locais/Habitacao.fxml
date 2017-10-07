@@ -33,7 +33,7 @@
                <children>
                   <HBox layoutY="-18.0" prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-0.0">
                      <children>
-                        <JFXButton prefHeight="41.0" text="Nova Habitacao" textFill="WHITE" />
+                        <JFXButton fx:id="btNovaHabitacao" onAction="#btNovaHabitacaoActionHandler" prefHeight="41.0" text="Nova Habitacao" textFill="WHITE" />
                         <JFXButton prefHeight="41.0" text="Alterar Habitacao" textFill="WHITE" />
                         <JFXButton fx:id="btVoltar" onAction="#btVoltarActionHandler" prefHeight="41.0" text="Voltar" textFill="WHITE" />
                      </children>
@@ -73,11 +73,11 @@
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Camas de Solteiro" GridPane.rowIndex="2" />
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Camas de Casal" GridPane.rowIndex="3" />
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Informacoes Adicionais" GridPane.rowIndex="4" />
-                        <JFXTextField GridPane.columnIndex="1" />
-                        <JFXTextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <JFXTextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <JFXTextField GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                        <JFXTextField GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <JFXTextField fx:id="tfNumero" GridPane.columnIndex="1" />
+                        <JFXTextField fx:id="tfPreco" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <JFXTextField fx:id="tfCamaSolteiro" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <JFXTextField fx:id="tfCamaCasal" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <JFXTextField fx:id="tfInfo" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                      </children>
                   </GridPane>
                </children>
