@@ -20,7 +20,7 @@
             <AnchorPane prefHeight="92.0" prefWidth="752.0" style="-fx-background-color: #ab0000;" BorderPane.alignment="CENTER">
                <children>
                   <Text fill="WHITE" layoutX="19.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Usuário conectado:" AnchorPane.leftAnchor="19.0" AnchorPane.topAnchor="11.0" />
-                  <Text fill="WHITE" layoutX="19.0" layoutY="69.2744140625" strokeType="OUTSIDE" strokeWidth="0.0" text="Habitacao" AnchorPane.bottomAnchor="16.7255859375" AnchorPane.leftAnchor="19.0">
+                  <Text fill="WHITE" layoutX="19.0" layoutY="69.2744140625" strokeType="OUTSIDE" strokeWidth="0.0" text="Salao de Festas" AnchorPane.bottomAnchor="16.7255859375" AnchorPane.leftAnchor="19.0">
                      <font>
                         <Font size="25.0" />
                      </font>
@@ -33,8 +33,8 @@
                <children>
                   <HBox layoutY="-18.0" prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-0.0">
                      <children>
-                        <JFXButton prefHeight="41.0" text="Nova Habitacao" textFill="WHITE" />
-                        <JFXButton prefHeight="41.0" text="Alterar Habitacao" textFill="WHITE" />
+                        <JFXButton fx:id="btNovoSalao" onAction="#btNovoSalaoActionHandler" prefHeight="41.0" text="Novo Salao" textFill="WHITE" />
+                        <JFXButton prefHeight="41.0" text="Alterar Salao" textFill="WHITE" />
                         <JFXButton fx:id="btVoltar" onAction="#btVoltarActionHandler" prefHeight="41.0" text="Voltar" textFill="WHITE" />
                      </children>
                   </HBox>
@@ -71,10 +71,10 @@
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Preco" GridPane.rowIndex="1" />
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Maximo de Pessoas" GridPane.rowIndex="2" />
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Informacoes Adicionais" GridPane.rowIndex="3" />
-                        <JFXTextField GridPane.columnIndex="1" />
-                        <JFXTextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <JFXTextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <JFXTextField GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <JFXTextField fx:id="tfNumero" GridPane.columnIndex="1" />
+                        <JFXTextField fx:id="tfPreco" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <JFXTextField fx:id="tfMaxPessoas" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <JFXTextField fx:id="tfInfo" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                      </children>
                   </GridPane>
                </children>

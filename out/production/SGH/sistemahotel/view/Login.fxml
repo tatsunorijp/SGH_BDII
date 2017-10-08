@@ -18,7 +18,7 @@
          <children>
             <ImageView cache="true" fitHeight="480.0" fitWidth="720.0" nodeOrientation="INHERIT" pickOnBounds="true" smooth="false">
                <image>
-                  <Image url="@../model/imagens/LogIn/Dark_Material_Design_wallpaper.jpg" />
+                  <Image url="@../model/imagens/login/Dark_Material_Design_wallpaper.jpg" />
                </image>
             </ImageView>
             <Text fill="WHITE" layoutX="71.0" layoutY="126.626953125" strokeType="OUTSIDE" strokeWidth="0.0" text="Trabalhinho de ISS">
@@ -56,12 +56,12 @@
                   <DropShadow height="60.0" radius="29.5" width="60.0" />
                </effect></JFXButton>
             <ImageView fitHeight="98.0" fitWidth="101.0" layoutX="76.0" layoutY="69.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../model/imagens/LogIn/user-account-box.png" />
-               </image>
                <effect>
                   <DropShadow blurType="GAUSSIAN" height="20.0" radius="9.5" width="20.0" />
                </effect>
+               <image>
+                  <Image url="@../model/imagens/login/user-account-box.png" />
+               </image>
             </ImageView>
          </children>
          <effect>

@@ -25,7 +25,7 @@
                            <children>
                               <ImageView fitHeight="112.0" fitWidth="148.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../model/imagens/LogIn/Dark_Material_Design_wallpaper.jpg" />
+                                    <Image url="@../model/imagens/login/Dark_Material_Design_wallpaper.jpg" />
                                  </image>
                               </ImageView>
                               <JFXButton fx:id="btClientes" onAction="#showClientes" prefHeight="300.0" prefWidth="160.0" text="Clientes" textFill="WHITE">
