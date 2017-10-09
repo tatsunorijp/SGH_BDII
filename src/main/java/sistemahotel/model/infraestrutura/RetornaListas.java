@@ -14,7 +14,7 @@ import java.util.List;
 /**
  * Created by tatsunori on 08/10/17.
  */
-public class Listas {
+public class RetornaListas {
     Persistencia persistencia = Persistencia.getInstancia();
     public static SessionFactory ssf;
     public static void startSessionFactory() {

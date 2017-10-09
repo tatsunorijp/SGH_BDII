@@ -1,7 +1,6 @@
 package sistemahotel.control.produto;
 
 import com.jfoenix.controls.JFXTextField;
-import com.jfoenix.controls.JFXTreeTableView;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
@@ -13,7 +12,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import sistemahotel.control.ControleTelas;
-import sistemahotel.model.infraestrutura.Listas;
+import sistemahotel.model.infraestrutura.RetornaListas;
 import sistemahotel.model.produto.Produto;
 
 import java.io.IOException;
@@ -44,7 +43,7 @@ public class ControleTelaProdutos implements Initializable {
     @FXML
     private JFXTextField tfAlerta;
 
-    Listas pegaListas;
+    RetornaListas pegaListas;
     ObservableList list;
     ControleTelas controleTelas = new ControleTelas();
 
@@ -58,41 +57,35 @@ public class ControleTelaProdutos implements Initializable {
         tvProdutos.getSelectionModel().selectedItemProperty().addListener(
                 (observable, oldvalue, newValue) -> selecaoDeItens((Produto) newValue)
         );
-
-        // 1. Wrap the ObservableList in a FilteredList (initially display all data).
         FilteredList<Produto> filteredData = new FilteredList<>(list, p -> true);
-
-        // 2. Set the filter Predicate whenever the filter changes.
         tfFiltro.textProperty().addListener((observable, oldValue, newValue) -> {
             filteredData.setPredicate(produto -> {
-                // If filter text is empty, display all persons.
                 if (newValue == null || newValue.isEmpty()) {
                     return true;
                 }
-
-                // Compare first name and last name of every person with filter text.
                 String lowerCaseFilter = newValue.toLowerCase();
 
                 if (produto.getNome().toLowerCase().contains(lowerCaseFilter)) {
-                    return true; // Filter matches first name.
+                    return true;
                 }
-                return false; // Does not match.
+                return false;
             });
         });
-
-        // 3. Wrap the FilteredList in a SortedList.
         SortedList<Produto> sortedData = new SortedList<>(filteredData);
-
-        // 4. Bind the SortedList comparator to the TableView comparator.
         sortedData.comparatorProperty().bind(tvProdutos.comparatorProperty());
-
-        // 5. Add sorted (and filtered) data to the table.
         tvProdutos.setItems(sortedData);
 
     }
 
     public void btNovoProdutoActionHandler(ActionEvent event) throws IOException{
         controleTelas.newWindow("/sistemahotel/view/produto/NovoProduto.fxml",event);
+    }
+
+    public void btAlterarProdutoActionHandler(ActionEvent event) throws IOException{
+
+    }
+    public void btDeletarProdutoActionHandler(ActionEvent event) throws IOException{
+
     }
 
     public void selecaoDeItens(Produto produto){
