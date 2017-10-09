@@ -55,9 +55,13 @@ public class ControleNovoProduto implements Initializable{
 
     @FXML
     void btConfirmarActionHandler(ActionEvent event) {
-        produtoDAO.NovoProduto(tfNome.getText(), tfQuantidadeInicial.getText(), tfPreco.getText(), tfAlertaDeEstoque.getText());
-        controleTelas.notificacao("Cadastro efetuado","Novo produto adicionado ao banco de dados");
-        controleTelas.newWindow("/sistemahotel/view/TelaPrincipal.fxml", event);
+        if (tfNome.getText().isEmpty() || tfPreco.getText().isEmpty()) {
+            controleTelas.popupAviso("Campos inválidos", "Campos com * são obrigatórios");
+        } else {
+            produtoDAO.NovoProduto(tfNome.getText(), tfQuantidadeInicial.getText(), tfPreco.getText(), tfAlertaDeEstoque.getText());
+            controleTelas.notificacao("Cadastro efetuado", "Novo produto adicionado ao banco de dados");
+            controleTelas.newWindow("/sistemahotel/view/TelaPrincipal.fxml", event);
+        }
     }
 
     @FXML

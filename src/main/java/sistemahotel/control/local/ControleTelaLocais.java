@@ -6,6 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.layout.AnchorPane;
+import sistemahotel.control.ControleTelaPrincipal;
 import sistemahotel.control.ControleTelas;
 
 import java.io.IOException;
@@ -24,9 +25,6 @@ public class ControleTelaLocais implements Initializable {
 
     @FXML
     private JFXButton btSalaoFestas;
-
-    @FXML
-    AnchorPane apPrincipal;
 
     ControleTelas window = new ControleTelas();
 

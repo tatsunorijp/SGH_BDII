@@ -36,6 +36,7 @@ public class ControleTelas {
         stage.show();
     }
 
+
     public void setFragment(String path, AnchorPane pane) throws IOException {
         AnchorPane a = (AnchorPane) FXMLLoader.load(getClass().getResource(path));
         pane.getChildren().setAll(a);

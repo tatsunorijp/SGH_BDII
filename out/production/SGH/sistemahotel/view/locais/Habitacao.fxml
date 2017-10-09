@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="apLocais" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="480.0" prefWidth="752.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sistemahotel.control.local.ControleTelaHabitacao">
+<AnchorPane fx:id="apLocais" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="720.0" prefWidth="1132.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sistemahotel.control.local.ControleTelaHabitacao">
    <children>
       <BorderPane layoutX="329.0" layoutY="157.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <top>
@@ -44,42 +44,44 @@
          <center>
             <AnchorPane BorderPane.alignment="CENTER">
                <children>
-                  <AnchorPane layoutX="537.0" layoutY="-1.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="347.0" prefWidth="224.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <AnchorPane layoutX="537.0" layoutY="-1.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="347.0" prefWidth="374.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
                         <JFXTreeTableView prefHeight="386.0" prefWidth="224.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <columns>
-                              <TreeTableColumn prefWidth="110.0" text="Tipo" />
-                              <TreeTableColumn prefWidth="113.0" text="Numero" />
+                              <TreeTableColumn prefWidth="189.0" text="Tipo" />
+                              <TreeTableColumn prefWidth="184.0" text="Numero" />
                            </columns>
                         </JFXTreeTableView>
                      </children>
                   </AnchorPane>
-                  <AnchorPane layoutY="-1.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="-0.0" />
-                  <GridPane layoutX="14.0" layoutY="17.0" prefHeight="322.0" prefWidth="507.0" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="231.0" AnchorPane.topAnchor="17.0">
-                    <columnConstraints>
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                    </columnConstraints>
-                    <rowConstraints>
-                      <RowConstraints maxHeight="61.0" minHeight="10.0" prefHeight="61.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="71.0" minHeight="10.0" prefHeight="67.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="89.0" minHeight="10.0" prefHeight="67.0" vgrow="SOMETIMES" />
-                      <RowConstraints maxHeight="96.0" minHeight="10.0" prefHeight="65.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="96.0" minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
-                    </rowConstraints>
+                  <AnchorPane prefHeight="586.0" prefWidth="759.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Numero" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Preco" GridPane.rowIndex="1" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Camas de Solteiro" GridPane.rowIndex="2" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Camas de Casal" GridPane.rowIndex="3" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Informacoes Adicionais" GridPane.rowIndex="4" />
-                        <JFXTextField fx:id="tfNumero" GridPane.columnIndex="1" />
-                        <JFXTextField fx:id="tfPreco" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <JFXTextField fx:id="tfCamaSolteiro" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <JFXTextField fx:id="tfCamaCasal" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                        <JFXTextField fx:id="tfInfo" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                     </children>
-                  </GridPane>
+                        <GridPane prefHeight="351.0" prefWidth="372.0" AnchorPane.bottomAnchor="127.0" AnchorPane.leftAnchor="102.0" AnchorPane.rightAnchor="285.0" AnchorPane.topAnchor="109.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints maxHeight="61.0" minHeight="10.0" prefHeight="61.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="71.0" minHeight="10.0" prefHeight="67.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="89.0" minHeight="10.0" prefHeight="67.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="96.0" minHeight="10.0" prefHeight="65.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="96.0" minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Numero" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Preco" GridPane.rowIndex="1" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Camas de Solteiro" GridPane.rowIndex="2" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Camas de Casal" GridPane.rowIndex="3" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Informacoes Adicionais" GridPane.rowIndex="4" />
+                              <JFXTextField fx:id="tfNumero" GridPane.columnIndex="1" />
+                              <JFXTextField fx:id="tfPreco" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <JFXTextField fx:id="tfCamaSolteiro" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <JFXTextField fx:id="tfCamaCasal" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <JFXTextField fx:id="tfInfo" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                           </children>
+                        </GridPane>
+                     </children></AnchorPane>
                </children>
             </AnchorPane>
          </center>

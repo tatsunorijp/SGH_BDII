@@ -27,7 +27,7 @@ public class ControleTelaPrincipal implements Initializable{
     @FXML
     private JFXButton btLocais;
     @FXML
-    public  AnchorPane apPrincipal;
+    public AnchorPane apPrincipal;
     @FXML
     private JFXDrawer drawerMenu;
 
@@ -52,8 +52,5 @@ public class ControleTelaPrincipal implements Initializable{
         window.newWindow("/sistemahotel/view/Login.fxml",event);
     }
 
-    public AnchorPane retorneAnchorPane(){
-        return this.apPrincipal;
-    }
 
 }
