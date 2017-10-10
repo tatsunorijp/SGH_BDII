@@ -38,8 +38,8 @@
                   <HBox layoutY="-18.0" prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-0.0">
                      <children>
                         <JFXButton fx:id="btNovoProduto" onAction="#btNovoProdutoActionHandler" prefHeight="41.0" text="Novo produto" textFill="WHITE" />
-                        <JFXButton prefHeight="41.0" text="Alterar produto" textFill="WHITE" />
-                        <JFXButton prefHeight="41.0" text="Excluir produto" textFill="WHITE" />
+                        <JFXButton onAction="#btAlterarProdutoActionHandler" prefHeight="41.0" text="Alterar produto" textFill="WHITE" />
+                        <JFXButton onAction="#btDeletarProdutoActionHandler" prefHeight="41.0" text="Excluir produto" textFill="WHITE" />
                         <HBox prefHeight="100.0" prefWidth="200.0">
                            <children>
                               <ImageView fitHeight="20.0" fitWidth="20.0">
@@ -70,7 +70,7 @@
                <children>
                 <AnchorPane layoutX="537.0" layoutY="-1.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="587.0" prefWidth="374.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
-                        <TableView fx:id="tvProdutos" layoutX="-8.0" prefHeight="587.0" prefWidth="374.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <TableView fx:id="tvProdutos" layoutX="-8.0" prefHeight="587.0" prefWidth="374.0" styleClass="TableViewCSS.css" stylesheets="@../../../../resources/TableViewCSS.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                           <columns>
                             <TableColumn fx:id="tcNome" prefWidth="205.0" resizable="false" text="Nome" />
                             <TableColumn fx:id="tcPreco" prefWidth="168.0" resizable="false" text="Preco" />

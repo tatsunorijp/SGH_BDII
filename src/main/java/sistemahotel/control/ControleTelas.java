@@ -31,6 +31,7 @@ public class ControleTelas {
         } catch (IOException e1) {
             e1.printStackTrace();
         }
+        Scene scene;
         stage.setScene(new Scene(root));
         ((Node) event.getSource()).getParent().getScene().getWindow().hide();
         stage.show();

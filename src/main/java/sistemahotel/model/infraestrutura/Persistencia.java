@@ -36,6 +36,14 @@ public class Persistencia {
         session.close();
     }
 
+    public void alterar(Object object){
+        Session session = ssf.openSession();
+        Transaction tx = session.beginTransaction();
+        session.saveOrUpdate(object);
+        tx.commit();
+        session.close();
+    }
+
     public void deletar(Object object){
         Session session = ssf.openSession();
         Transaction tx = session.beginTransaction();

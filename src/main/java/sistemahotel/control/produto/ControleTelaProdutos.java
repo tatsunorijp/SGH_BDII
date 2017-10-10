@@ -12,6 +12,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import sistemahotel.control.ControleTelas;
+import sistemahotel.model.infraestrutura.Persistencia;
 import sistemahotel.model.infraestrutura.RetornaListas;
 import sistemahotel.model.produto.Produto;
 
@@ -43,9 +44,12 @@ public class ControleTelaProdutos implements Initializable {
     @FXML
     private JFXTextField tfAlerta;
 
+    Produto produtoMain;
+
     RetornaListas pegaListas;
     ObservableList list;
     ControleTelas controleTelas = new ControleTelas();
+    Persistencia persistencia = Persistencia.getInstancia();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -82,17 +86,29 @@ public class ControleTelaProdutos implements Initializable {
     }
 
     public void btAlterarProdutoActionHandler(ActionEvent event) throws IOException{
+        Produto produtoaux = new Produto();
+        produtoaux.setNome(tfNome.getText());
+        produtoaux.setPreco(tfPreco.getText());
+        produtoaux.setQuantidade(tfEstoque.getText());
+        produtoaux.setAlertaEstoque(tfAlerta.getText());
+        produtoaux.setId(produtoMain.getId());
+        list.remove(produtoMain);
 
+        persistencia.alterar(produtoaux);
+        list.add(produtoaux);
+        tvProdutos.refresh();
     }
     public void btDeletarProdutoActionHandler(ActionEvent event) throws IOException{
-
+        persistencia.deletar(produtoMain);
+        list.remove(produtoMain);
+        tvProdutos.refresh();
     }
 
     public void selecaoDeItens(Produto produto){
+        produtoMain = produto;
         tfNome.setText(produto.getNome());
         tfPreco.setText(produto.getPreco());
         tfEstoque.setText(produto.getQuantidade());
         tfAlerta.setText(produto.getAlertaEstoque());
-
     }
 }

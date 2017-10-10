@@ -16,6 +16,7 @@
       <root url="jar://$USER_HOME$/Downloads/jfoenix.jar!/" />
       <root url="jar://$USER_HOME$/Downloads/jfoenix.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/controlsfx-8.40.14.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/fontawesomefx-8.9.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
