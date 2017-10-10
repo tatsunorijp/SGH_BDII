@@ -1,6 +1,6 @@
 package sistemahotel.model.pessoa;
 
-import sistemahotel.infraestrutura.Pessoa;
+
 
 public class Usuario extends Pessoa {
 

@@ -6,7 +6,10 @@ import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import sistemahotel.control.ControleTelas;
+import sistemahotel.model.autenticacao.Autenticacao;
+import sistemahotel.model.pessoa.Usuario;
 
 
 import java.io.IOException;
@@ -26,10 +29,23 @@ public class ControleTelaLogin implements Initializable{
     @FXML
     private JFXButton btSair;
     ControleTelas controleTelas = new ControleTelas();
+    Usuario user;
 
 
     public void iniciar(ActionEvent event) throws IOException {
-        controleTelas.newWindow("/sistemahotel/view/TelaPrincipal.fxml", event);
+        String login = tfUser.getText();
+        String password = tfPassword.getText();
+        Autenticacao autenticacao = new Autenticacao();
+        //user = autenticacao.Autenticar(login, password);
+        /*if (user == null){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Erro");
+            alert.setContentText("Usuario invalido");
+            alert.showAndWait();
+        }*/
+        //else {
+            controleTelas.newWindow("/sistemahotel/view/TelaPrincipal.fxml", event);
+        //}
     }
     public void sair(ActionEvent event){
         System.exit(0);
