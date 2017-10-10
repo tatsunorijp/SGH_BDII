@@ -1,4 +1,4 @@
-package sistemahotel.control;
+package sistemahotel.control.autenticacao;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
@@ -6,6 +6,7 @@ import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import sistemahotel.control.ControleTelas;
 
 
 import java.io.IOException;

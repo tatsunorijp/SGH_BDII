@@ -43,4 +43,8 @@ public class Persistencia {
         tx.commit();
         session.close();
     }
+
+    public static SessionFactory getSsf() {
+        return ssf;
+    }
 }

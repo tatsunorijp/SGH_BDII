@@ -50,7 +50,7 @@
                                     <Insets top="5.0" />
                                  </HBox.margin>
                               </ImageView>
-                              <JFXTextField fx:id="tfFiltro" focusColor="BLACK" promptText="Pesquisar" unFocusColor="WHITE">
+                              <JFXTextField fx:id="tfFiltro" focusColor="#ff9d9d" promptText="Pesquisar" unFocusColor="WHITE">
                                  <HBox.margin>
                                     <Insets />
                                  </HBox.margin>
