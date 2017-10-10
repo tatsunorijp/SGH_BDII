@@ -31,8 +31,9 @@ public class ControleTelas {
         } catch (IOException e1) {
             e1.printStackTrace();
         }
-        Scene scene;
-        stage.setScene(new Scene(root));
+        Scene scene = new Scene(root);
+        scene.getStylesheets().add("TableViewCSS.css");
+        stage.setScene(scene);
         ((Node) event.getSource()).getParent().getScene().getWindow().hide();
         stage.show();
     }
