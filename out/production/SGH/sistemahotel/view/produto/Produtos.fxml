@@ -70,10 +70,10 @@
                <children>
                 <AnchorPane layoutX="537.0" layoutY="-1.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="587.0" prefWidth="374.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
-                        <TableView fx:id="tvProdutos" layoutX="-8.0" prefHeight="587.0" prefWidth="374.0" styleClass="TableViewCSS.css" stylesheets="@../../../../resources/TableViewCSS.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <TableView fx:id="tvProdutos" layoutX="-8.0" prefHeight="587.0" prefWidth="374.0" stylesheets="@../../../../resources/TableViewCSS.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                           <columns>
-                            <TableColumn fx:id="tcNome" prefWidth="205.0" resizable="false" text="Nome" />
-                            <TableColumn fx:id="tcPreco" prefWidth="168.0" resizable="false" text="Preco" />
+                            <TableColumn fx:id="tcNome" prefWidth="196.0" resizable="false" text="Nome" />
+                            <TableColumn fx:id="tcPreco" prefWidth="177.0" resizable="false" text="Preco" />
                           </columns>
                         </TableView>
                      </children>
