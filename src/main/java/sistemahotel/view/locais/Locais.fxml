@@ -35,7 +35,7 @@
                      <children>
                         <JFXButton fx:id="btHabitacao" onAction="#btHabitacaoActionHandler" prefHeight="41.0" text="Habitacao" textFill="WHITE" />
                         <JFXButton fx:id="btSalaoFestas" onAction="#btSalaoFestasActionHandler" prefHeight="41.0" text="Salao de Festas" textFill="WHITE" />
-                        <JFXButton prefHeight="41.0" text="Excluir Local" textFill="WHITE" />
+                        <JFXButton fx:id="btExcluir" onAction="#btExcluirActionHandler" prefHeight="41.0" text="Excluir Local" textFill="WHITE" />
                         <HBox prefHeight="100.0" prefWidth="200.0">
                            <children>
                               <ImageView fitHeight="20.0" fitWidth="20.0">

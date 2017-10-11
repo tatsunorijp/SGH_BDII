@@ -105,7 +105,7 @@ public class ControleTelaHabitacao implements Initializable {
                 return false;
             });
         });
-        SortedList<Local> sortedData = new SortedList<>(filteredData);
+        SortedList<Habitacao> sortedData = new SortedList<>(filteredData);
         sortedData.comparatorProperty().bind(tvHabitacao.comparatorProperty());
         tvHabitacao.setItems(sortedData);
     }

@@ -65,12 +65,16 @@ public class ControleTelaSalaoFestas implements Initializable{
         alert.showAndWait();
     }
 
+    public void btAlterarSalaoActionHandler(ActionEvent e){
+        localdao.AlterarSalao(salaoMain, tfNumero.getText(), tfPreco.getText(), tfInfo.getText(), tfMaxPessoas.getText());
+    }
+
     public void btVoltarActionHandler(ActionEvent event) throws IOException {
         window.newWindow("/sistemahotel/view/TelaPrincipal.fxml", event);
     }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        list = FXCollections.observableList(pegaListas.listHabitacao());
+        list = FXCollections.observableList(pegaListas.listSalaoFestas());
         tcPreco.setCellValueFactory(new PropertyValueFactory<>("preco"));
         tcNumero.setCellValueFactory(new PropertyValueFactory<>("numero"));
         tvSalao.setItems(FXCollections.observableList(list));
@@ -93,7 +97,7 @@ public class ControleTelaSalaoFestas implements Initializable{
                 return false;
             });
         });
-        SortedList<Local> sortedData = new SortedList<>(filteredData);
+        SortedList<SalaoFestas> sortedData = new SortedList<>(filteredData);
         sortedData.comparatorProperty().bind(tvSalao.comparatorProperty());
         tvSalao.setItems(sortedData);
 

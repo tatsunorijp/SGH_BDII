@@ -18,7 +18,9 @@ import sistemahotel.control.ControleTelaPrincipal;
 import sistemahotel.control.ControleTelas;
 import sistemahotel.model.infraestrutura.Persistencia;
 import sistemahotel.model.infraestrutura.RetornaListas;
+import sistemahotel.model.local.Habitacao;
 import sistemahotel.model.local.Local;
+import sistemahotel.model.local.LocalDAO;
 import sistemahotel.model.produto.Produto;
 
 import java.io.IOException;
@@ -46,6 +48,8 @@ public class ControleTelaLocais implements Initializable {
 
     RetornaListas pegaListas;
     ObservableList list;
+    Local localMain;
+    LocalDAO localdao = new LocalDAO();
 
     ControleTelas window = new ControleTelas();
 
@@ -57,6 +61,10 @@ public class ControleTelaLocais implements Initializable {
         window.newWindow("/sistemahotel/view/locais/SalaoFestas.fxml", e);
     }
 
+    public void btExcluirActionHandler(ActionEvent e){
+        localdao.DeletarLocal(localMain);
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         list = FXCollections.observableList(pegaListas.listLocais());
@@ -64,7 +72,9 @@ public class ControleTelaLocais implements Initializable {
         tcNumero.setCellValueFactory(new PropertyValueFactory<>("numero"));
         tvLocais.setItems(FXCollections.observableList(list));
 
-
+        tvLocais.getSelectionModel().selectedItemProperty().addListener(
+                (observable, oldvalue, newValue) -> selecaoDeItens((Local) newValue)
+        );
         FilteredList<Local> filteredData = new FilteredList<>(list, p -> true);
         tfFiltro.textProperty().addListener((observable, oldValue, newValue) -> {
             filteredData.setPredicate(local -> {
@@ -84,4 +94,10 @@ public class ControleTelaLocais implements Initializable {
         tvLocais.setItems(sortedData);
 
     }
+
+    public void selecaoDeItens(Local local){
+        localMain = local;
+
+    }
+
 }
