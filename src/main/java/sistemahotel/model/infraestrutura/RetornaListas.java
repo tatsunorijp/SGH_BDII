@@ -4,6 +4,9 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import sistemahotel.model.local.Habitacao;
+import sistemahotel.model.local.Local;
+import sistemahotel.model.local.SalaoFestas;
 import sistemahotel.model.pessoa.Usuario;
 import sistemahotel.model.produto.Produto;
 
@@ -57,5 +60,65 @@ public class RetornaListas{
             session.close();
         }
         return produto;
+    }
+
+    public static List<Local> listLocais() {
+        ssf = persistencia.getSsf();
+        Session session = ssf.openSession();
+        Transaction transaction = null;
+
+        List local = null;
+
+        try {
+            transaction = session.beginTransaction();
+            local = session.createQuery("FROM Local").list();
+            transaction.commit();
+        } catch (HibernateException e) {
+            if (transaction != null) transaction.rollback();
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+        return local;
+    }
+
+    public static List<Habitacao> listHabitacao() {
+        ssf = persistencia.getSsf();
+        Session session = ssf.openSession();
+        Transaction transaction = null;
+
+        List habitacao = null;
+
+        try {
+            transaction = session.beginTransaction();
+            habitacao = session.createQuery("FROM Habitacao ").list();
+            transaction.commit();
+        } catch (HibernateException e) {
+            if (transaction != null) transaction.rollback();
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+        return habitacao;
+    }
+
+    public static List<SalaoFestas> listSalaoFestas() {
+        ssf = persistencia.getSsf();
+        Session session = ssf.openSession();
+        Transaction transaction = null;
+
+        List salao = null;
+
+        try {
+            transaction = session.beginTransaction();
+            salao = session.createQuery("FROM SalaoFestas ").list();
+            transaction.commit();
+        } catch (HibernateException e) {
+            if (transaction != null) transaction.rollback();
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+        return salao;
     }
 }

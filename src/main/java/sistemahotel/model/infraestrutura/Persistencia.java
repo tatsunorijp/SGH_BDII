@@ -39,7 +39,7 @@ public class Persistencia {
     public void alterar(Object object){
         Session session = ssf.openSession();
         Transaction tx = session.beginTransaction();
-        session.saveOrUpdate(object);
+        session.update(object);
         tx.commit();
         session.close();
     }
