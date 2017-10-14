@@ -15,6 +15,7 @@ import sistemahotel.control.ControleTelas;
 import sistemahotel.model.infraestrutura.Persistencia;
 import sistemahotel.model.infraestrutura.RetornaListas;
 import sistemahotel.model.produto.Produto;
+import sistemahotel.model.produto.ProdutoDAO;
 
 import java.io.IOException;
 import java.net.URL;
@@ -43,13 +44,12 @@ public class ControleTelaProdutos implements Initializable {
 
     @FXML
     private JFXTextField tfAlerta;
-
+    boolean a;
     Produto produtoMain;
-
+    ProdutoDAO produtoDAO = ProdutoDAO.getInstancia();
     RetornaListas pegaListas;
     ObservableList list;
     ControleTelas controleTelas = new ControleTelas();
-    Persistencia persistencia = Persistencia.getInstancia();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -86,24 +86,28 @@ public class ControleTelaProdutos implements Initializable {
     }
 
     public void btAlterarProdutoActionHandler(ActionEvent event) throws IOException{
-        Produto produtoaux = new Produto();
-        produtoaux.setNome(tfNome.getText());
-        produtoaux.setPreco(tfPreco.getText());
-        produtoaux.setQuantidade(tfEstoque.getText());
-        produtoaux.setAlertaEstoque(tfAlerta.getText());
-        produtoaux.setId(produtoMain.getId());
-        list.remove(produtoMain);
+        if (tfNome.getText().isEmpty() || tfPreco.getText().isEmpty()) {
+            controleTelas.popupAviso("Campos inválidos", "Campos com * são obrigatórios");
+        } else {
 
-        persistencia.alterar(produtoaux);
-        list.add(produtoaux);
-        tvProdutos.refresh();
-    }
-    public void btDeletarProdutoActionHandler(ActionEvent event) throws IOException{
-        persistencia.deletar(produtoMain);
-        list.remove(produtoMain);
-        tvProdutos.refresh();
-    }
+            list.add(produtoDAO.Alterar(tfNome.getText(), tfEstoque.getText(), tfPreco.getText(), tfAlerta.getText(),
+                    produtoMain.getId()));
+            list.remove(produtoMain);
+            controleTelas.notificacao("Alteração efetuada", "Alteração do produto concluída no banco de dados");
+            tvProdutos.refresh();
+        }
 
+    }
+    public void btDeletarProdutoActionHandler(ActionEvent event) throws IOException {
+        a = controleTelas.continuarOuCancelar("Menssagem de confirmação",
+                "Você está excluindo um produto!",
+                "Você realmente deseja excluir o produto?");
+        if (a) {
+            produtoDAO.Deleter(produtoMain);
+            list.remove(produtoMain);
+            tvProdutos.refresh();
+        }
+    }
     public void selecaoDeItens(Produto produto){
         produtoMain = produto;
         tfNome.setText(produto.getNome());

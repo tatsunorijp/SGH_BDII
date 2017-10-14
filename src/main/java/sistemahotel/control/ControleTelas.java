@@ -8,13 +8,15 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.Duration;
 import org.controlsfx.control.Notifications;
-import javax.management.Notification;
+
 import java.io.IOException;
+import java.util.Optional;
 
 /**
  * Created by Tatsunori on 05/10/2017.
@@ -67,5 +69,19 @@ public class ControleTelas {
                 oie.showInformation();
             }
         });
+    }
+
+    public boolean continuarOuCancelar(String titulo, String cabecaTexto, String corpoTexto){
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle(titulo);
+        alert.setHeaderText(cabecaTexto);
+        alert.setContentText(corpoTexto);
+
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.get() == ButtonType.OK){
+            return true;
+        } else {
+            return false;
+        }
     }
 }

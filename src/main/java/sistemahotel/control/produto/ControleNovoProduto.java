@@ -58,7 +58,7 @@ public class ControleNovoProduto implements Initializable{
         if (tfNome.getText().isEmpty() || tfPreco.getText().isEmpty()) {
             controleTelas.popupAviso("Campos inválidos", "Campos com * são obrigatórios");
         } else {
-            produtoDAO.NovoProduto(tfNome.getText(), tfQuantidadeInicial.getText(), tfPreco.getText(), tfAlertaDeEstoque.getText());
+            produtoDAO.Novo(tfNome.getText(), tfQuantidadeInicial.getText(), tfPreco.getText(), tfAlertaDeEstoque.getText());
             controleTelas.notificacao("Cadastro efetuado", "Novo produto adicionado ao banco de dados");
             controleTelas.newWindow("/sistemahotel/view/TelaPrincipal.fxml", event);
         }

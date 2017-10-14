@@ -20,7 +20,7 @@ public class ProdutoDAO {
         return instancia;
     }
 
-    public void NovoProduto(String nome,String quantidade,String preco,String alertaEstoque){
+    public void Novo(String nome,String quantidade,String preco,String alertaEstoque){
         produto = new Produto();
         produto.setNome(nome);
         produto.setQuantidade(quantidade);
@@ -29,17 +29,18 @@ public class ProdutoDAO {
         persistencia.persistir(produto);
     }
 
-    public void AlterarProduto(String nome,String quantidade,String preco,String alertaEstoque, Long id){
+    public Produto Alterar(String nome, String quantidade, String preco, String alertaEstoque, Long id){
+        produto = new Produto();
         produto.setNome(nome);
         produto.setQuantidade(quantidade);
         produto.setPreco(preco);
         produto.setAlertaEstoque(alertaEstoque);
         produto.setId(id);
-        persistencia.persistir(produto);
-
+        persistencia.alterar(produto);
+        return produto;
     }
 
-    public void DeleterProduto(Produto produto){
+    public void Deleter(Produto produto){
         persistencia.deletar(produto);
     }
 
