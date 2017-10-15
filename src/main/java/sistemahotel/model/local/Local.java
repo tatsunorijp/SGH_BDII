@@ -14,7 +14,7 @@ public abstract class Local {
     @GeneratedValue
     protected Long id;
     protected String numero;
-    protected String tipo;
+    protected String tipo; // "Habitacao" ou "Salao"
     protected String status;
     protected String informacoesAdicionais;
     protected String preco;

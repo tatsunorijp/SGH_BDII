@@ -45,7 +45,7 @@ public class ControleNovoProduto implements Initializable{
 
 
 
-    ControleTelas controleTelas = new ControleTelas();
+    ControleTelas controleTelas = ControleTelas.getInstancia();
     ProdutoDAO produtoDAO = ProdutoDAO.getInstancia();
 
     @FXML

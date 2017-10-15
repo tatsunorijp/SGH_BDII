@@ -22,6 +22,19 @@ import java.util.Optional;
  * Created by Tatsunori on 05/10/2017.
  */
 public class ControleTelas {
+
+    private static ControleTelas instancia = null;
+
+    private ControleTelas(){
+    }
+
+    public static ControleTelas getInstancia(){
+        if(instancia == null){
+            instancia = new ControleTelas();
+        }
+        return instancia;
+    }
+
     public void newWindow(String path, ActionEvent event){
         Stage stage = new Stage();
         stage.initStyle(StageStyle.UNDECORATED);

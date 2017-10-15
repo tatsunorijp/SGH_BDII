@@ -31,7 +31,7 @@ public class ControleTelaPrincipal implements Initializable{
     @FXML
     private JFXDrawer drawerMenu;
 
-    ControleTelas window = new ControleTelas();
+    ControleTelas window = ControleTelas.getInstancia();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -39,8 +39,8 @@ public class ControleTelaPrincipal implements Initializable{
     public void showClientes(ActionEvent event) throws IOException {
         window.setFragment("/sistemahotel/view/pessoa/Clientes.fxml",apPrincipal);
     }
-    public void showReservas(ActionEvent event){
-
+    public void showReservas(ActionEvent event) throws  IOException{
+        window.setFragment("/sistemahotel/view/reserva/TelaReservas.fxml",apPrincipal);
     }
     public void showProdutos(ActionEvent event) throws IOException {
         window.setFragment("/sistemahotel/view/produto/Produtos.fxml",apPrincipal);

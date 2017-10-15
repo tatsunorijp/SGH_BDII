@@ -21,7 +21,7 @@ public class Reserva {
     @OneToOne
     @JoinColumn(name = "fk_local", nullable=false)
     private Local local;
-    private String status;
+    private String status; // Agendada, Em andamento, Finalizada, Cancelada //
     private LocalDateTime dataReserva;
     private LocalDateTime dataCheckIn;
     private LocalDateTime dataCheckOut;
@@ -83,9 +83,7 @@ public class Reserva {
         this.dataCheckOut = dataCheckOut;
     }
 
-    public String getQtdhospede() {
-        return qtdhospede;
-    }
+    public String getQtdhospede() { return qtdhospede; }
 
     public void setQtdhospede(String qtdhospede) {
         this.qtdhospede = qtdhospede;

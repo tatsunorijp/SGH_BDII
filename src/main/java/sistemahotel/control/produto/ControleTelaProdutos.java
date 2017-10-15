@@ -49,7 +49,7 @@ public class ControleTelaProdutos implements Initializable {
     ProdutoDAO produtoDAO = ProdutoDAO.getInstancia();
     RetornaListas pegaListas;
     ObservableList list;
-    ControleTelas controleTelas = new ControleTelas();
+    ControleTelas controleTelas = ControleTelas.getInstancia();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {

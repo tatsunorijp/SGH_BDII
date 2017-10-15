@@ -14,7 +14,7 @@ public abstract class Pessoa {
     @GeneratedValue(strategy = GenerationType.AUTO)
     protected Long id;
     @NotNull
-    protected String tipo;
+    protected String tipo; // "Cliente" ou "Usuario"
     @Column(unique = true)
     private String CPF;
     @NotNull

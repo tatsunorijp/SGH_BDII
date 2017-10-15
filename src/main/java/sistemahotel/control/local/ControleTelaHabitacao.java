@@ -52,7 +52,7 @@ public class ControleTelaHabitacao implements Initializable {
     private JFXTextField tfInfo;
 
     Habitacao habitacaoMain;
-    ControleTelas window = new ControleTelas();
+    ControleTelas window = ControleTelas.getInstancia();
     LocalDAO localdao = new LocalDAO();
     RetornaListas pegaListas;
     ObservableList list;

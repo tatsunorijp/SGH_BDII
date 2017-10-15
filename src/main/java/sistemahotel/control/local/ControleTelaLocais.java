@@ -51,7 +51,7 @@ public class ControleTelaLocais implements Initializable {
     Local localMain;
     LocalDAO localdao = new LocalDAO();
 
-    ControleTelas window = new ControleTelas();
+    ControleTelas window = ControleTelas.getInstancia();
 
     public void btHabitacaoActionHandler(ActionEvent e) throws IOException {
         window.newWindow("/sistemahotel/view/locais/Habitacao.fxml", e);

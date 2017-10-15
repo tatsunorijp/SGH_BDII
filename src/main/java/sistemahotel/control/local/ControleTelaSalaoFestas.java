@@ -46,7 +46,7 @@ public class ControleTelaSalaoFestas implements Initializable{
     private JFXTextField tfInfo;
 
 
-    ControleTelas window = new ControleTelas();
+    ControleTelas window = ControleTelas.getInstancia();
     LocalDAO localdao = new LocalDAO();
     RetornaListas pegaListas;
     ObservableList list;

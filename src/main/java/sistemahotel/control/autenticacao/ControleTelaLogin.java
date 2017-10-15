@@ -28,7 +28,7 @@ public class ControleTelaLogin implements Initializable{
     private JFXButton btLogin;
     @FXML
     private JFXButton btSair;
-    ControleTelas controleTelas = new ControleTelas();
+    ControleTelas controleTelas = ControleTelas.getInstancia();
     Usuario user;
 
 
