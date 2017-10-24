@@ -14,9 +14,6 @@ import java.util.ResourceBundle;
 
 import javafx.scene.image.ImageView;
 
-/**
- * Created by Tatsunori on 02/10/2017.
- */
 public class ControleTelaPrincipal implements Initializable{
     @FXML
     private JFXButton btClientes;

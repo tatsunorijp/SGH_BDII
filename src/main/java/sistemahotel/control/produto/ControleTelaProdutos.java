@@ -21,9 +21,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-/**
- * Created by Tatsunori on 04/10/2017.
- */
+
 public class ControleTelaProdutos implements Initializable {
     @FXML
     TableView tvProdutos;

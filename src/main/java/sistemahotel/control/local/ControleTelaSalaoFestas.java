@@ -9,7 +9,6 @@ import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -20,7 +19,6 @@ import sistemahotel.model.infraestrutura.RetornaListas;
 import sistemahotel.model.local.Habitacao;
 import sistemahotel.model.local.Local;
 import sistemahotel.model.local.LocalDAO;
-import sistemahotel.model.local.SalaoFestas;
 
 import java.io.IOException;
 import java.net.URL;

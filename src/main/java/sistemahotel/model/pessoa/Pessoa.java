@@ -5,9 +5,7 @@ import com.sun.istack.internal.NotNull;
 import javax.persistence.*;
 import java.time.LocalDate;
 
-/**
- * Created by marcelo on 23/09/17.
- */
+
 @Entity
 public abstract class Pessoa {
     @Id

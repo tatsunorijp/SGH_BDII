@@ -7,9 +7,7 @@ import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-/**
- * Created by marcelo on 23/09/17.
- */
+
 @Entity
 public class Reserva {
     @Id

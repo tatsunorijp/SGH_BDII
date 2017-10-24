@@ -5,9 +5,6 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
-/**
- * Created by marcelo on 02/10/17.
- */
 public class Persistencia {
 
     private static Persistencia instancia = null;

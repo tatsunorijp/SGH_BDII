@@ -18,9 +18,6 @@ import org.controlsfx.control.Notifications;
 import java.io.IOException;
 import java.util.Optional;
 
-/**
- * Created by Tatsunori on 05/10/2017.
- */
 public class ControleTelas {
 
     private static ControleTelas instancia = null;

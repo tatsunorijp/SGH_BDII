@@ -2,9 +2,7 @@ package sistemahotel.model.produto;
 
 import sistemahotel.model.infraestrutura.Persistencia;
 
-/**
- * Created by Tatsunori on 05/10/2017.
- */
+
 public class ProdutoDAO {
     Persistencia persistencia = Persistencia.getInstancia();
     Produto produto;

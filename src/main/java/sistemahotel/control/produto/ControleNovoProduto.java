@@ -14,9 +14,6 @@ import sistemahotel.model.produto.ProdutoDAO;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-/**
- * Created by Tatsunori on 05/10/2017.
- */
 public class ControleNovoProduto implements Initializable{
 
     @FXML

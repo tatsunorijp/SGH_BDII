@@ -16,9 +16,6 @@ import sistemahotel.model.reserva.Reserva;
 
 import java.util.List;
 
-/**
- * Created by tatsunori on 08/10/17.
- */
 public class RetornaListas{
     public static Persistencia persistencia = Persistencia.getInstancia();
     public static SessionFactory ssf;

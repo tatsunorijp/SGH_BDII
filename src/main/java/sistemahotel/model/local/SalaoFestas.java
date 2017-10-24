@@ -4,9 +4,6 @@ import sistemahotel.model.local.Local;
 
 import javax.persistence.Entity;
 
-/**
- * Created by marcelo on 23/09/17.
- */
 @Entity
 public class SalaoFestas extends Local {
     String maximoPessoas;

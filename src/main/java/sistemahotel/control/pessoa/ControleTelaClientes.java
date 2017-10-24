@@ -23,10 +23,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 
-/**
- * Created by Tatsunori on 03/10/2017.
- * Modified by Pedro.
- */
+
 public class ControleTelaClientes implements Initializable {
     @FXML
     TableView tvClientes;
