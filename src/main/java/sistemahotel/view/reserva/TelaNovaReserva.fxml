@@ -21,6 +21,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
+<?import javafx.scene.control.DatePicker?>
 
 <AnchorPane prefHeight="615.0" prefWidth="827.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sistemahotel.control.reserva.ControleTelaNovaReserva">
 <children>
@@ -65,10 +66,9 @@
                      <right>
                         <TableView fx:id="tvLocais" prefHeight="320.0" prefWidth="346.0" stylesheets="@../../../../resources/TableViewCSS.css" BorderPane.alignment="CENTER_RIGHT">
                           <columns>
-                              <TableColumn fx:id="tcLocalNumero" prefWidth="68.0" text="Numero" />
-                            <TableColumn fx:id="tcLocalTipo" prefWidth="88.0" text="Tipo" />
-                            <TableColumn fx:id="tcLocalQtdhospede" prefWidth="112.0" text="Max. Pessoas" />
-                              <TableColumn fx:id="tcLocalPreco" prefWidth="77.0" text="Preco" />
+                              <TableColumn fx:id="tcLocalNumero" prefWidth="100.0" text="Numero" />
+                            <TableColumn fx:id="tcLocalTipo" prefWidth="113.0" text="Tipo" />
+                              <TableColumn fx:id="tcLocalPreco" prefWidth="132.0" text="Preco" />
                           </columns>
                            <BorderPane.margin>
                               <Insets bottom="25.0" right="15.0" top="5.0" />
@@ -128,7 +128,12 @@
                               </Text>
                               <Text fill="#800c0c" strokeType="OUTSIDE" strokeWidth="0.0" text="Data de Check-in:" GridPane.columnIndex="1" />
                               <Text fill="#901111" strokeType="OUTSIDE" strokeWidth="0.0" text="Data de Check-out:" GridPane.columnIndex="2" />
-                              <JFXTextField fx:id="tfQtdhospede" prefHeight="23.0" prefWidth="221.0" GridPane.rowIndex="1" />
+                              <JFXTextField fx:id="tfQtdhospede" prefHeight="23.0" prefWidth="221.0" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets right="20.0" />
+                                 </GridPane.margin></JFXTextField>
+                              <DatePicker fx:id="dpDataCheckIn" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <DatePicker fx:id="dpDataCheckOut" GridPane.columnIndex="2" GridPane.rowIndex="1" />
                            </children>
                         </GridPane>
                      </bottom>

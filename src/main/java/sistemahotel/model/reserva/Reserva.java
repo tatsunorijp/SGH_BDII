@@ -21,8 +21,8 @@ public class Reserva {
     private Local local;
     private String status; // Agendada, Em andamento, Finalizada, Cancelada //
     private LocalDateTime dataReserva;
-    private LocalDateTime dataCheckIn;
-    private LocalDateTime dataCheckOut;
+    private LocalDate dataCheckIn;
+    private LocalDate dataCheckOut;
     private String qtdhospede;
 
     public Long getId() {
@@ -65,19 +65,19 @@ public class Reserva {
         this.dataReserva = dataReserva;
     }
 
-    public LocalDateTime getDataCheckIn() {
+    public LocalDate getDataCheckIn() {
         return dataCheckIn;
     }
 
-    public void setDataCheckIn(LocalDateTime dataCheckIn) {
+    public void setDataCheckIn(LocalDate dataCheckIn) {
         this.dataCheckIn = dataCheckIn;
     }
 
-    public LocalDateTime getDataCheckOut() {
+    public LocalDate getDataCheckOut() {
         return dataCheckOut;
     }
 
-    public void setDataCheckOut(LocalDateTime dataCheckOut) {
+    public void setDataCheckOut(LocalDate dataCheckOut) {
         this.dataCheckOut = dataCheckOut;
     }
 

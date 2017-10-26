@@ -9,6 +9,7 @@ import sistemahotel.model.infraestrutura.RetornaListas;
 import sistemahotel.model.local.Local;
 import sistemahotel.model.pessoa.Cliente;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -28,7 +29,7 @@ public class ReservaDAO {
         return instancia;
     }
 
-    public void novaReserva(Cliente cliente, Local local,LocalDateTime dataCheckIn, LocalDateTime dataCheckOut, String qtdhospede){
+    public void novaReserva(Cliente cliente, Local local, LocalDate dataCheckIn, LocalDate dataCheckOut, String qtdhospede){
         Reserva reserva = new Reserva();
 
         reserva.setCliente(cliente);
@@ -37,18 +38,18 @@ public class ReservaDAO {
         reserva.setDataReserva(LocalDateTime.now());
         reserva.setDataCheckIn(dataCheckIn);
         reserva.setDataCheckOut(dataCheckOut);
+        reserva.setQtdhospede(qtdhospede);
 
         persistencia.persistir(reserva);
     }
 
-    public boolean checarIndisponibilidade(Local local, LocalDateTime dataCheckIn, LocalDateTime dataCheckOut){
+    public boolean checarIndisponibilidade(Local local, LocalDate dataCheckIn, LocalDate dataCheckOut){ // true = INDISPONIVEL
         List<Reserva> lista = RetornaListas.listReservaPorLocal(local);
-
-        for(Reserva aux: lista){
-            if (aux.getDataCheckOut().compareTo(dataCheckIn) < 0){ // se a data de checkout de aux for menor que a data de checkin da nova reserva, entao OK
+        if(lista.isEmpty()) return false; // caso a lista de reservas esteja vazia;
+        for (Reserva aux : lista) {
+            if (aux.getDataCheckOut().compareTo(dataCheckIn) < 0) { // se a data de checkout de aux for menor que a data de checkin da nova reserva, entao OK
                 return false;
-            }
-            else if (aux.getDataCheckIn().compareTo(dataCheckOut) > 0){ // caso contrario, OK se a data de checkin de aux for maior que a data de checkout da nova reserva
+            } else if (aux.getDataCheckIn().compareTo(dataCheckOut) > 0) { // caso contrario, OK se a data de checkin de aux for maior que a data de checkout da nova reserva
                 return false;
             }
         }

@@ -31,7 +31,7 @@ public class RetornaListas{
 
         try {
             transaction = session.beginTransaction();
-            users = session.createQuery("FROM Pessoa WHERE Pessoa.tipo = 'Usuario'").list();
+            users = session.createQuery("FROM Pessoa WHERE tipo = 'Usuario'").list();
             transaction.commit();
         } catch (HibernateException e) {
             if (transaction != null) transaction.rollback();
@@ -42,16 +42,16 @@ public class RetornaListas{
         return users;
     }
 
-    public static List<Pessoa> listClientes() {
+    public static List<Cliente> listClientes() {
         ssf = persistencia.getSsf();
         Session session = ssf.openSession();
         Transaction transaction = null;
 
-        List<Pessoa> clientes = null;
+        List<Cliente> clientes = null;
 
         try {
             transaction = session.beginTransaction();
-            clientes = session.createQuery("FROM Pessoa WHERE Pessoa.tipo = 'Cliente'").list();
+            clientes = session.createQuery("FROM Pessoa WHERE tipo = 'Cliente'").list();
             transaction.commit();
         } catch (HibernateException e) {
             if (transaction != null) transaction.rollback();
@@ -152,7 +152,7 @@ public class RetornaListas{
 
         try {
             transaction = session.beginTransaction();
-            reserva = session.createQuery("FROM Reserva").list();
+            reserva = session.createQuery("FROM Reserva WHERE status != 'Cancelada'").list();
             transaction.commit();
         } catch (HibernateException e) {
             if (transaction != null) transaction.rollback();
@@ -168,11 +168,13 @@ public class RetornaListas{
         Session session = ssf.openSession();
         Transaction transaction = null;
 
+        long auxid = local.getId();
+
         List<Reserva> reserva = null;
 
         try {
             transaction = session.beginTransaction();
-            reserva = session.createQuery("FROM Reserva WHERE Reserva.local = local AND (Reserva.status = 'Em Andamento' OR Reserva.status = 'Agendada')").list();
+            reserva = session.createQuery("FROM Reserva WHERE local.id = :id  AND (status = 'Em Andamento' OR status = 'Agendada')").setParameter("id", auxid).list();
             transaction.commit();
         } catch (HibernateException e) {
             if (transaction != null) transaction.rollback();
