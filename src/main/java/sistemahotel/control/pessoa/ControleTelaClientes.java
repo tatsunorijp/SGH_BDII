@@ -64,7 +64,7 @@ public class ControleTelaClientes implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        list = FXCollections.observableList(pegaListas.listClientes2());
+        list = FXCollections.observableList(pegaListas.listClientes());
         tcNome.setCellValueFactory( new PropertyValueFactory<>("nome"));
         tcRG.setCellValueFactory(new PropertyValueFactory<>("RG"));
         tvClientes.setItems(FXCollections.observableList(list));

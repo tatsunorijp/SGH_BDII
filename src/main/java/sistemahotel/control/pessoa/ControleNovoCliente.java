@@ -72,7 +72,7 @@ public class ControleNovoCliente implements Initializable {
                             dtDataDeNascimento.getValue());
             controleTelas.notificacao("Cadastro efetuado",
                                       "Novo cliente adicionado ao banco de dados");
-            controleTelas.newWindow("/sistemahotel/view/TelaPrincipal.fxml", event);
+            controleTelas.newWindow("/sistemahotel/view/Clientes.fxml", event);
         }
     }
 
@@ -88,7 +88,7 @@ public class ControleNovoCliente implements Initializable {
         tfEmail.setText("");
         tfInformacoesAdicionais.setText("");
         tfPlacaDoCarro.setText("");
-        dtDataDeNascimento.setValue(LocalDate.MIN);
+        dtDataDeNascimento.setValue(LocalDate.parse("1900-01-01"));
     }
 
     @Override
