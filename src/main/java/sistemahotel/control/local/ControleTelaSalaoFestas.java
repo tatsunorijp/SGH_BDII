@@ -19,6 +19,7 @@ import sistemahotel.model.infraestrutura.RetornaListas;
 import sistemahotel.model.local.Habitacao;
 import sistemahotel.model.local.Local;
 import sistemahotel.model.local.LocalDAO;
+import sistemahotel.model.local.SalaoFestas;
 
 import java.io.IOException;
 import java.net.URL;

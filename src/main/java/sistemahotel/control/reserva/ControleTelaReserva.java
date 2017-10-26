@@ -1,6 +1,8 @@
 package sistemahotel.control.reserva;
 
 import com.jfoenix.controls.JFXTextField;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
@@ -11,9 +13,11 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.event.ActionEvent;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.util.Callback;
 import sistemahotel.control.ControleTelas;
 import sistemahotel.model.infraestrutura.Persistencia;
 import sistemahotel.model.infraestrutura.RetornaListas;
+import sistemahotel.model.pessoa.Cliente;
 import sistemahotel.model.produto.Produto;
 import sistemahotel.model.reserva.Reserva;
 import sistemahotel.model.reserva.ReservaDAO;
@@ -53,8 +57,8 @@ public class ControleTelaReserva implements Initializable{
 
         olReservas = FXCollections.observableList(RetornaListas.listReserva());
         tcStatus.setCellValueFactory( new PropertyValueFactory<>("status"));
-        tcCliente.setCellValueFactory( new PropertyValueFactory<>("fk_cliente"));
-        tcLocal.setCellValueFactory( new PropertyValueFactory<>("fk_local"));
+        tcCliente.setCellValueFactory((Callback<TableColumn.CellDataFeatures<Reserva, String>, ObservableValue<String>>) r -> new SimpleStringProperty(r.getValue().getCliente().getNome()));
+        tcLocal.setCellValueFactory((Callback<TableColumn.CellDataFeatures<Reserva, String>, ObservableValue<String>>) r -> new SimpleStringProperty(r.getValue().getLocal().getNumero()));
         tcQtdhospede.setCellValueFactory( new PropertyValueFactory<>("qtdhospede"));
         tcDataCheckIn.setCellValueFactory(new PropertyValueFactory<>("dataCheckIn"));
         tcDataCheckOut.setCellValueFactory(new PropertyValueFactory<>("dataCheckOut"));
@@ -88,10 +92,14 @@ public class ControleTelaReserva implements Initializable{
     }
 
     public void btCancelaReservaActionHandler(ActionEvent event) throws IOException{
-
-
-        InstanciaReservaDAO.cancelarReserva(reservaMain);
-        tvReservas.refresh();
+        boolean msg = janela.continuarOuCancelar("Menssagem de confirmação",
+                "Você está cancelando uma reserva!",
+                "Você realmente deseja cancelar esta reserva?");
+        if (msg) {
+            InstanciaReservaDAO.cancelarReserva(reservaMain);
+            olReservas.remove(reservaMain);
+            tvReservas.refresh();
+        }
     }
 
     public void selecaoReserva(Reserva reserva){

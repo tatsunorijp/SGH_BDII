@@ -8,6 +8,7 @@ import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -45,13 +46,15 @@ public class ControleTelaNovaReserva implements Initializable{
     TableColumn tcLocalNumero;
     @FXML
     TableColumn tcLocalTipo;
-    //@FXML
-    //TableColumn tcLocalQtdhospede;
     @FXML
     TableColumn tcLocalPreco;
+    @FXML
+    DatePicker dpDataCheckIn;
+    @FXML
+    DatePicker dpDataCheckOut;
 
-    private Cliente cliente;
-    private Local local;
+    private Cliente cliente = null;
+    private Local local = null;
     private ObservableList olClientes;
     private ObservableList olLocais;
     private ReservaDAO InstanciaReservaDAO = ReservaDAO.getInstancia();
@@ -60,10 +63,10 @@ public class ControleTelaNovaReserva implements Initializable{
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        //olClientes= FXCollections.observableList(RetornaListas.listClientes());
+        olClientes= FXCollections.observableList(RetornaListas.listClientes());
         tcClienteNome.setCellValueFactory( new PropertyValueFactory<>("nome"));
         tcClienteCPF.setCellValueFactory( new PropertyValueFactory<>("CPF"));
-        //tvClientes.setItems(FXCollections.observableList(olClientes));
+        tvClientes.setItems(FXCollections.observableList(olClientes));
         tvClientes.getSelectionModel().selectedItemProperty().addListener(
                 (observable, oldvalue, newValue) -> selecaoCliente((Cliente) newValue)
         );
@@ -89,7 +92,6 @@ public class ControleTelaNovaReserva implements Initializable{
         olLocais= FXCollections.observableList(RetornaListas.listLocais());
         tcLocalNumero.setCellValueFactory( new PropertyValueFactory<>("numero"));
         tcLocalTipo.setCellValueFactory( new PropertyValueFactory<>("tipo"));
-        //tcLocalQtdhospede.setCellValueFactory( new PropertyValueFactory<>("maximoPessoas"));
         tcLocalPreco.setCellValueFactory( new PropertyValueFactory<>("preco"));
         tvLocais.setItems(FXCollections.observableList(olLocais));
         tvLocais.getSelectionModel().selectedItemProperty().addListener(
@@ -123,13 +125,20 @@ public class ControleTelaNovaReserva implements Initializable{
 
     @FXML
     void btConfirmarActionHandler(ActionEvent event) {
-        /*if ( InstanciaReservaDAO.checarIndisponibilidade(local, datacheckin, datacheckout) ) {
-            janela.popupAviso("Data inválida", "Esta habitação estará ocupada nesta data");
+        if (cliente                   == null ||
+            local                     == null ||
+            tfQtdhospede.getText().isEmpty()  ||
+            dpDataCheckIn.getValue()  == null ||
+            dpDataCheckOut.getValue() == null)  { janela.popupAviso("Campos inválidos", "Campos com * são obrigatórios");
         } else {
-            InstanciaReservaDAO.novaReserva(null, null, null, null, null);
-            janela.notificacao("Reserva efetuada", "Nova reserva agendada no banco de dados");
-            janela.newWindow("/sistemahotel/view/TelaPrincipal.fxml", event);
-        }*/
+            if ( InstanciaReservaDAO.checarIndisponibilidade(local, dpDataCheckIn.getValue(), dpDataCheckOut.getValue()) ) {
+                janela.popupAviso("Data inválida", "Esta habitação está ocupada nesta data");
+            } else {
+                InstanciaReservaDAO.novaReserva(cliente, local, dpDataCheckIn.getValue(), dpDataCheckOut.getValue(), tfQtdhospede.getText());
+                janela.notificacao("Reserva efetuada", "Nova reserva agendada no banco de dados");
+                janela.newWindow("/sistemahotel/view/TelaPrincipal.fxml", event);
+            }
+        }
     }
 
     public void selecaoCliente(Cliente cliente){
