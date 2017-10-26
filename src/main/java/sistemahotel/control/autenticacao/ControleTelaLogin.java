@@ -33,16 +33,16 @@ public class ControleTelaLogin implements Initializable{
         String login = tfUser.getText();
         String password = tfPassword.getText();
         Autenticacao autenticacao = new Autenticacao();
-        //user = autenticacao.Autenticar(login, password);
-        /*if (user == null){
+        user = autenticacao.Autenticar(login, password);
+        if (user == null){
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Erro");
             alert.setContentText("Usuario invalido");
             alert.showAndWait();
-        }*/
-        //else {
+        }
+        else {
             controleTelas.newWindow("/sistemahotel/view/TelaPrincipal.fxml", event);
-        //}
+        }
     }
     public void sair(ActionEvent event){
         System.exit(0);
