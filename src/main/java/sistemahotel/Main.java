@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import sistemahotel.model.infraestrutura.Persistencia;
+import sistemahotel.model.pessoa.Usuario;
 import sistemahotel.model.reserva.ReservaDAO;
 
 /**
@@ -15,6 +16,10 @@ import sistemahotel.model.reserva.ReservaDAO;
 public class Main extends  Application{
     public static void main(String[] args){
         Persistencia.getInstancia().startSsf();
+        Usuario user = new Usuario();
+        user.setLogin("admin");
+        user.setSenha("admin");
+        Persistencia.getInstancia().persistir(user);
         launch(args);
 
 

@@ -42,6 +42,27 @@ public class RetornaListas{
         return users;
     }
 
+
+    public static List<Pessoa> listPessoa() {
+        ssf = persistencia.getSsf();
+        Session session = ssf.openSession();
+        Transaction transaction = null;
+
+        List pessoas = null;
+
+        try {
+            transaction = session.beginTransaction();
+            pessoas = session.createQuery("FROM Pessoa").list();
+            transaction.commit();
+        } catch (HibernateException e) {
+            if (transaction != null) transaction.rollback();
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+        return pessoas;
+    }
+
     public static List<Cliente> listClientes() {
         ssf = persistencia.getSsf();
         Session session = ssf.openSession();

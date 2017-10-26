@@ -1,11 +1,17 @@
 package sistemahotel.model.pessoa;
 
 
+import javax.persistence.Entity;
 
+@Entity
 public class Usuario extends Pessoa {
 
     private String login;
     private String senha;
+
+    public Usuario() {
+        this.tipo = "Usuario";
+    }
 
     public String getLogin() {
         return login;
