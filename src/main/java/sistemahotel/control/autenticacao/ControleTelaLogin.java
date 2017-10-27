@@ -41,7 +41,7 @@ public class ControleTelaLogin implements Initializable{
             alert.showAndWait();
         }
         else {
-            controleTelas.newWindow("/sistemahotel/view/TelaPrincipal.fxml", event);
+            controleTelas.novaJanela("/sistemahotel/view/TelaPrincipal.fxml", event);
         }
     }
     public void sair(ActionEvent event){

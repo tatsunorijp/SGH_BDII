@@ -3,6 +3,7 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXPasswordField?>
 <?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.effect.ColorAdjust?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -45,8 +46,14 @@
       </Pane>
       <AnchorPane layoutX="437.0" layoutY="34.0" opacity="0.9" prefHeight="414.0" prefWidth="250.0" style="-fx-background-color: #ab0000;" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="30.0">
          <children>
-            <JFXTextField fx:id="tfUser" focusColor="#ffcbcb" labelFloat="true" layoutX="31.0" layoutY="236.0" prefHeight="25.0" prefWidth="192.0" promptText="User" unFocusColor="WHITE" AnchorPane.bottomAnchor="159.0" AnchorPane.leftAnchor="31.0" AnchorPane.rightAnchor="31.0" />
-            <JFXPasswordField fx:id="tfPassword" focusColor="#ff6868" layoutX="31.0" layoutY="275.0" prefHeight="25.0" prefWidth="192.0" promptText="Password" unFocusColor="WHITE" AnchorPane.bottomAnchor="120.0" AnchorPane.leftAnchor="31.0" AnchorPane.rightAnchor="31.0" />
+            <JFXTextField fx:id="tfUser" focusColor="#ffcbcb" labelFloat="true" layoutX="31.0" layoutY="236.0" prefHeight="25.0" prefWidth="192.0" promptText="User" unFocusColor="WHITE" AnchorPane.bottomAnchor="159.0" AnchorPane.leftAnchor="31.0" AnchorPane.rightAnchor="31.0">
+               <effect>
+                  <ColorAdjust brightness="1.0" />
+               </effect></JFXTextField>
+            <JFXPasswordField fx:id="tfPassword" focusColor="#ff6868" layoutX="31.0" layoutY="275.0" prefHeight="25.0" prefWidth="192.0" promptText="Password" unFocusColor="WHITE" AnchorPane.bottomAnchor="120.0" AnchorPane.leftAnchor="31.0" AnchorPane.rightAnchor="31.0">
+               <effect>
+                  <ColorAdjust brightness="1.0" />
+               </effect></JFXPasswordField>
             <JFXButton fx:id="btLogin" layoutX="50.0" layoutY="329.0" onAction="#iniciar" prefHeight="25.0" prefWidth="135.0" style="-fx-background-color: ff1b1b;" text="Log in" textFill="WHITE" AnchorPane.bottomAnchor="66.0" AnchorPane.leftAnchor="31.0" AnchorPane.rightAnchor="31.0">
                <effect>
                   <DropShadow height="60.0" radius="29.5" width="60.0" />

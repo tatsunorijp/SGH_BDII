@@ -7,6 +7,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
@@ -28,27 +29,37 @@
                                     <Image url="@../model/imagens/login/Dark_Material_Design_wallpaper.jpg" />
                                  </image>
                               </ImageView>
-                              <JFXButton fx:id="btClientes" onAction="#showClientes" prefHeight="300.0" prefWidth="160.0" text="Clientes" textFill="WHITE">
+                              <JFXButton fx:id="btClientes" onAction="#showClientes" prefHeight="400.0" prefWidth="160.0" text="Clientes" textFill="WHITE">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </JFXButton>
-                              <JFXButton fx:id="btReservas" onAction="#showReservas" prefHeight="300.0" prefWidth="160.0" text="Reservas" textFill="WHITE">
+                              <JFXButton fx:id="btReservas" onAction="#showReservas" prefHeight="400.0" prefWidth="160.0" text="Reservas" textFill="WHITE">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </JFXButton>
-                              <JFXButton fx:id="btProdutos" onAction="#showProdutos" prefHeight="300.0" prefWidth="160.0" text="Produtos" textFill="WHITE">
+                              <JFXButton fx:id="btProdutos" onAction="#showProdutos" prefHeight="400.0" prefWidth="160.0" text="Produtos" textFill="WHITE">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </JFXButton>
-                              <JFXButton fx:id="btLocais" onAction="#showLocais" prefHeight="300.0" prefWidth="160.0" text="Locais" textFill="WHITE">
+                              <JFXButton fx:id="btLocais" onAction="#showLocais" prefHeight="400.0" prefWidth="160.0" text="Habitações" textFill="WHITE">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </JFXButton>
-                              <JFXButton fx:id="btSair" onAction="#exit" prefHeight="300.0" prefWidth="160.0" text="Sair" textFill="WHITE">
+                              <JFXButton prefHeight="400.0" prefWidth="160.0" text="Salas de eventos" textFill="WHITE">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton prefHeight="400.0" prefWidth="160.0" text="Usuarios" textFill="WHITE">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton fx:id="btSair" onAction="#exit" prefHeight="400.0" prefWidth="160.0" text="Sair" textFill="WHITE">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
@@ -59,10 +70,13 @@
                   </AnchorPane>
                </children>
                <effect>
-                  <DropShadow height="30.0" radius="14.5" width="30.0" />
+                  <DropShadow height="30.0" offsetY="3.0" radius="14.5" width="30.0" />
                </effect>
             </JFXDrawer>
          </left>
+         <right>
+            <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+         </right>
       </BorderPane>
    </children>
 </AnchorPane>

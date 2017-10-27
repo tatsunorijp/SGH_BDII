@@ -6,9 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.layout.AnchorPane;
-import sistemahotel.control.ControleTelaPrincipal;
 import sistemahotel.control.ControleTelas;
-import sistemahotel.model.produto.Produto;
 import sistemahotel.model.produto.ProdutoDAO;
 
 import java.net.URL;
@@ -47,7 +45,7 @@ public class ControleNovoProduto implements Initializable{
 
     @FXML
     void btCancelarActionHandler(ActionEvent event) {
-        controleTelas.newWindow("/sistemahotel/view/TelaPrincipal.fxml", event);
+        controleTelas.fechaJanela(event);
     }
 
     @FXML
@@ -57,7 +55,7 @@ public class ControleNovoProduto implements Initializable{
         } else {
             produtoDAO.Novo(tfNome.getText(), tfQuantidadeInicial.getText(), tfPreco.getText(), tfAlertaDeEstoque.getText());
             controleTelas.notificacao("Cadastro efetuado", "Novo produto adicionado ao banco de dados");
-            controleTelas.newWindow("/sistemahotel/view/TelaPrincipal.fxml", event);
+            controleTelas.novaJanela("/sistemahotel/view/TelaPrincipal.fxml", event);
         }
     }
 

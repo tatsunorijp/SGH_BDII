@@ -2,7 +2,6 @@ package sistemahotel.control.local;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
-import com.jfoenix.controls.JFXTreeTableView;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
@@ -13,15 +12,10 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.layout.AnchorPane;
-import sistemahotel.control.ControleTelaPrincipal;
 import sistemahotel.control.ControleTelas;
-import sistemahotel.model.infraestrutura.Persistencia;
 import sistemahotel.model.infraestrutura.RetornaListas;
-import sistemahotel.model.local.Habitacao;
 import sistemahotel.model.local.Local;
 import sistemahotel.model.local.LocalDAO;
-import sistemahotel.model.produto.Produto;
 
 import java.io.IOException;
 import java.net.URL;
@@ -51,11 +45,11 @@ public class ControleTelaLocais implements Initializable {
     ControleTelas window = ControleTelas.getInstancia();
 
     public void btHabitacaoActionHandler(ActionEvent e) throws IOException {
-        window.newWindow("/sistemahotel/view/locais/Habitacao.fxml", e);
+        window.novaJanela("/sistemahotel/view/locais/Habitacao.fxml", e);
     }
 
     public void btSalaoFestasActionHandler(ActionEvent e) throws IOException {
-        window.newWindow("/sistemahotel/view/locais/SalaoFestas.fxml", e);
+        window.novaJanela("/sistemahotel/view/locais/SalaoFestas.fxml", e);
     }
 
     public void btExcluirActionHandler(ActionEvent e){

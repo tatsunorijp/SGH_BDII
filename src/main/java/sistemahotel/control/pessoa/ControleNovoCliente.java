@@ -7,9 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.DatePicker;
 import javafx.scene.layout.AnchorPane;
-import sistemahotel.control.ControleTelaPrincipal;
 import sistemahotel.control.ControleTelas;
-import sistemahotel.model.pessoa.Cliente;
 import sistemahotel.model.pessoa.ClienteDAO;
 import java.net.URL;
 import java.time.LocalDate;
@@ -54,7 +52,7 @@ public class ControleNovoCliente implements Initializable {
 
     @FXML
     void btCancelarActionHandler(ActionEvent event) {
-        controleTelas.newWindow("/sistemahotel/view/TelaPrincipal.fxml", event);
+        controleTelas.fechaJanela(event);
     }
 
     @FXML
@@ -72,7 +70,7 @@ public class ControleNovoCliente implements Initializable {
                             dtDataDeNascimento.getValue());
             controleTelas.notificacao("Cadastro efetuado",
                                       "Novo cliente adicionado ao banco de dados");
-            controleTelas.newWindow("/sistemahotel/view/Clientes.fxml", event);
+            controleTelas.novaJanela("/sistemahotel/view/Clientes.fxml", event);
         }
     }
 

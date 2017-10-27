@@ -2,7 +2,6 @@ package sistemahotel.control;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDrawer;
-import com.jfoenix.controls.JFXHamburger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -11,8 +10,6 @@ import javafx.scene.layout.AnchorPane;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-
-import javafx.scene.image.ImageView;
 
 public class ControleTelaPrincipal implements Initializable{
     @FXML
@@ -46,7 +43,7 @@ public class ControleTelaPrincipal implements Initializable{
         window.setFragment("/sistemahotel/view/locais/Locais.fxml",apPrincipal);
     }
     public void exit(ActionEvent event){
-        window.newWindow("/sistemahotel/view/Login.fxml",event);
+        window.novaJanela("/sistemahotel/view/Login.fxml",event);
     }
 
 

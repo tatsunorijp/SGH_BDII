@@ -10,6 +10,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.Duration;
@@ -32,7 +33,7 @@ public class ControleTelas {
         return instancia;
     }
 
-    public void newWindow(String path, ActionEvent event){
+    public void novaJanela(String path, ActionEvent event){
         Stage stage = new Stage();
         stage.initStyle(StageStyle.UNDECORATED);
         FXMLLoader loader = new FXMLLoader();
@@ -48,6 +49,28 @@ public class ControleTelas {
         stage.setScene(scene);
         ((Node) event.getSource()).getParent().getScene().getWindow().hide();
         stage.show();
+    }
+
+    public void novaJanelaSobreposta(String path, ActionEvent event){
+        Stage stage = new Stage();
+        stage.initStyle(StageStyle.UNDECORATED);
+        stage.initModality(Modality.APPLICATION_MODAL);
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource(path));
+        Parent root = null;
+        try {
+            root = loader.load();
+        } catch (IOException e1) {
+            e1.printStackTrace();
+        }
+        Scene scene = new Scene(root);
+        scene.getStylesheets().add("TableViewCSS.css");
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void fechaJanela(ActionEvent event){
+        ((Node) event.getSource()).getParent().getScene().getWindow().hide();
     }
 
 

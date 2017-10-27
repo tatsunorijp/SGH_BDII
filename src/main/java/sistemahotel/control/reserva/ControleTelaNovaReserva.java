@@ -11,14 +11,11 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import sistemahotel.control.ControleTelas;
-import sistemahotel.model.infraestrutura.Persistencia;
 import sistemahotel.model.infraestrutura.RetornaListas;
 import sistemahotel.model.local.Local;
 import sistemahotel.model.pessoa.Cliente;
-import sistemahotel.model.reserva.Reserva;
 import sistemahotel.model.reserva.ReservaDAO;
 
 import java.net.URL;
@@ -120,7 +117,7 @@ public class ControleTelaNovaReserva implements Initializable{
 
     @FXML
     void btCancelarActionHandler(ActionEvent event) {
-        janela.newWindow("/sistemahotel/view/TelaPrincipal.fxml", event);
+        janela.fechaJanela(event);
     }
 
     @FXML
@@ -136,7 +133,7 @@ public class ControleTelaNovaReserva implements Initializable{
             } else {
                 InstanciaReservaDAO.novaReserva(cliente, local, dpDataCheckIn.getValue(), dpDataCheckOut.getValue(), tfQtdhospede.getText());
                 janela.notificacao("Reserva efetuada", "Nova reserva agendada no banco de dados");
-                janela.newWindow("/sistemahotel/view/TelaPrincipal.fxml", event);
+                janela.novaJanela("/sistemahotel/view/TelaPrincipal.fxml", event);
             }
         }
     }

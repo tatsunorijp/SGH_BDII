@@ -13,7 +13,6 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import sistemahotel.control.ControleTelas;
-import sistemahotel.model.infraestrutura.Persistencia;
 import sistemahotel.model.infraestrutura.RetornaListas;
 import sistemahotel.model.pessoa.Cliente;
 import sistemahotel.model.pessoa.ClienteDAO;
@@ -92,7 +91,7 @@ public class ControleTelaClientes implements Initializable {
     }
 
     public void btNovoClienteActionHandler(ActionEvent event) throws IOException {
-        controleTelas.newWindow("/sistemahotel/view/pessoa/NovoCliente.fxml",event);
+        controleTelas.novaJanelaSobreposta("/sistemahotel/view/pessoa/NovoCliente.fxml",event);
     }
 
     public void btAlterarClienteActionHandler(ActionEvent event) throws IOException {

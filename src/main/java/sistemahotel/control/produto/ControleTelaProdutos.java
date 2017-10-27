@@ -12,7 +12,6 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import sistemahotel.control.ControleTelas;
-import sistemahotel.model.infraestrutura.Persistencia;
 import sistemahotel.model.infraestrutura.RetornaListas;
 import sistemahotel.model.produto.Produto;
 import sistemahotel.model.produto.ProdutoDAO;
@@ -80,7 +79,7 @@ public class ControleTelaProdutos implements Initializable {
     }
 
     public void btNovoProdutoActionHandler(ActionEvent event) throws IOException{
-        controleTelas.newWindow("/sistemahotel/view/produto/NovoProduto.fxml",event);
+        controleTelas.novaJanelaSobreposta("/sistemahotel/view/produto/NovoProduto.fxml",event);
     }
 
     public void btAlterarProdutoActionHandler(ActionEvent event) throws IOException{

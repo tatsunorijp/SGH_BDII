@@ -15,16 +15,12 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.util.Callback;
 import sistemahotel.control.ControleTelas;
-import sistemahotel.model.infraestrutura.Persistencia;
 import sistemahotel.model.infraestrutura.RetornaListas;
-import sistemahotel.model.pessoa.Cliente;
-import sistemahotel.model.produto.Produto;
 import sistemahotel.model.reserva.Reserva;
 import sistemahotel.model.reserva.ReservaDAO;
 
 import java.io.IOException;
 import java.net.URL;
-import java.time.LocalDateTime;
 import java.util.ResourceBundle;
 
 public class ControleTelaReserva implements Initializable{
@@ -88,7 +84,7 @@ public class ControleTelaReserva implements Initializable{
     }
 
     public void btNovaReservaActionHandler(ActionEvent event) throws IOException{
-        janela.newWindow("/sistemahotel/view/reserva/TelaNovaReserva.fxml",event);
+        janela.novaJanelaSobreposta("/sistemahotel/view/reserva/TelaNovaReserva.fxml",event);
     }
 
     public void btCancelaReservaActionHandler(ActionEvent event) throws IOException{
