@@ -2,8 +2,11 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXTextField?>
-<?import com.jfoenix.controls.JFXTreeTableView?>
-<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -13,14 +16,14 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="apLocais" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="480.0" prefWidth="752.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sistemahotel.control.local.ControleTelaHabitacao">
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="720.0" prefWidth="1132.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sistemahotel.control.local.ControleTelaHabitacao">
    <children>
       <BorderPane layoutX="329.0" layoutY="157.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <top>
             <AnchorPane prefHeight="92.0" prefWidth="752.0" style="-fx-background-color: #ab0000;" BorderPane.alignment="CENTER">
                <children>
                   <Text fill="WHITE" layoutX="19.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Usuário conectado:" AnchorPane.leftAnchor="19.0" AnchorPane.topAnchor="11.0" />
-                  <Text fill="WHITE" layoutX="19.0" layoutY="69.2744140625" strokeType="OUTSIDE" strokeWidth="0.0" text="Habitacao" AnchorPane.bottomAnchor="16.7255859375" AnchorPane.leftAnchor="19.0">
+                  <Text fill="WHITE" layoutX="19.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Habitacao" AnchorPane.bottomAnchor="17.10400390625" AnchorPane.leftAnchor="19.0">
                      <font>
                         <Font size="25.0" />
                      </font>
@@ -34,55 +37,72 @@
                   <HBox layoutY="-18.0" prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-0.0">
                      <children>
                         <JFXButton fx:id="btNovaHabitacao" onAction="#btNovaHabitacaoActionHandler" prefHeight="41.0" text="Nova Habitacao" textFill="WHITE" />
-                        <JFXButton prefHeight="41.0" text="Alterar Habitacao" textFill="WHITE" />
+                        <JFXButton fx:id="btAlterarHabitacao" onAction="#btAlterarHabitacaoActionHandler" prefHeight="41.0" text="Alterar Habitacao" textFill="WHITE" />
                         <JFXButton fx:id="btVoltar" onAction="#btVoltarActionHandler" prefHeight="41.0" text="Voltar" textFill="WHITE" />
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <ImageView fitHeight="20.0" fitWidth="20.0">
+                                 <image>
+                                    <Image url="@../../model/imagens/searching-magnifying-glass.png" />
+                                 </image>
+                                 <HBox.margin>
+                                    <Insets top="5.0" />
+                                 </HBox.margin>
+                              </ImageView>
+                              <JFXTextField fx:id="tfFiltro" focusColor="#ff9d9d" promptText="Pesquisar" unFocusColor="WHITE">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </JFXTextField>
+                           </children>
+                           <HBox.margin>
+                              <Insets left="580.0" top="5.0" />
+                           </HBox.margin>
+                        </HBox>
                      </children>
                   </HBox>
                </children>
             </AnchorPane>
          </bottom>
-         <center>
-            <AnchorPane BorderPane.alignment="CENTER">
+         <left>
+            <AnchorPane prefHeight="587.0" prefWidth="768.0" BorderPane.alignment="CENTER">
                <children>
-                  <AnchorPane layoutX="537.0" layoutY="-1.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="347.0" prefWidth="224.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                     <children>
-                        <JFXTreeTableView prefHeight="386.0" prefWidth="224.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                           <columns>
-                              <TreeTableColumn prefWidth="110.0" text="Tipo" />
-                              <TreeTableColumn prefWidth="113.0" text="Numero" />
-                           </columns>
-                        </JFXTreeTableView>
-                     </children>
-                  </AnchorPane>
-                  <AnchorPane layoutY="-1.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="-0.0" />
-                  <GridPane layoutX="14.0" layoutY="17.0" prefHeight="322.0" prefWidth="507.0" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="231.0" AnchorPane.topAnchor="17.0">
-                    <columnConstraints>
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                    </columnConstraints>
-                    <rowConstraints>
-                      <RowConstraints maxHeight="61.0" minHeight="10.0" prefHeight="61.0" vgrow="SOMETIMES" />
+                  <GridPane layoutX="213.0" layoutY="103.0" prefHeight="351.0" prefWidth="372.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="61.0" minHeight="10.0" prefHeight="61.0" vgrow="SOMETIMES" />
                         <RowConstraints maxHeight="71.0" minHeight="10.0" prefHeight="67.0" vgrow="SOMETIMES" />
                         <RowConstraints maxHeight="89.0" minHeight="10.0" prefHeight="67.0" vgrow="SOMETIMES" />
-                      <RowConstraints maxHeight="96.0" minHeight="10.0" prefHeight="65.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="96.0" minHeight="10.0" prefHeight="65.0" vgrow="SOMETIMES" />
                         <RowConstraints maxHeight="96.0" minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
-                    </rowConstraints>
+                     </rowConstraints>
                      <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Numero" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Preco" GridPane.rowIndex="1" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Camas de Solteiro" GridPane.rowIndex="2" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Camas de Casal" GridPane.rowIndex="3" />
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Informacoes Adicionais" GridPane.rowIndex="4" />
-                        <JFXTextField fx:id="tfNumero" GridPane.columnIndex="1" />
-                        <JFXTextField fx:id="tfPreco" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <JFXTextField fx:id="tfCamaSolteiro" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <JFXTextField fx:id="tfCamaCasal" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                        <JFXTextField fx:id="tfInfo" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Text fill="#ab0000" strokeType="OUTSIDE" strokeWidth="0.0" text="Numero" />
+                        <Text fill="#ab0000" strokeType="OUTSIDE" strokeWidth="0.0" text="Preco" GridPane.rowIndex="1" />
+                        <Text fill="#ab0000" strokeType="OUTSIDE" strokeWidth="0.0" text="Camas de Solteiro" GridPane.rowIndex="2" />
+                        <Text fill="#ab0000" strokeType="OUTSIDE" strokeWidth="0.0" text="Camas de Casal" GridPane.rowIndex="3" />
+                        <Text fill="#ab0000" strokeType="OUTSIDE" strokeWidth="0.0" text="Informacoes Adicionais" GridPane.rowIndex="4" />
+                        <JFXTextField fx:id="tfNumero" focusColor="#ff5c5c" unFocusColor="#ab0000" GridPane.columnIndex="1" />
+                        <JFXTextField fx:id="tfPreco" focusColor="#ff5c5c" unFocusColor="#ab0000" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <JFXTextField fx:id="tfCamaSolteiro" focusColor="#ff5c5c" unFocusColor="#ab0000" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <JFXTextField fx:id="tfCamaCasal" focusColor="#ff5c5c" unFocusColor="#ab0000" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <JFXTextField fx:id="tfInfo" focusColor="#ff5c5c" unFocusColor="#ab0000" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                      </children>
                   </GridPane>
                </children>
             </AnchorPane>
-         </center>
+         </left>
+         <right>
+            <TableView fx:id="tvHabitacao" prefHeight="587.0" prefWidth="365.0" stylesheets="@../../../../resources/TableViewCSS.css" BorderPane.alignment="CENTER">
+               <columns>
+                  <TableColumn fx:id="tcPreco" prefWidth="196.0" resizable="false" text="Preço" />
+                  <TableColumn fx:id="tcNumero" prefWidth="177.0" resizable="false" text="Numero" />
+               </columns>
+            </TableView>
+         </right>
       </BorderPane>
    </children>
 </AnchorPane>

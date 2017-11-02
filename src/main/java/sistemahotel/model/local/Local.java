@@ -4,9 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-/**
- * Created by marcelo on 23/09/17.
- */
+
 @Entity
 public abstract class Local {
 
@@ -14,7 +12,7 @@ public abstract class Local {
     @GeneratedValue
     protected Long id;
     protected String numero;
-    protected String tipo;
+    protected String tipo; // "Habitacao" ou "Salao"
     protected String status;
     protected String informacoesAdicionais;
     protected String preco;

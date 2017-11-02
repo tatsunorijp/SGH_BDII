@@ -5,16 +5,14 @@ import com.sun.istack.internal.NotNull;
 import javax.persistence.*;
 import java.time.LocalDate;
 
-/**
- * Created by marcelo on 23/09/17.
- */
+
 @Entity
 public abstract class Pessoa {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     protected Long id;
     @NotNull
-    protected String tipo;
+    protected String tipo; // "Cliente" ou "Usuario"
     @Column(unique = true)
     private String CPF;
     @NotNull

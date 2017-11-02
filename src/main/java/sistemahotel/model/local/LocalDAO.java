@@ -6,6 +6,11 @@ public class LocalDAO {
 
     Persistencia persist = Persistencia.getInstancia();
 
+
+
+
+
+
     public void NovaHabitacao(String numero, String camasSolteiro, String camasCasal, String preco, String infoAdicionais){
         Habitacao habitacao = new Habitacao();
         habitacao.setNumero(numero);
@@ -25,12 +30,21 @@ public class LocalDAO {
         persist.persistir(salao);
     }
 
-    public void AlterarHabitacao(String preco, String info, String camasSolteiro, String camasCasal){
-
+    public void AlterarHabitacao(Habitacao habitacao, String numero, String preco, String info, String camasSolteiro, String camasCasal){
+        habitacao.setNumero(numero);
+        habitacao.setPreco(preco);
+        habitacao.setInformacoesAdicionais(info);
+        habitacao.setCamasDeCasal(camasCasal);
+        habitacao.setCamasDeSolteiro(camasSolteiro);
+        persist.alterar(habitacao);
     }
 
-    public void AlterarSalao(String preco, String info, String maxPessoas){
-
+    public void AlterarSalao(SalaoFestas salao, String numero, String preco, String info, String maxPessoas){
+        salao.setNumero(numero);
+        salao.setPreco(preco);
+        salao.setInformacoesAdicionais(info);
+        salao.setMaximoPessoas(maxPessoas);
+        persist.alterar(salao);
     }
 
     public void DeletarLocal(Local local){

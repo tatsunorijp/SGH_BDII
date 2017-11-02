@@ -8,19 +8,32 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.Duration;
 import org.controlsfx.control.Notifications;
-import javax.management.Notification;
-import java.io.IOException;
 
-/**
- * Created by Tatsunori on 05/10/2017.
- */
+import java.io.IOException;
+import java.util.Optional;
+
 public class ControleTelas {
-    public void newWindow(String path, ActionEvent event){
+
+    private static ControleTelas instancia = null;
+
+    private ControleTelas(){
+    }
+
+    public static ControleTelas getInstancia(){
+        if(instancia == null){
+            instancia = new ControleTelas();
+        }
+        return instancia;
+    }
+
+    public void novaJanela(String path, ActionEvent event){
         Stage stage = new Stage();
         stage.initStyle(StageStyle.UNDECORATED);
         FXMLLoader loader = new FXMLLoader();
@@ -31,10 +44,35 @@ public class ControleTelas {
         } catch (IOException e1) {
             e1.printStackTrace();
         }
-        stage.setScene(new Scene(root));
+        Scene scene = new Scene(root);
+        scene.getStylesheets().add("TableViewCSS.css");
+        stage.setScene(scene);
         ((Node) event.getSource()).getParent().getScene().getWindow().hide();
         stage.show();
     }
+
+    public void novaJanelaSobreposta(String path, ActionEvent event){
+        Stage stage = new Stage();
+        stage.initStyle(StageStyle.UNDECORATED);
+        stage.initModality(Modality.APPLICATION_MODAL);
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource(path));
+        Parent root = null;
+        try {
+            root = loader.load();
+        } catch (IOException e1) {
+            e1.printStackTrace();
+        }
+        Scene scene = new Scene(root);
+        scene.getStylesheets().add("TableViewCSS.css");
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void fechaJanela(ActionEvent event){
+        ((Node) event.getSource()).getParent().getScene().getWindow().hide();
+    }
+
 
     public void setFragment(String path, AnchorPane pane) throws IOException {
         AnchorPane a = (AnchorPane) FXMLLoader.load(getClass().getResource(path));
@@ -64,5 +102,19 @@ public class ControleTelas {
                 oie.showInformation();
             }
         });
+    }
+
+    public boolean continuarOuCancelar(String titulo, String cabecaTexto, String corpoTexto){
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle(titulo);
+        alert.setHeaderText(cabecaTexto);
+        alert.setContentText(corpoTexto);
+
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.get() == ButtonType.OK){
+            return true;
+        } else {
+            return false;
+        }
     }
 }

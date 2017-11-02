@@ -7,6 +7,8 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import sistemahotel.model.infraestrutura.Persistencia;
+import sistemahotel.model.pessoa.Usuario;
+import sistemahotel.model.reserva.ReservaDAO;
 
 /**
  * Created by marcelo on 19/09/17.
@@ -22,6 +24,7 @@ public class Main extends  Application{
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("/sistemahotel/view/Login.fxml"));
         Parent root = loader.load();

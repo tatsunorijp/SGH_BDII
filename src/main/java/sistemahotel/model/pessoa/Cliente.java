@@ -2,9 +2,7 @@ package sistemahotel.model.pessoa;
 
 import javax.persistence.Entity;
 
-/**
- * Created by marcelo on 23/09/17.
- */
+
 @Entity
 public class Cliente extends Pessoa {
     private String telefone;

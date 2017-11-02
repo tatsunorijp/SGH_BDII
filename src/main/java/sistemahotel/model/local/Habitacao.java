@@ -2,9 +2,7 @@ package sistemahotel.model.local;
 
 import javax.persistence.Entity;
 
-/**
- * Created by marcelo on 23/09/17.
- */
+
 @Entity
 public class Habitacao extends Local {
 

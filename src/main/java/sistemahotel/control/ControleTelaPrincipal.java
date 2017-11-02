@@ -2,7 +2,6 @@ package sistemahotel.control;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDrawer;
-import com.jfoenix.controls.JFXHamburger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -12,11 +11,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import javafx.scene.image.ImageView;
-
-/**
- * Created by Tatsunori on 02/10/2017.
- */
 public class ControleTelaPrincipal implements Initializable{
     @FXML
     private JFXButton btClientes;
@@ -27,11 +21,11 @@ public class ControleTelaPrincipal implements Initializable{
     @FXML
     private JFXButton btLocais;
     @FXML
-    public  AnchorPane apPrincipal;
+    public AnchorPane apPrincipal;
     @FXML
     private JFXDrawer drawerMenu;
 
-    ControleTelas window = new ControleTelas();
+    ControleTelas window = ControleTelas.getInstancia();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -39,8 +33,8 @@ public class ControleTelaPrincipal implements Initializable{
     public void showClientes(ActionEvent event) throws IOException {
         window.setFragment("/sistemahotel/view/pessoa/Clientes.fxml",apPrincipal);
     }
-    public void showReservas(ActionEvent event){
-
+    public void showReservas(ActionEvent event) throws  IOException{
+        window.setFragment("/sistemahotel/view/reserva/TelaReservas.fxml",apPrincipal);
     }
     public void showProdutos(ActionEvent event) throws IOException {
         window.setFragment("/sistemahotel/view/produto/Produtos.fxml",apPrincipal);
@@ -49,11 +43,8 @@ public class ControleTelaPrincipal implements Initializable{
         window.setFragment("/sistemahotel/view/locais/Locais.fxml",apPrincipal);
     }
     public void exit(ActionEvent event){
-        window.newWindow("/sistemahotel/view/Login.fxml",event);
+        window.novaJanela("/sistemahotel/view/Login.fxml",event);
     }
 
-    public AnchorPane retorneAnchorPane(){
-        return this.apPrincipal;
-    }
 
 }

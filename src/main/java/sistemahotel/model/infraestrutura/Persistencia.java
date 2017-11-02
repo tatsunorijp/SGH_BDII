@@ -5,9 +5,6 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
-/**
- * Created by marcelo on 02/10/17.
- */
 public class Persistencia {
 
     private static Persistencia instancia = null;
@@ -36,11 +33,23 @@ public class Persistencia {
         session.close();
     }
 
+    public void alterar(Object object){
+        Session session = ssf.openSession();
+        Transaction tx = session.beginTransaction();
+        session.update(object);
+        tx.commit();
+        session.close();
+    }
+
     public void deletar(Object object){
         Session session = ssf.openSession();
         Transaction tx = session.beginTransaction();
         session.delete(object);
         tx.commit();
         session.close();
+    }
+
+    public static SessionFactory getSsf() {
+        return ssf;
     }
 }

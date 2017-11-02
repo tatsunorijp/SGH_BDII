@@ -7,9 +7,7 @@ import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-/**
- * Created by marcelo on 23/09/17.
- */
+
 @Entity
 public class Reserva {
     @Id
@@ -21,10 +19,10 @@ public class Reserva {
     @OneToOne
     @JoinColumn(name = "fk_local", nullable=false)
     private Local local;
-    private String status;
+    private String status; // Agendada, Em andamento, Finalizada, Cancelada //
     private LocalDateTime dataReserva;
-    private LocalDateTime dataCheckIn;
-    private LocalDateTime dataCheckOut;
+    private LocalDate dataCheckIn;
+    private LocalDate dataCheckOut;
     private String qtdhospede;
 
     public Long getId() {
@@ -67,25 +65,23 @@ public class Reserva {
         this.dataReserva = dataReserva;
     }
 
-    public LocalDateTime getDataCheckIn() {
+    public LocalDate getDataCheckIn() {
         return dataCheckIn;
     }
 
-    public void setDataCheckIn(LocalDateTime dataCheckIn) {
+    public void setDataCheckIn(LocalDate dataCheckIn) {
         this.dataCheckIn = dataCheckIn;
     }
 
-    public LocalDateTime getDataCheckOut() {
+    public LocalDate getDataCheckOut() {
         return dataCheckOut;
     }
 
-    public void setDataCheckOut(LocalDateTime dataCheckOut) {
+    public void setDataCheckOut(LocalDate dataCheckOut) {
         this.dataCheckOut = dataCheckOut;
     }
 
-    public String getQtdhospede() {
-        return qtdhospede;
-    }
+    public String getQtdhospede() { return qtdhospede; }
 
     public void setQtdhospede(String qtdhospede) {
         this.qtdhospede = qtdhospede;

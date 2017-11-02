@@ -1,0 +1,22 @@
+.table-view:focused{
+ -fx-background-color: #ab0000;
+}
+
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+}
+
+
+.table-view .column-header-background .label{
+    -fx-background-color: white;
+    -fx-border-color: #ab0000;
+    -fx-text-fill:  #ab0000;
+}
+.table-view .column-header-background{
+    -fx-background-color: #ab0000;
+}
+
+.table-row-cell:selected{
+    -fx-background-color: #ab0000;
+}

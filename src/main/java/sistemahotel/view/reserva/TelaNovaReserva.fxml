@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.DatePicker?>
+
+<AnchorPane prefHeight="615.0" prefWidth="827.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sistemahotel.control.reserva.ControleTelaNovaReserva">
+<children>
+    <HBox layoutX="211.0" layoutY="-128.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <children>
+            <AnchorPane prefHeight="400.0" prefWidth="90.0" style="-fx-background-color: #ab0000;">
+                <children>
+                    <VBox layoutX="34.0" layoutY="49.0" prefHeight="400.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <children>
+                            <JFXButton fx:id="btConfirmar" onAction="#btConfirmarActionHandler" prefHeight="400.0" prefWidth="85.0" text="Confirmar" textFill="WHITE" />
+                            <JFXButton fx:id="btCancelar" onAction="#btCancelarActionHandler" prefHeight="400.0" prefWidth="200.0" text="Cancelar" textFill="WHITE" />
+                        </children>
+                    </VBox>
+                </children>
+                <effect>
+                    <DropShadow height="30.0" radius="14.5" width="30.0" />
+                </effect>
+            </AnchorPane>
+            <AnchorPane prefHeight="615.0" prefWidth="736.0">
+                <children>
+                    <Text fill="#ab0000" layoutX="29.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nova Reserva">
+                        <font>
+                            <Font size="16.0" />
+                        </font>
+                        <effect>
+                            <DropShadow blurType="GAUSSIAN" offsetX="2.0" offsetY="2.0" />
+                        </effect>
+                    </Text>
+                    <Line endX="592.0" layoutX="122.0" layoutY="59.0" opacity="0.41" startX="-100.0" stroke="#6b6b6b" AnchorPane.leftAnchor="21.5" AnchorPane.rightAnchor="13.5" />
+                  <BorderPane layoutY="72.0" prefHeight="541.0" prefWidth="737.0">
+                     <left>
+                        <TableView fx:id="tvClientes" prefHeight="320.0" prefWidth="346.0" stylesheets="@../../../../resources/TableViewCSS.css" BorderPane.alignment="CENTER_LEFT">
+                          <columns>
+                            <TableColumn fx:id="tcClienteNome" prefWidth="226.0" text="Nome" />
+                              <TableColumn fx:id="tcClienteCPF" prefWidth="119.0" text="CPF" />
+                          </columns>
+                           <BorderPane.margin>
+                              <Insets bottom="25.0" left="15.0" top="5.0" />
+                           </BorderPane.margin>
+                        </TableView>
+                     </left>
+                     <right>
+                        <TableView fx:id="tvLocais" prefHeight="320.0" prefWidth="346.0" stylesheets="@../../../../resources/TableViewCSS.css" BorderPane.alignment="CENTER_RIGHT">
+                          <columns>
+                              <TableColumn fx:id="tcLocalNumero" prefWidth="100.0" text="Numero" />
+                            <TableColumn fx:id="tcLocalTipo" prefWidth="113.0" text="Tipo" />
+                              <TableColumn fx:id="tcLocalPreco" prefWidth="132.0" text="Preco" />
+                          </columns>
+                           <BorderPane.margin>
+                              <Insets bottom="25.0" right="15.0" top="5.0" />
+                           </BorderPane.margin>
+                        </TableView>
+                     </right>
+                     <top>
+                        <GridPane BorderPane.alignment="CENTER">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="362.0" minWidth="10.0" prefWidth="362.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="347.0" minWidth="10.0" prefWidth="345.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Text fill="#900a0a" strokeType="OUTSIDE" strokeWidth="0.0" text="Selecione o cliente:" />
+                              <Text fill="#830c0c" strokeType="OUTSIDE" strokeWidth="0.0" text="Selecione o local:" GridPane.columnIndex="1" />
+                              <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1">
+                                 <children>
+                                    <ImageView fitHeight="29.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" />
+                                    <JFXTextField fx:id="tfFiltroCliente" prefHeight="23.0" prefWidth="312.0" promptText="Procurar por nome" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <children>
+                                    <ImageView fitHeight="29.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true" />
+                                    <JFXTextField fx:id="tfFiltroLocal" prefHeight="23.0" prefWidth="315.0" promptText="Procurar por tipo" />
+                                 </children>
+                              </HBox>
+                           </children>
+                           <BorderPane.margin>
+                              <Insets left="15.0" right="15.0" />
+                           </BorderPane.margin>
+                        </GridPane>
+                     </top>
+                     <bottom>
+                        <GridPane prefHeight="60.0" prefWidth="643.0" BorderPane.alignment="CENTER">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <BorderPane.margin>
+                              <Insets bottom="30.0" left="15.0" top="15.0" />
+                           </BorderPane.margin>
+                           <children>
+                              <Text fill="#830e0e" strokeType="OUTSIDE" strokeWidth="0.0" text="Qtd de pessoas:" GridPane.halignment="LEFT">
+                                 <GridPane.margin>
+                                    <Insets />
+                                 </GridPane.margin>
+                              </Text>
+                              <Text fill="#800c0c" strokeType="OUTSIDE" strokeWidth="0.0" text="Data de Check-in:" GridPane.columnIndex="1" />
+                              <Text fill="#901111" strokeType="OUTSIDE" strokeWidth="0.0" text="Data de Check-out:" GridPane.columnIndex="2" />
+                              <JFXTextField fx:id="tfQtdhospede" prefHeight="23.0" prefWidth="221.0" GridPane.rowIndex="1">
+                                 <GridPane.margin>
+                                    <Insets right="20.0" />
+                                 </GridPane.margin></JFXTextField>
+                              <DatePicker fx:id="dpDataCheckIn" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <DatePicker fx:id="dpDataCheckOut" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                           </children>
+                        </GridPane>
+                     </bottom>
+                  </BorderPane>
+                </children>
+            </AnchorPane>
+        </children>
+    </HBox>
+</children>
+</AnchorPane>
