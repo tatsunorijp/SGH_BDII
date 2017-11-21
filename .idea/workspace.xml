@@ -1,35 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9c934395-a98d-4c7c-a5f9-c59ac28c6334" name="Default" comment="efetuação de reservas funcionando, exceto a checagem de colisão de datas">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/sistemahotel/control/telaprincipal/ControleTelaPrincipalAdmin.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/sistemahotel/control/telaprincipal/ControleTelaPrincipalGerente.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/sistemahotel/control/usuarios/ControleTelaUsuarios.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/sistemahotel/model/pessoa/Gerente.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/sistemahotel/model/pessoa/Recepcionista.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/sistemahotel/view/telaprincipal/TelaPrincipal.fxml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/sistemahotel/view/telaprincipal/TelaPrincipalGerente.fxml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/sistemahotel/view/usuarios/Usuarios.fxml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SGH/sistemahotel/view/TelaPrincipal.fxml" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/sistemahotel/control/ControleTelaPrincipal.java" afterPath="$PROJECT_DIR$/src/main/java/sistemahotel/control/telaprincipal/ControleTelaPrincipal.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/sistemahotel/view/TelaPrincipal.fxml" afterPath="$PROJECT_DIR$/src/main/java/sistemahotel/view/telaprincipal/TelaPrincipalAdmin.fxml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/sistemahotel/view/locais/SalaoFestas.fxml" afterPath="$PROJECT_DIR$/src/main/java/sistemahotel/view/locais/SalaoEventos.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SGH/sistemahotel/control/local/ControleTelaHabitacao.class" afterPath="$PROJECT_DIR$/out/production/SGH/sistemahotel/control/local/ControleTelaHabitacao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SGH/sistemahotel/control/local/ControleTelaSalaoFestas.class" afterPath="$PROJECT_DIR$/out/production/SGH/sistemahotel/control/local/ControleTelaSalaoFestas.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
+    <list default="true" id="9c934395-a98d-4c7c-a5f9-c59ac28c6334" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/sistemahotel/model/pessoa/UsuarioDAO.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SGH/sistemahotel/view/locais/SalaoFestas.fxml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SGH/hibernate.cfg.xml" afterPath="$PROJECT_DIR$/out/production/SGH/hibernate.cfg.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/sistemahotel/Main.java" afterPath="$PROJECT_DIR$/src/main/java/sistemahotel/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/sistemahotel/control/autenticacao/ControleTelaLogin.java" afterPath="$PROJECT_DIR$/src/main/java/sistemahotel/control/autenticacao/ControleTelaLogin.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/sistemahotel/control/local/ControleTelaHabitacao.java" afterPath="$PROJECT_DIR$/src/main/java/sistemahotel/control/local/ControleTelaHabitacao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/sistemahotel/control/local/ControleTelaLocais.java" afterPath="$PROJECT_DIR$/src/main/java/sistemahotel/control/local/ControleTelaLocais.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/sistemahotel/control/local/ControleTelaSalaoFestas.java" afterPath="$PROJECT_DIR$/src/main/java/sistemahotel/control/local/ControleTelaSalaoFestas.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/sistemahotel/control/produto/ControleNovoProduto.java" afterPath="$PROJECT_DIR$/src/main/java/sistemahotel/control/produto/ControleNovoProduto.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/sistemahotel/control/reserva/ControleTelaNovaReserva.java" afterPath="$PROJECT_DIR$/src/main/java/sistemahotel/control/reserva/ControleTelaNovaReserva.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/sistemahotel/model/autenticacao/Autenticacao.java" afterPath="$PROJECT_DIR$/src/main/java/sistemahotel/model/autenticacao/Autenticacao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/sistemahotel/model/infraestrutura/RetornaListas.java" afterPath="$PROJECT_DIR$/src/main/java/sistemahotel/model/infraestrutura/RetornaListas.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/sistemahotel/model/pessoa/Usuario.java" afterPath="$PROJECT_DIR$/src/main/java/sistemahotel/model/pessoa/Usuario.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/sistemahotel/control/usuarios/ControleTelaUsuarios.java" afterPath="$PROJECT_DIR$/src/main/java/sistemahotel/control/usuarios/ControleTelaUsuarios.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -62,22 +38,34 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ControleTelas.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/sistemahotel/control/ControleTelas.java">
+      <file leaf-file-name="ControleTelaClientes.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/sistemahotel/control/pessoa/ControleTelaClientes.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="77" column="0" lean-forward="false" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+            <state relative-caret-position="92">
+              <caret line="94" column="5" lean-forward="true" selection-start-line="94" selection-start-column="5" selection-end-line="94" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ControleTelaLogin.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/sistemahotel/control/autenticacao/ControleTelaLogin.java">
+      <file leaf-file-name="UsuarioDAO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/sistemahotel/model/pessoa/UsuarioDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="89">
-              <caret line="35" column="56" lean-forward="false" selection-start-line="35" selection-start-column="56" selection-end-line="35" selection-end-column="56" />
+            <state relative-caret-position="150">
+              <caret line="12" column="19" lean-forward="false" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ControleTelaUsuarios.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/sistemahotel/control/usuarios/ControleTelaUsuarios.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="575">
+              <caret line="108" column="5" lean-forward="true" selection-start-line="108" selection-start-column="5" selection-end-line="108" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -156,7 +144,6 @@
         <option value="$PROJECT_DIR$/src/main/java/sistemahotel/control/usuarios/ControleTelaPrincipalGerente.java" />
         <option value="$PROJECT_DIR$/src/main/java/sistemahotel/view/telaprincipal/TelaPrincipalGerente.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/sistemahotel/view/usuarios/Usuarios.fxml" />
-        <option value="$PROJECT_DIR$/src/main/java/sistemahotel/control/usuarios/ControleTelaUsuarios.java" />
         <option value="$PROJECT_DIR$/src/main/java/sistemahotel/control/telaprincipal/ControleTelaPrincipalAdmin.java" />
         <option value="$PROJECT_DIR$/src/main/java/sistemahotel/control/telaprincipal/ControleTelaPrincipal.java" />
         <option value="$PROJECT_DIR$/src/main/java/sistemahotel/control/telaprincipal/ControleTelaPrincipalGerente.java" />
@@ -164,6 +151,8 @@
         <option value="$PROJECT_DIR$/src/main/java/sistemahotel/model/pessoa/Usuario.java" />
         <option value="$PROJECT_DIR$/src/main/java/sistemahotel/model/infraestrutura/RetornaListas.java" />
         <option value="$PROJECT_DIR$/src/main/java/sistemahotel/control/autenticacao/ControleTelaLogin.java" />
+        <option value="$PROJECT_DIR$/src/main/java/sistemahotel/model/pessoa/UsuarioDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/sistemahotel/control/usuarios/ControleTelaUsuarios.java" />
       </list>
     </option>
   </component>
@@ -250,75 +239,7 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="sistemahotel" type="462c0819:PsiDirectoryNode" />
               <item name="control" type="462c0819:PsiDirectoryNode" />
-              <item name="autenticacao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SGH" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SGH" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="sistemahotel" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SGH" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SGH" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="sistemahotel" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
               <item name="pessoa" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SGH" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SGH" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="sistemahotel" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SGH" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SGH" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="sistemahotel" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="locais" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SGH" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SGH" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="sistemahotel" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="pessoa" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SGH" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SGH" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="sistemahotel" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="telaprincipal" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SGH" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SGH" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="sistemahotel" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="usuarios" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SGH" type="b2602c69:ProjectViewProjectNode" />
@@ -351,6 +272,7 @@
       <recent name="$PROJECT_DIR$/src/main/java/sistemahotel/view/reserva" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="sistemahotel.model.pessoa" />
       <recent name="sistemahotel.control.usuarios" />
       <recent name="sistemahotel.control" />
     </key>
@@ -802,7 +724,7 @@
       <workItem from="1508970082551" duration="12273000" />
       <workItem from="1511259938885" duration="730000" />
       <workItem from="1511285931270" duration="3443000" />
-      <workItem from="1511290845367" duration="4430000" />
+      <workItem from="1511290845367" duration="5647000" />
     </task>
     <task id="LOCAL-00001" summary="Tela gerenciador locais iniciada">
       <created>1507236046930</created>
@@ -867,11 +789,18 @@
       <option name="project" value="LOCAL" />
       <updated>1508983153703</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="criadas telas iniciais separadas por tipo de usuario, implementacao da tela de gerencia de usuario">
+      <created>1511295363814</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1511295363814</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="80311000" />
+    <option name="totallyTimeSpent" value="81528000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="63" y="27" width="1368" height="741" extended-state="6" />
@@ -962,7 +891,8 @@
     <MESSAGE value="alterar habitacao implementado" />
     <MESSAGE value="efetuar reservas, cancelar reservas - COM BUGS" />
     <MESSAGE value="efetuação de reservas funcionando, exceto a checagem de colisão de datas" />
-    <option name="LAST_COMMIT_MESSAGE" value="efetuação de reservas funcionando, exceto a checagem de colisão de datas" />
+    <MESSAGE value="criadas telas iniciais separadas por tipo de usuario, implementacao da tela de gerencia de usuario" />
+    <option name="LAST_COMMIT_MESSAGE" value="criadas telas iniciais separadas por tipo de usuario, implementacao da tela de gerencia de usuario" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -975,14 +905,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="das://table:/c1c86d86/6c767c56-67bf-4086-8681-f8d4e0f7e2dc/sgh.Produto" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/sistemahotel/model/produto/ProdutoDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="42" column="38" lean-forward="true" selection-start-line="42" selection-start-column="8" selection-end-line="42" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/sistemahotel/control/local/ControleTelaLocais.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="748">
@@ -1142,6 +1064,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="36" lean-forward="false" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
+          <folding>
+            <element signature="e#149#150#0" expanded="false" />
+            <element signature="e#192#193#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1172,16 +1098,6 @@
         <state relative-caret-position="186">
           <caret line="19" column="19" lean-forward="false" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sistemahotel/control/pessoa/ControleTelaClientes.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="21" column="32" lean-forward="true" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1272,14 +1188,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sistemahotel/model/pessoa/ClienteDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-75">
-          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/sistemahotel/model/pessoa/Pessoa.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -1304,16 +1212,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sistemahotel/control/usuarios/ControleTelaUsuarios.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="89" column="45" lean-forward="false" selection-start-line="89" selection-start-column="16" selection-end-line="89" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/sistemahotel/model/autenticacao/Autenticacao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="321">
@@ -1329,6 +1227,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sistemahotel/model/infraestrutura/RetornaListas.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="90" column="53" lean-forward="true" selection-start-line="90" selection-start-column="53" selection-end-line="90" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sistemahotel/control/autenticacao/ControleTelaLogin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="89">
+          <caret line="35" column="56" lean-forward="false" selection-start-line="35" selection-start-column="56" selection-end-line="35" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/sistemahotel/model/pessoa/Usuario.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -1336,14 +1250,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sistemahotel/model/infraestrutura/RetornaListas.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="90" column="53" lean-forward="true" selection-start-line="90" selection-start-column="53" selection-end-line="90" selection-end-column="53" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1355,11 +1261,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sistemahotel/control/autenticacao/ControleTelaLogin.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/sistemahotel/control/pessoa/ControleNovoCliente.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="89">
-          <caret line="35" column="56" lean-forward="false" selection-start-line="35" selection-start-column="56" selection-end-line="35" selection-end-column="56" />
+        <state relative-caret-position="60">
+          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sistemahotel/model/pessoa/UsuarioDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="12" column="19" lean-forward="false" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sistemahotel/model/pessoa/ClienteDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="12" column="4" lean-forward="true" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sistemahotel/control/pessoa/ControleTelaClientes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="94" column="5" lean-forward="true" selection-start-line="94" selection-start-column="5" selection-end-line="94" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sistemahotel/control/usuarios/ControleTelaUsuarios.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="575">
+          <caret line="108" column="5" lean-forward="true" selection-start-line="108" selection-start-column="5" selection-end-line="108" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

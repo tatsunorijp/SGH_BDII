@@ -45,7 +45,7 @@ public class ControleTelaUsuarios implements Initializable {
     private JFXTextField tfSenha;
 
     Usuario usuarioMain;
-    //ClienteDAO clienteDAO = ClienteDAO.getInstancia();
+    UsuarioDAO usuarioDAO = UsuarioDAO.getInstancia();
     RetornaListas pegaListas;
     ObservableList list;
     ControleTelas controleTelas = ControleTelas.getInstancia();
@@ -80,11 +80,19 @@ public class ControleTelaUsuarios implements Initializable {
     }
 
     public void btNovoUsuarioActionHandler(ActionEvent event) throws IOException {
-
+        //controleTelas.novaJanelaSobreposta("/sistemahotel/view/pessoa/NovoUsuario.fxml",event);
     }
 
     public void btAlterarUsuarioActionHandler(ActionEvent event) throws IOException {
-
+        if (tfNome.getText().isEmpty() || tfRG.getText().isEmpty()) {
+            controleTelas.popupAviso("Campos inválidos", "Campos com * são obrigatórios");
+        } else {
+            list.add(usuarioDAO.Alterar(tfNome.getText(),tfLogin.getText(), tfSenha.getText(), tfCPF.getText(), tfRG.getText(),
+                    dtDataDeNascimento.getValue(), usuarioMain.getId()));
+            list.remove(usuarioMain);
+            controleTelas.notificacao("Alteração efetuada", "Alteração do usuario concluída no banco de dados");
+            tvUsuarios.refresh();
+        }
     }
 
     public void btDeletarUsuarioActionHandler(ActionEvent event) throws IOException {
@@ -94,9 +102,9 @@ public class ControleTelaUsuarios implements Initializable {
                 "Você está excluindo um usuario!",
                 "Você realmente deseja excluir o usuario?");
         if (conf) {
-            //clienteDAO.Deletar(clienteMain);
-            //list.remove(clienteMain);
-            //tvClientes.refresh();
+            usuarioDAO.Deletar(usuarioMain);
+            list.remove(usuarioMain);
+            tvUsuarios.refresh();
         }
     }
 
