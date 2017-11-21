@@ -20,9 +20,9 @@ public class UsuarioDAO {
     }
 
     public void Novo(String nome, String login, String senha,
-                     String cpf, String rg, LocalDate dataDeNascimento) {
+                     String cpf, String rg, String tipo, LocalDate dataDeNascimento) {
         usuario = new Usuario();
-        //usuario.setTipo(tipo);
+        usuario.setTipo(tipo);
         usuario.setNome(nome);
         usuario.setLogin(login);
         usuario.setSenha(senha);
@@ -33,9 +33,9 @@ public class UsuarioDAO {
     }
 
     public Usuario Alterar(String nome, String login, String senha,
-                           String cpf, String rg, LocalDate dataDeNascimento, Long id) {
+                           String cpf, String rg, String tipo, LocalDate dataDeNascimento, Long id) {
         usuario = new Usuario();
-        //usuario.setTipo(tipo);
+        usuario.setTipo(tipo);
         usuario.setNome(nome);
         usuario.setLogin(login);
         usuario.setSenha(senha);

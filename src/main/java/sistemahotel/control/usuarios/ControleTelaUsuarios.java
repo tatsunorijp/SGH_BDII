@@ -1,5 +1,6 @@
 package sistemahotel.control.usuarios;
 
+import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -22,7 +23,8 @@ import java.util.ResourceBundle;
 
 public class ControleTelaUsuarios implements Initializable {
 
-
+    @FXML
+    JFXComboBox cbTipo;
     @FXML
     TableView tvUsuarios;
     @FXML
@@ -80,7 +82,7 @@ public class ControleTelaUsuarios implements Initializable {
     }
 
     public void btNovoUsuarioActionHandler(ActionEvent event) throws IOException {
-        //controleTelas.novaJanelaSobreposta("/sistemahotel/view/pessoa/NovoUsuario.fxml",event);
+        controleTelas.novaJanelaSobreposta("/sistemahotel/view/usuarios/NovoUsuario.fxml",event);
     }
 
     public void btAlterarUsuarioActionHandler(ActionEvent event) throws IOException {
@@ -88,7 +90,7 @@ public class ControleTelaUsuarios implements Initializable {
             controleTelas.popupAviso("Campos inválidos", "Campos com * são obrigatórios");
         } else {
             list.add(usuarioDAO.Alterar(tfNome.getText(),tfLogin.getText(), tfSenha.getText(), tfCPF.getText(), tfRG.getText(),
-                    dtDataDeNascimento.getValue(), usuarioMain.getId()));
+                    cbTipo.getValue().toString() ,dtDataDeNascimento.getValue(), usuarioMain.getId()));
             list.remove(usuarioMain);
             controleTelas.notificacao("Alteração efetuada", "Alteração do usuario concluída no banco de dados");
             tvUsuarios.refresh();
@@ -116,5 +118,12 @@ public class ControleTelaUsuarios implements Initializable {
         dtDataDeNascimento.setValue(usuario.getDataDeNascimento());
         tfLogin.setText(usuario.getLogin());
         tfSenha.setText(usuario.getSenha());
+        ObservableList<String> options = FXCollections.observableArrayList(
+                "Gerente",
+                "Recepcionista",
+                "Admin"
+        );
+        cbTipo.setItems(options);
+        cbTipo.setPromptText(usuario.getTipo());
     }
 }

@@ -44,10 +44,10 @@ public class ControleTelaLogin implements Initializable{
             controleTelas.novaJanela("/sistemahotel/view/telaprincipal/TelaPrincipalAdmin.fxml", event);
         }
         else if(user.getTipo().equals("Gerente")){
-            controleTelas.novaJanela("/sistemahotel/view/telaprincipal/TelaPrincipalAdmin.fxml", event);
+            controleTelas.novaJanela("/sistemahotel/view/telaprincipal/TelaPrincipalGerente.fxml", event);
         }
         else if(user.getTipo().equals("Recepcionista")){
-            controleTelas.novaJanela("/sistemahotel/view/telaprincipal/TelaPrincipalAdmin.fxml", event);
+            controleTelas.novaJanela("/sistemahotel/view/telaprincipal/TelaPrincipal.fxml", event);
         }
     }
     public void sair(ActionEvent event){
