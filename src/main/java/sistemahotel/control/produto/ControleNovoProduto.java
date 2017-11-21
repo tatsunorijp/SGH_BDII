@@ -55,7 +55,7 @@ public class ControleNovoProduto implements Initializable{
         } else {
             produtoDAO.Novo(tfNome.getText(), tfQuantidadeInicial.getText(), tfPreco.getText(), tfAlertaDeEstoque.getText());
             controleTelas.notificacao("Cadastro efetuado", "Novo produto adicionado ao banco de dados");
-            controleTelas.novaJanela("/sistemahotel/view/TelaPrincipal.fxml", event);
+            controleTelas.novaJanela("/sistemahotel/view/telaprincipal/TelaPrincipal.fxml", event);
         }
     }
 

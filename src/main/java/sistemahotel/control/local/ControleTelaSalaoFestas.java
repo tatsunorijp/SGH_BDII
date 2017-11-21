@@ -65,7 +65,7 @@ public class ControleTelaSalaoFestas implements Initializable{
     }
 
     public void btVoltarActionHandler(ActionEvent event) throws IOException {
-        window.novaJanela("/sistemahotel/view/TelaPrincipal.fxml", event);
+        window.novaJanela("/sistemahotel/view/telaprincipal/TelaPrincipal.fxml", event);
     }
     @Override
     public void initialize(URL location, ResourceBundle resources) {

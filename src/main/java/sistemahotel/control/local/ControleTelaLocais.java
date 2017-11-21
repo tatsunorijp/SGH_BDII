@@ -49,7 +49,7 @@ public class ControleTelaLocais implements Initializable {
     }
 
     public void btSalaoFestasActionHandler(ActionEvent e) throws IOException {
-        window.novaJanela("/sistemahotel/view/locais/SalaoFestas.fxml", e);
+        window.novaJanela("/sistemahotel/view/locais/SalaoEventos.fxml", e);
     }
 
     public void btExcluirActionHandler(ActionEvent e){

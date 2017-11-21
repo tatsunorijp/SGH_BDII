@@ -1,11 +1,12 @@
 package sistemahotel.model.pessoa;
 
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 
 @Entity
 public class Usuario extends Pessoa {
-
+    @Column(unique = true)
     private String login;
     private String senha;
 

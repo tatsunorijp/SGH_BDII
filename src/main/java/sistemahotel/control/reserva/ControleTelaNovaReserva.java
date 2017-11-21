@@ -133,7 +133,7 @@ public class ControleTelaNovaReserva implements Initializable{
             } else {
                 InstanciaReservaDAO.novaReserva(cliente, local, dpDataCheckIn.getValue(), dpDataCheckOut.getValue(), tfQtdhospede.getText());
                 janela.notificacao("Reserva efetuada", "Nova reserva agendada no banco de dados");
-                janela.novaJanela("/sistemahotel/view/TelaPrincipal.fxml", event);
+                janela.novaJanela("/sistemahotel/view/telaprincipal/TelaPrincipal.fxml", event);
             }
         }
     }

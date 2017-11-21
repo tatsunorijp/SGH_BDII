@@ -1,4 +1,4 @@
-package sistemahotel.control;
+package sistemahotel.control.telaprincipal;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDrawer;
@@ -6,12 +6,13 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.layout.AnchorPane;
+import sistemahotel.control.ControleTelas;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class ControleTelaPrincipal implements Initializable{
+public class ControleTelaPrincipalGerente implements Initializable{
     @FXML
     private JFXButton btClientes;
     @FXML
@@ -39,8 +40,15 @@ public class ControleTelaPrincipal implements Initializable{
     public void showProdutos(ActionEvent event) throws IOException {
         window.setFragment("/sistemahotel/view/produto/Produtos.fxml",apPrincipal);
     }
-    public void showLocais(ActionEvent event) throws IOException {
-        window.setFragment("/sistemahotel/view/locais/Locais.fxml",apPrincipal);
+    public void showHabitacoes(ActionEvent event) throws IOException {
+        window.setFragment("/sistemahotel/view/locais/Habitacoes.fxml",apPrincipal);
+    }
+    public void showSalaoEventos(ActionEvent event) throws IOException {
+        window.setFragment("/sistemahotel/view/locais/SalaoEventos.fxml",apPrincipal);
+    }
+    // implementar gerar relatorio
+    public void showRelatorio(ActionEvent event) throws IOException {
+
     }
     public void exit(ActionEvent event){
         window.novaJanela("/sistemahotel/view/Login.fxml",event);

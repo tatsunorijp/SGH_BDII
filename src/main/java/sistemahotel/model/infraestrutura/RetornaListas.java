@@ -7,9 +7,7 @@ import org.hibernate.Transaction;
 import sistemahotel.model.local.Habitacao;
 import sistemahotel.model.local.Local;
 import sistemahotel.model.local.SalaoFestas;
-import sistemahotel.model.pessoa.Cliente;
-import sistemahotel.model.pessoa.Pessoa;
-import sistemahotel.model.pessoa.Usuario;
+import sistemahotel.model.pessoa.*;
 import sistemahotel.model.produto.Produto;
 import sistemahotel.model.reserva.Reserva;
 
@@ -22,6 +20,66 @@ public class RetornaListas{
 
 
 
+    public static List<Recepcionista> listRecepcionista() {
+        ssf = persistencia.getSsf();
+        Session session = ssf.openSession();
+        Transaction transaction = null;
+
+        List users = null;
+
+        try {
+            transaction = session.beginTransaction();
+            users = session.createQuery("FROM Pessoa WHERE tipo = 'Recepcionista'").list();
+            transaction.commit();
+        } catch (HibernateException e) {
+            if (transaction != null) transaction.rollback();
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+        return users;
+    }
+
+    public static List<Gerente> listGerente() {
+        ssf = persistencia.getSsf();
+        Session session = ssf.openSession();
+        Transaction transaction = null;
+
+        List users = null;
+
+        try {
+            transaction = session.beginTransaction();
+            users = session.createQuery("FROM Pessoa WHERE tipo = 'Gerente'").list();
+            transaction.commit();
+        } catch (HibernateException e) {
+            if (transaction != null) transaction.rollback();
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+        return users;
+    }
+
+    public static List<Usuario> listAdmin() {
+        ssf = persistencia.getSsf();
+        Session session = ssf.openSession();
+        Transaction transaction = null;
+
+        List users = null;
+
+        try {
+            transaction = session.beginTransaction();
+            users = session.createQuery("FROM Pessoa WHERE tipo = 'Admin'").list();
+            transaction.commit();
+        } catch (HibernateException e) {
+            if (transaction != null) transaction.rollback();
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+        return users;
+    }
+
     public static List<Usuario> listUsuario() {
         ssf = persistencia.getSsf();
         Session session = ssf.openSession();
@@ -31,7 +89,7 @@ public class RetornaListas{
 
         try {
             transaction = session.beginTransaction();
-            users = session.createQuery("FROM Pessoa WHERE tipo = 'Usuario'").list();
+            users = session.createQuery("FROM Usuario").list();
             transaction.commit();
         } catch (HibernateException e) {
             if (transaction != null) transaction.rollback();

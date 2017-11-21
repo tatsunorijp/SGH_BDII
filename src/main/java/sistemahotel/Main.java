@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import sistemahotel.model.infraestrutura.Persistencia;
+import sistemahotel.model.pessoa.Gerente;
 import sistemahotel.model.pessoa.Usuario;
 import sistemahotel.model.reserva.ReservaDAO;
 
@@ -31,5 +32,7 @@ public class Main extends  Application{
         primaryStage.initStyle(StageStyle.UNDECORATED);
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
+        Usuario admin = new Usuario();
+
     }
 }

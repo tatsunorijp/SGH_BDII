@@ -9,7 +9,20 @@ public class Autenticacao {
 
     public Usuario Autenticar (String usuario, String senha){
         user = null;
-        for (Usuario autenticar: RetornaListas.listUsuario()){
+        for (Usuario autenticar: RetornaListas.listAdmin()){
+            if (autenticar.getLogin().equals(usuario) && autenticar.getSenha().equals(senha)){
+                user = autenticar;
+            }
+        }
+
+        for (Usuario autenticar: RetornaListas.listGerente()){
+            if (autenticar.getLogin().equals(usuario) && autenticar.getSenha().equals(senha)){
+                user = autenticar;
+            }
+        }
+
+
+        for (Usuario autenticar: RetornaListas.listRecepcionista()){
             if (autenticar.getLogin().equals(usuario) && autenticar.getSenha().equals(senha)){
                 user = autenticar;
             }

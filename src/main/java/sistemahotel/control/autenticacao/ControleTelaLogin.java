@@ -40,8 +40,14 @@ public class ControleTelaLogin implements Initializable{
             alert.setContentText("Usuario invalido");
             alert.showAndWait();
         }
-        else {
-            controleTelas.novaJanela("/sistemahotel/view/TelaPrincipal.fxml", event);
+        else if(user.getTipo().equals("Admin")){
+            controleTelas.novaJanela("/sistemahotel/view/telaprincipal/TelaPrincipalAdmin.fxml", event);
+        }
+        else if(user.getTipo().equals("Gerente")){
+            controleTelas.novaJanela("/sistemahotel/view/telaprincipal/TelaPrincipalAdmin.fxml", event);
+        }
+        else if(user.getTipo().equals("Recepcionista")){
+            controleTelas.novaJanela("/sistemahotel/view/telaprincipal/TelaPrincipalAdmin.fxml", event);
         }
     }
     public void sair(ActionEvent event){
