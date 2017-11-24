@@ -17,6 +17,11 @@ public abstract class Local {
     protected String informacoesAdicionais;
     protected String preco;
 
+    @Override
+    public String toString() {
+        return getTipo();
+    }
+
     public Long getId() {
         return id;
     }

@@ -23,6 +23,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import static sistemahotel.model.infraestrutura.Util.setUpFilter;
+
 public class ControleTelaReserva implements Initializable{
 
     @FXML
@@ -62,24 +64,7 @@ public class ControleTelaReserva implements Initializable{
         tvReservas.getSelectionModel().selectedItemProperty().addListener(
                 (observable, oldvalue, newValue) -> selecaoReserva((Reserva) newValue)
         );
-
-        FilteredList<Reserva> filteredData = new FilteredList<>(olReservas, p -> true);
-        tfFiltro.textProperty().addListener((observable, oldValue, newValue) -> {
-            filteredData.setPredicate(reserva -> {
-                if (newValue == null || newValue.isEmpty()) {
-                    return true;
-                }
-                String lowerCaseFilter = newValue.toLowerCase();
-
-                if (reserva.getCliente().getNome().toLowerCase().contains(lowerCaseFilter)) {
-                    return true;
-                }
-                return false;
-            });
-        });
-        SortedList<Reserva> sortedData = new SortedList<>(filteredData);
-        sortedData.comparatorProperty().bind(tvReservas.comparatorProperty());
-        tvReservas.setItems(sortedData);
+        setUpFilter(olReservas, tfFiltro, tvReservas);
 
     }
 

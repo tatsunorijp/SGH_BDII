@@ -20,6 +20,11 @@ public abstract class Pessoa {
     private String nome;
     private LocalDate dataDeNascimento;
 
+    @Override
+    public String toString() {
+        return getNome();
+    }
+
     public Long getId() {
         return id;
     }
