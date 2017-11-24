@@ -52,17 +52,7 @@ public class ControleTelaHabitacao implements Initializable {
 
 
     public void btNovaHabitacaoActionHandler(ActionEvent e) throws IOException {
-        String numero = tfNumero.getText();
-        String preco = tfPreco.getText();
-        String camasolteiro = tfCamaSolteiro.getText();
-        String camacasal = tfCamaCasal.getText();
-        String informacoes = tfInfo.getText();
-        localdao.NovaHabitacao(numero, camasolteiro, camacasal, preco, informacoes);
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Operação realizada com sucesso");
-        alert.setHeaderText(null);
-        alert.setContentText("Habitação Cadastrada");
-        alert.showAndWait();
+        window.novaJanelaSobreposta("/sistemahotel/view/locais/NovaHabitacao.fxml",e);
     }
 
     public void btAlterarHabitacaoActionHandler(ActionEvent e){

@@ -48,16 +48,7 @@ public class ControleTelaSalaoFestas implements Initializable{
     SalaoFestas salaoMain;
 
     public void btNovoSalaoActionHandler(ActionEvent e) throws IOException{
-        String numero = tfNumero.getText();
-        String preco = tfPreco.getText();
-        String maxpessoas = tfMaxPessoas.getText();
-        String informacoes = tfInfo.getText();
-        localdao.NovoSalao(numero, maxpessoas, informacoes, preco);
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Operação realizada com sucesso");
-        alert.setHeaderText(null);
-        alert.setContentText("Salao de Festas cadastrado");
-        alert.showAndWait();
+        window.novaJanelaSobreposta("/sistemahotel/view/locais/NovaSalao.fxml",e);
     }
 
     public void btAlterarSalaoActionHandler(ActionEvent e){
