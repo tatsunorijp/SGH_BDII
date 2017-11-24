@@ -3,8 +3,6 @@ package sistemahotel.control.reserva;
 import com.jfoenix.controls.JFXTextField;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.collections.transformation.FilteredList;
-import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -20,6 +18,8 @@ import sistemahotel.model.reserva.ReservaDAO;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import static sistemahotel.model.infraestrutura.Util.setUpFilter;
 
 public class ControleTelaNovaReserva implements Initializable{
 
@@ -67,24 +67,8 @@ public class ControleTelaNovaReserva implements Initializable{
         tvClientes.getSelectionModel().selectedItemProperty().addListener(
                 (observable, oldvalue, newValue) -> selecaoCliente((Cliente) newValue)
         );
+        setUpFilter(olClientes, tfFiltroCliente, tvClientes);
 
-        FilteredList<Cliente> filteredDataClientes = new FilteredList<>(olClientes, p -> true);
-        tfFiltroCliente.textProperty().addListener((observable, oldValue, newValue) -> {
-            filteredDataClientes.setPredicate(cliente -> {
-                if (newValue == null || newValue.isEmpty()) {
-                    return true;
-                }
-                String lowerCaseFilter = newValue.toLowerCase();
-
-                if (cliente.getNome().toLowerCase().contains(lowerCaseFilter)) {
-                    return true;
-                }
-                return false;
-            });
-        });
-        SortedList<Cliente> sortedDataClientes = new SortedList<>(filteredDataClientes);
-        sortedDataClientes.comparatorProperty().bind(tvClientes.comparatorProperty());
-        tvClientes.setItems(sortedDataClientes);
 
         olLocais= FXCollections.observableList(RetornaListas.listLocais());
         tcLocalNumero.setCellValueFactory( new PropertyValueFactory<>("numero"));
@@ -94,24 +78,7 @@ public class ControleTelaNovaReserva implements Initializable{
         tvLocais.getSelectionModel().selectedItemProperty().addListener(
                 (observable, oldvalue, newValue) -> selecaoLocal((Local) newValue)
         );
-
-        FilteredList<Local> filteredDataLocais = new FilteredList<>(olLocais, p -> true);
-        tfFiltroLocal.textProperty().addListener((observable, oldValue, newValue) -> {
-            filteredDataLocais.setPredicate(local -> {
-                if (newValue == null || newValue.isEmpty()) {
-                    return true;
-                }
-                String lowerCaseFilter = newValue.toLowerCase();
-
-                if (local.getTipo().toLowerCase().contains(lowerCaseFilter)) {
-                    return true;
-                }
-                return false;
-            });
-        });
-        SortedList<Local> sortedDataLocal = new SortedList<>(filteredDataLocais);
-        sortedDataLocal.comparatorProperty().bind(tvLocais.comparatorProperty());
-        tvLocais.setItems(sortedDataLocal);
+        setUpFilter(olLocais, tfFiltroLocal, tvLocais);
 
     }
 
@@ -133,7 +100,7 @@ public class ControleTelaNovaReserva implements Initializable{
             } else {
                 InstanciaReservaDAO.novaReserva(cliente, local, dpDataCheckIn.getValue(), dpDataCheckOut.getValue(), tfQtdhospede.getText());
                 janela.notificacao("Reserva efetuada", "Nova reserva agendada no banco de dados");
-                janela.novaJanela("/sistemahotel/view/TelaPrincipal.fxml", event);
+                janela.novaJanela("/sistemahotel/view/telaprincipal/TelaPrincipal.fxml", event);
             }
         }
     }
@@ -145,5 +112,4 @@ public class ControleTelaNovaReserva implements Initializable{
     public void selecaoLocal(Local local){
         this.local = local;
     }
-
 }
