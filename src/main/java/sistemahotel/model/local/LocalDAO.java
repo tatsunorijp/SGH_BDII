@@ -30,21 +30,23 @@ public class LocalDAO {
         persist.persistir(salao);
     }
 
-    public void AlterarHabitacao(Habitacao habitacao, String numero, String preco, String info, String camasSolteiro, String camasCasal){
+    public Local AlterarHabitacao(Habitacao habitacao, String numero, String preco, String info, String camasSolteiro, String camasCasal){
         habitacao.setNumero(numero);
         habitacao.setPreco(preco);
         habitacao.setInformacoesAdicionais(info);
         habitacao.setCamasDeCasal(camasCasal);
         habitacao.setCamasDeSolteiro(camasSolteiro);
         persist.alterar(habitacao);
+        return habitacao;
     }
 
-    public void AlterarSalao(SalaoFestas salao, String numero, String preco, String info, String maxPessoas){
+    public Local AlterarSalao(SalaoFestas salao, String numero, String preco, String info, String maxPessoas){
         salao.setNumero(numero);
         salao.setPreco(preco);
         salao.setInformacoesAdicionais(info);
         salao.setMaximoPessoas(maxPessoas);
         persist.alterar(salao);
+        return salao;
     }
 
     public void DeletarLocal(Local local){

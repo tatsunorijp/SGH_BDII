@@ -1,5 +1,6 @@
 package sistemahotel.control.local;
 
+import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -30,6 +31,8 @@ public class ControleTelaSalaoFestas implements Initializable{
     TableColumn tcNumero;
     @FXML
     JFXTextField tfFiltro;
+    @FXML
+    JFXButton btExcluir;
 
     @FXML
     private JFXTextField tfNumero;
@@ -40,24 +43,40 @@ public class ControleTelaSalaoFestas implements Initializable{
     @FXML
     private JFXTextField tfInfo;
 
-
+    Boolean a;
     ControleTelas window = ControleTelas.getInstancia();
     LocalDAO localdao = new LocalDAO();
     RetornaListas pegaListas;
     ObservableList list;
     SalaoFestas salaoMain;
 
+
+    public void btDeletarSalaoActionHandler(ActionEvent event) throws IOException {
+        a = window.continuarOuCancelar("Menssagem de confirmação",
+                "Você está excluindo um salaão de eventos!",
+                "Você realmente deseja excluir o salão");
+        if (a) {
+            localdao.DeletarLocal(salaoMain);
+            list.remove(salaoMain);
+            tvSalao.refresh();
+        }
+    }
+
     public void btNovoSalaoActionHandler(ActionEvent e) throws IOException{
-        window.novaJanelaSobreposta("/sistemahotel/view/locais/NovaSalao.fxml",e);
+        window.novaJanelaSobreposta("/sistemahotel/view/locais/NovoSalao.fxml",e);
     }
 
     public void btAlterarSalaoActionHandler(ActionEvent e){
-        localdao.AlterarSalao(salaoMain, tfNumero.getText(), tfPreco.getText(), tfInfo.getText(), tfMaxPessoas.getText());
+        if (tfNumero.getText().isEmpty() || tfPreco.getText().isEmpty()) {
+            window.popupAviso("Campos inválidos", "Campos com * são obrigatórios");
+        } else {
+            list.add(localdao.AlterarSalao(salaoMain, tfNumero.getText(), tfPreco.getText(), tfInfo.getText(), tfMaxPessoas.getText()));
+            list.remove(salaoMain);
+            window.notificacao("Alteração efetuada", "Alteração do produto concluída no banco de dados");
+            tvSalao.refresh();
+        }
     }
 
-    public void btVoltarActionHandler(ActionEvent event) throws IOException {
-        window.novaJanela("/sistemahotel/view/telaprincipal/TelaPrincipal.fxml", event);
-    }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         list = FXCollections.observableList(pegaListas.listSalaoFestas());

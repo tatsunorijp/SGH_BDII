@@ -38,7 +38,7 @@
                      <children>
                         <JFXButton fx:id="btNovoSalao" onAction="#btNovoSalaoActionHandler" prefHeight="41.0" text="Novo Salao" textFill="WHITE" />
                         <JFXButton fx:id="btAlterarSalao" onAction="#btAlterarSalaoActionHandler" prefHeight="41.0" text="Alterar Salao" textFill="WHITE" />
-                        <JFXButton fx:id="btVoltar1" onAction="#btVoltarActionHandler" prefHeight="41.0" text="Voltar" textFill="WHITE" />
+                        <JFXButton fx:id="btExcluir" onAction="#btDeletarSalaoActionHandler" prefHeight="41.0" text="Excluir" textFill="WHITE" />
                         <HBox prefHeight="100.0" prefWidth="200.0">
                            <children>
                               <ImageView fitHeight="20.0" fitWidth="20.0">
@@ -59,6 +59,7 @@
                               <Insets left="580.0" top="5.0" />
                            </HBox.margin>
                         </HBox>
+                        <JFXButton fx:id="btExcluir1" layoutX="171.0" layoutY="10.0" onAction="#btDeletarSalaoActionHandler" prefHeight="41.0" text="Excluir" textFill="WHITE" />
                      </children>
                   </HBox>
                </children>

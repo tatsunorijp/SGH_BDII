@@ -13,10 +13,9 @@
       <root url="jar://$PROJECT_DIR$/lib/javassist-3.20.0-GA.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/hibernate-core-5.2.10.Final.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/mysql-connector-java-5.1.42-bin.jar!/" />
-      <root url="jar://$USER_HOME$/Downloads/jfoenix.jar!/" />
-      <root url="jar://$USER_HOME$/Downloads/jfoenix.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/controlsfx-8.40.14.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/fontawesomefx-8.9.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/jfoenix.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

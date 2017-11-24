@@ -1,5 +1,6 @@
 package sistemahotel.control.local;
 
+import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -15,6 +16,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import sistemahotel.control.ControleTelas;
 import sistemahotel.model.infraestrutura.RetornaListas;
 import sistemahotel.model.local.Habitacao;
+import sistemahotel.model.local.Local;
 import sistemahotel.model.local.LocalDAO;
 
 import java.io.IOException;
@@ -32,7 +34,8 @@ public class ControleTelaHabitacao implements Initializable {
     TableColumn tcNumero;
     @FXML
     JFXTextField tfFiltro;
-
+    @FXML
+    JFXButton btExcluir;
     @FXML
     private JFXTextField tfNumero;
     @FXML
@@ -44,6 +47,7 @@ public class ControleTelaHabitacao implements Initializable {
     @FXML
     private JFXTextField tfInfo;
 
+    boolean a;
     Habitacao habitacaoMain;
     ControleTelas window = ControleTelas.getInstancia();
     LocalDAO localdao = new LocalDAO();
@@ -51,16 +55,31 @@ public class ControleTelaHabitacao implements Initializable {
     ObservableList list;
 
 
+    public void btDeletarHabitacaoActionHandler(ActionEvent event) throws IOException {
+        a = window.continuarOuCancelar("Menssagem de confirmação",
+                "Você está excluindo uma habitação!",
+                "Você realmente deseja excluir a habitação?");
+        if (a){
+            localdao.DeletarLocal(habitacaoMain);
+            list.remove(habitacaoMain);
+            tvHabitacao.refresh();
+        }
+    }
+
     public void btNovaHabitacaoActionHandler(ActionEvent e) throws IOException {
         window.novaJanelaSobreposta("/sistemahotel/view/locais/NovaHabitacao.fxml",e);
     }
 
     public void btAlterarHabitacaoActionHandler(ActionEvent e){
-        localdao.AlterarHabitacao(habitacaoMain, tfNumero.getText(), tfPreco.getText(), tfInfo.getText(), tfCamaSolteiro.getText(), tfCamaCasal.getText());
-    }
-
-    public void btVoltarActionHandler(ActionEvent event) throws IOException {
-        window.novaJanela("/sistemahotel/view/telaprincipal/TelaPrincipal.fxml", event);
+        if (tfNumero.getText().isEmpty() || tfPreco.getText().isEmpty()) {
+            window.popupAviso("Campos inválidos", "Campos com * são obrigatórios");
+        } else {
+            list.add(localdao.AlterarHabitacao(habitacaoMain, tfNumero.getText(), tfPreco.getText(), tfInfo.getText(),
+                    tfCamaSolteiro.getText(), tfCamaCasal.getText()));
+            list.remove(habitacaoMain);
+            window.notificacao("Alteração efetuada", "Alteração do produto concluída no banco de dados");
+            tvHabitacao.refresh();
+        }
     }
 
     @Override
