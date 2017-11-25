@@ -1,12 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.*?>
-<?import java.lang.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.geometry.Insets?>
@@ -20,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="apReservas" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="720.0" prefWidth="1132.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sistemahotel.control.reserva.ControleTelaReserva">
+<AnchorPane fx:id="apReservas" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="720.0" prefWidth="1132.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sistemahotel.control.reserva.ControleTelaReserva">
 <children>
     <BorderPane layoutX="329.0" layoutY="157.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <top>
@@ -42,6 +35,7 @@
                     <HBox prefHeight="41.0" prefWidth="675.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="457.0" AnchorPane.topAnchor="0.0">
                         <children>
                             <JFXButton fx:id="btNovaReserva" onAction="#btNovaReservaActionHandler" prefHeight="41.0" prefWidth="179.0" text="Nova Reserva" textFill="WHITE" />
+                        <JFXButton fx:id="btNovaReservaSalao" layoutX="367.0" layoutY="10.0" onAction="#btNovaReservaSalaoActionHandler" prefHeight="41.0" prefWidth="178.0" text="Nova Reserva de Salao" textFill="WHITE" />
                             <JFXButton fx:id="btCancelaReserva" onAction="#btCancelaReservaActionHandler" prefHeight="41.0" prefWidth="178.0" text="Cancelar Reserva" textFill="WHITE" />
                         <JFXButton prefHeight="43.0" prefWidth="166.0" text="Estender Reserva" textFill="WHITE" />
                         </children>

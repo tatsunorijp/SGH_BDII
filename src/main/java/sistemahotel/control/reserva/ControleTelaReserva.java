@@ -72,6 +72,10 @@ public class ControleTelaReserva implements Initializable{
         janela.novaJanelaSobreposta("/sistemahotel/view/reserva/TelaNovaReserva.fxml",event);
     }
 
+    public void btNovaReservaSalaoActionHandler(ActionEvent event) throws IOException{
+        janela.novaJanelaSobreposta("/sistemahotel/view/reserva/TelaNovaReservaSalao.fxml",event);
+    }
+
     public void btCancelaReservaActionHandler(ActionEvent event) throws IOException{
         boolean msg = janela.continuarOuCancelar("Menssagem de confirmação",
                 "Você está cancelando uma reserva!",

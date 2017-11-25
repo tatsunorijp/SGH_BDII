@@ -24,6 +24,7 @@ public class Reserva {
     private LocalDate dataCheckIn;
     private LocalDate dataCheckOut;
     private String qtdhospede;
+    private String nomeDoEvento;
 
     public Long getId() {
         return id;
@@ -85,5 +86,13 @@ public class Reserva {
 
     public void setQtdhospede(String qtdhospede) {
         this.qtdhospede = qtdhospede;
+    }
+
+    public String getNomeDoEvento() {
+        return nomeDoEvento;
+    }
+
+    public void setNomeDoEvento(String nomeDoEvento) {
+        this.nomeDoEvento = nomeDoEvento;
     }
 }

@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.image.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import com.jfoenix.controls.*?>
-<?import java.lang.*?>
-<?import javafx.scene.effect.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.text.*?>
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
@@ -21,9 +18,8 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
-<?import javafx.scene.control.DatePicker?>
 
-<AnchorPane prefHeight="615.0" prefWidth="827.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sistemahotel.control.reserva.ControleTelaNovaReserva">
+<AnchorPane prefHeight="615.0" prefWidth="827.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sistemahotel.control.reserva.ControleTelaNovaReserva">
 <children>
     <HBox layoutX="211.0" layoutY="-128.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <children>
@@ -66,9 +62,10 @@
                      <right>
                         <TableView fx:id="tvLocais" prefHeight="320.0" prefWidth="346.0" stylesheets="@../../../../resources/TableViewCSS.css" BorderPane.alignment="CENTER_RIGHT">
                           <columns>
-                              <TableColumn fx:id="tcLocalNumero" prefWidth="100.0" text="Numero" />
-                            <TableColumn fx:id="tcLocalTipo" prefWidth="113.0" text="Tipo" />
-                              <TableColumn fx:id="tcLocalPreco" prefWidth="132.0" text="Preco" />
+                              <TableColumn fx:id="tcLocalNumero" prefWidth="72.0" text="Numero" />
+                            <TableColumn fx:id="tcLocalCamasSolteiro" prefWidth="90.0" text="C. solteiro" />
+                              <TableColumn fx:id="tcLocalCamasCasal" prefWidth="89.0" text="C. casal" />
+                              <TableColumn fx:id="tcLocalPreco" prefWidth="94.0" text="Preco" />
                           </columns>
                            <BorderPane.margin>
                               <Insets bottom="25.0" right="15.0" top="5.0" />

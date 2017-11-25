@@ -13,6 +13,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import sistemahotel.control.ControleTelas;
 import sistemahotel.model.infraestrutura.RetornaListas;
 import sistemahotel.model.local.Local;
+import sistemahotel.model.local.SalaoFestas;
 import sistemahotel.model.pessoa.Cliente;
 import sistemahotel.model.reserva.ReservaDAO;
 
@@ -21,14 +22,14 @@ import java.util.ResourceBundle;
 
 import static sistemahotel.model.infraestrutura.Util.setUpFilter;
 
-public class ControleTelaNovaReserva implements Initializable{
+public class ControleTelaNovaReservaSalao implements Initializable{
 
     @FXML
     JFXTextField tfFiltroCliente;
     @FXML
     JFXTextField tfFiltroLocal;
     @FXML
-    JFXTextField tfQtdhospede;
+    JFXTextField tfNomeDoEvento;
 
     @FXML
     public TableView tvClientes;
@@ -42,9 +43,7 @@ public class ControleTelaNovaReserva implements Initializable{
     @FXML
     TableColumn tcLocalNumero;
     @FXML
-    TableColumn tcLocalCamasSolteiro;
-    @FXML
-    TableColumn tcLocalCamasCasal;
+    TableColumn tcLocalLotacaoMax;
     @FXML
     TableColumn tcLocalPreco;
     @FXML
@@ -53,7 +52,7 @@ public class ControleTelaNovaReserva implements Initializable{
     DatePicker dpDataCheckOut;
 
     private Cliente cliente = null;
-    private Local local = null;
+    private SalaoFestas local = null;
     private ObservableList olClientes;
     private ObservableList olLocais;
     private ReservaDAO InstanciaReservaDAO = ReservaDAO.getInstancia();
@@ -72,14 +71,13 @@ public class ControleTelaNovaReserva implements Initializable{
         setUpFilter(olClientes, tfFiltroCliente, tvClientes);
 
 
-        olLocais= FXCollections.observableList(RetornaListas.listHabitacao());
+        olLocais= FXCollections.observableList(RetornaListas.listSalaoFestas());
         tcLocalNumero.setCellValueFactory( new PropertyValueFactory<>("numero"));
-        tcLocalCamasSolteiro.setCellValueFactory( new PropertyValueFactory<>("tipo"));
-        tcLocalCamasCasal.setCellValueFactory( new PropertyValueFactory<>("tipo"));
+        tcLocalLotacaoMax.setCellValueFactory( new PropertyValueFactory<>("maximoPessoas"));
         tcLocalPreco.setCellValueFactory( new PropertyValueFactory<>("preco"));
         tvLocais.setItems(FXCollections.observableList(olLocais));
         tvLocais.getSelectionModel().selectedItemProperty().addListener(
-                (observable, oldvalue, newValue) -> selecaoLocal((Local) newValue)
+                (observable, oldvalue, newValue) -> selecaoLocal((SalaoFestas) newValue)
         );
         setUpFilter(olLocais, tfFiltroLocal, tvLocais);
 
@@ -92,17 +90,16 @@ public class ControleTelaNovaReserva implements Initializable{
 
     @FXML
     void btConfirmarActionHandler(ActionEvent event) {
-        if (cliente                   == null ||
-            local                     == null ||
-            tfQtdhospede.getText().isEmpty()  ||
-            dpDataCheckIn.getValue()  == null ||
-            dpDataCheckOut.getValue() == null)  { janela.popupAviso("Campos inválidos", "Campos com * são obrigatórios");
+        if (    cliente                   == null ||
+                local                     == null ||
+                dpDataCheckIn.getValue()  == null ||
+                dpDataCheckOut.getValue() == null)  { janela.popupAviso("Campos inválidos", "Campos com * são obrigatórios");
         } else {
             if ( InstanciaReservaDAO.checarIndisponibilidade(local, dpDataCheckIn.getValue(), dpDataCheckOut.getValue()) ) {
-                janela.popupAviso("Data inválida", "Esta habitação está ocupada nesta data");
+                janela.popupAviso("Data inválida", "Este salão está ocupado nesta data");
             } else {
-                InstanciaReservaDAO.novaReserva(cliente, local, dpDataCheckIn.getValue(), dpDataCheckOut.getValue(), tfQtdhospede.getText());
-                janela.notificacao("Reserva efetuada", "Nova reserva agendada no banco de dados");
+                InstanciaReservaDAO.novaReservaSalao(cliente, local, dpDataCheckIn.getValue(), dpDataCheckOut.getValue(), tfNomeDoEvento.getText());
+                janela.notificacao("Reserva de Salao efetuada", "Nova reserva agendada no banco de dados");
                 janela.novaJanela("/sistemahotel/view/telaprincipal/TelaPrincipal.fxml", event);
             }
         }
@@ -112,7 +109,7 @@ public class ControleTelaNovaReserva implements Initializable{
         this.cliente = cliente;
     }
 
-    public void selecaoLocal(Local local){
+    public void selecaoLocal(SalaoFestas local){
         this.local = local;
     }
 }

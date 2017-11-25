@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import org.controlsfx.control.spreadsheet.SpreadsheetView?>
+
+<AnchorPane fx:id="apReservas" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="720.0" prefWidth="1132.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sistemahotel.control.reserva.Testeplanilha">
+    <children>
+        <BorderPane layoutX="329.0" layoutY="157.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <top>
+                <AnchorPane prefHeight="92.0" prefWidth="752.0" style="-fx-background-color: #ab0000;" BorderPane.alignment="CENTER">
+                    <children>
+                        <Text fill="WHITE" layoutX="19.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Usuário conectado:" AnchorPane.leftAnchor="19.0" AnchorPane.topAnchor="11.0" />
+                        <Text fill="WHITE" layoutX="45.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reservas" AnchorPane.bottomAnchor="16.7255859375" AnchorPane.leftAnchor="45.0">
+                            <font>
+                                <Font size="25.0" />
+                            </font>
+                        </Text>
+                        <Text fill="WHITE" layoutX="132.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="O maior hacker do mundo" />
+                    </children>
+                </AnchorPane>
+            </top>
+            <bottom>
+                <AnchorPane maxWidth="1.7976931348623157E308" prefHeight="41.0" prefWidth="752.0" style="-fx-background-color: #ab0000;" BorderPane.alignment="CENTER">
+                    <children>
+                        <HBox prefHeight="41.0" prefWidth="675.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="457.0" AnchorPane.topAnchor="0.0">
+                            <children>
+                                <JFXButton fx:id="btNovaReserva" onAction="#btNovaReservaActionHandler" prefHeight="41.0" prefWidth="179.0" text="Nova Reserva" textFill="WHITE" />
+                                <JFXButton fx:id="btCancelaReserva" onAction="#btCancelaReservaActionHandler" prefHeight="41.0" prefWidth="178.0" text="Cancelar Reserva" textFill="WHITE" />
+                                <JFXButton prefHeight="43.0" prefWidth="166.0" text="Estender Reserva" textFill="WHITE" />
+                            </children>
+                        </HBox>
+                        <HBox layoutX="942.0" layoutY="3.0" prefHeight="36.0" prefWidth="176.0">
+                            <children>
+                                <ImageView fitHeight="20.0" fitWidth="20.0">
+                                    <image>
+                                        <Image url="@../../model/imagens/searching-magnifying-glass.png" />
+                                    </image>
+                                    <HBox.margin>
+                                        <Insets top="5.0" />
+                                    </HBox.margin>
+                                </ImageView>
+                                <JFXTextField fx:id="tfFiltro" focusColor="#ff9d9d" prefHeight="28.0" prefWidth="155.0" promptText="Pesquisar" unFocusColor="WHITE">
+                                    <HBox.margin>
+                                        <Insets />
+                                    </HBox.margin>
+                                </JFXTextField>
+                            </children>
+                        </HBox>
+                    </children>
+                </AnchorPane>
+            </bottom>
+            <center>
+                <AnchorPane prefHeight="587.0" prefWidth="798.0" BorderPane.alignment="CENTER">
+                    <children>
+                        <AnchorPane layoutX="188.0" prefHeight="587.0" prefWidth="944.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="188.0" AnchorPane.topAnchor="0.0">
+                            <children>
+                                <SpreadsheetView fx:id="svReservas" nodeOrientation="LEFT_TO_RIGHT" prefHeight="587.0" prefWidth="944.0" />
+                            </children></AnchorPane>
+                    </children>
+                </AnchorPane>
+            </center>
+        </BorderPane>
+    </children>
+</AnchorPane>

@@ -7,6 +7,7 @@ import org.hibernate.Transaction;
 import sistemahotel.model.infraestrutura.Persistencia;
 import sistemahotel.model.infraestrutura.RetornaListas;
 import sistemahotel.model.local.Local;
+import sistemahotel.model.local.SalaoFestas;
 import sistemahotel.model.pessoa.Cliente;
 
 import java.time.LocalDate;
@@ -41,6 +42,22 @@ public class ReservaDAO {
         reserva.setQtdhospede(qtdhospede);
 
         persistencia.persistir(reserva);
+    }
+
+    public void novaReservaSalao(Cliente cliente, SalaoFestas local, LocalDate dataCheckIn, LocalDate dataCheckOut, String nomeDoEvento){
+        Reserva reserva = new Reserva();
+
+        reserva.setCliente(cliente);
+        reserva.setLocal(local);
+        reserva.setStatus("Agendada");
+        reserva.setDataReserva(LocalDateTime.now());
+        reserva.setDataCheckIn(dataCheckIn);
+        reserva.setDataCheckOut(dataCheckOut);
+        reserva.setQtdhospede(local.getMaximoPessoas());
+        reserva.setNomeDoEvento(nomeDoEvento);
+
+        persistencia.persistir(reserva);
+
     }
 
     public boolean checarIndisponibilidade(Local local, LocalDate dataCheckIn, LocalDate dataCheckOut){ // true = INDISPONIVEL

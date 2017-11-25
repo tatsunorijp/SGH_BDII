@@ -36,6 +36,7 @@ public class ControleTelaPrincipalAdmin implements Initializable{
     }
     public void showReservas(ActionEvent event) throws  IOException{
         window.setFragment("/sistemahotel/view/reserva/TelaReservas.fxml",apPrincipal);
+        //window.setFragment("/sistemahotel/view/reserva/testeplanilha.fxml",apPrincipal);
     }
     public void showProdutos(ActionEvent event) throws IOException {
         window.setFragment("/sistemahotel/view/produto/Produtos.fxml",apPrincipal);
