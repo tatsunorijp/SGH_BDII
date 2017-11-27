@@ -56,7 +56,7 @@ public class ControleTelaHabitacao implements Initializable {
 
 
     public void btDeletarHabitacaoActionHandler(ActionEvent event) throws IOException {
-        a = window.continuarOuCancelar("Menssagem de confirmação",
+        a = window.continuarOuCancelar("Mensagem de confirmação",
                 "Você está excluindo uma habitação!",
                 "Você realmente deseja excluir a habitação?");
         if (a){
@@ -68,6 +68,10 @@ public class ControleTelaHabitacao implements Initializable {
 
     public void btNovaHabitacaoActionHandler(ActionEvent e) throws IOException {
         window.novaJanelaSobreposta("/sistemahotel/view/locais/NovaHabitacao.fxml",e);
+    }
+
+    public void btRefreshActionHandler(ActionEvent e) throws IOException {
+        tvHabitacao.refresh();
     }
 
     public void btAlterarHabitacaoActionHandler(ActionEvent e){

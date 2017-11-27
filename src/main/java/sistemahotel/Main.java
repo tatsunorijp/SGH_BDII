@@ -11,6 +11,8 @@ import sistemahotel.model.pessoa.Gerente;
 import sistemahotel.model.pessoa.Usuario;
 import sistemahotel.model.reserva.ReservaDAO;
 
+import static sistemahotel.model.infraestrutura.RetornaListas.persistencia;
+
 /**
  * Created by marcelo on 19/09/17.
  */
@@ -18,8 +20,6 @@ public class Main extends  Application{
     public static void main(String[] args){
         Persistencia.getInstancia().startSsf();
         launch(args);
-
-
     }
 
 
@@ -32,6 +32,5 @@ public class Main extends  Application{
         primaryStage.initStyle(StageStyle.UNDECORATED);
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
-
     }
 }

@@ -15,6 +15,8 @@
       <root url="jar://$PROJECT_DIR$/lib/mysql-connector-java-5.1.42-bin.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/controlsfx-8.40.14.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/fontawesomefx-8.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jfoenix.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/mariadb-java-client-2.0.3.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

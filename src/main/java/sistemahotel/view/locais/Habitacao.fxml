@@ -16,7 +16,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="720.0" prefWidth="1132.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sistemahotel.control.local.ControleTelaHabitacao">
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="720.0" prefWidth="1132.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sistemahotel.control.local.ControleTelaHabitacao">
    <children>
       <BorderPane layoutX="329.0" layoutY="157.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <top>
@@ -36,9 +36,9 @@
                <children>
                   <HBox layoutY="-18.0" prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-0.0">
                      <children>
-                        <JFXButton fx:id="btNovaHabitacao" onAction="#btNovaHabitacaoActionHandler" prefHeight="41.0" prefWidth="128.0" text="Nova Habitacao" textFill="WHITE" />
-                        <JFXButton fx:id="btAlterarHabitacao" onAction="#btAlterarHabitacaoActionHandler" prefHeight="41.0" prefWidth="141.0" text="Alterar Habitacao" textFill="WHITE" />
-                        <JFXButton fx:id="btExcluir" onAction="#btDeletarHabitacaoActionHandler" prefHeight="41.0" prefWidth="78.0" text="Excluir" textFill="WHITE" />
+                        <JFXButton fx:id="btNovaHabitacao" onAction="#btNovaHabitacaoActionHandler" prefHeight="41.0" prefWidth="155.0" text="Nova Habitacao" textFill="WHITE" />
+                        <JFXButton fx:id="btAlterarHabitacao" onAction="#btAlterarHabitacaoActionHandler" prefHeight="41.0" prefWidth="166.0" text="Alterar Habitacao" textFill="WHITE" />
+                        <JFXButton fx:id="btExcluir" onAction="#btDeletarHabitacaoActionHandler" prefHeight="41.0" prefWidth="104.0" text="Excluir" textFill="WHITE" />
                         <HBox prefHeight="100.0" prefWidth="200.0">
                            <children>
                               <ImageView fitHeight="20.0" fitWidth="20.0">
@@ -59,6 +59,7 @@
                               <Insets left="580.0" top="5.0" />
                            </HBox.margin>
                         </HBox>
+                        <JFXButton fx:id="btRefresh" onAction="#btRefreshActionHandler" prefHeight="41.0" prefWidth="78.0" text="R" textFill="WHITE" />
                      </children>
                   </HBox>
                </children>

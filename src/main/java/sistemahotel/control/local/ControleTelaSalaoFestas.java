@@ -52,14 +52,18 @@ public class ControleTelaSalaoFestas implements Initializable{
 
 
     public void btDeletarSalaoActionHandler(ActionEvent event) throws IOException {
-        a = window.continuarOuCancelar("Menssagem de confirmação",
-                "Você está excluindo um salaão de eventos!",
-                "Você realmente deseja excluir o salão");
+        a = window.continuarOuCancelar("Mensagem de confirmação",
+                "Você está excluindo um salão de eventos!",
+                "Você realmente deseja excluir o salão?");
         if (a) {
             localdao.DeletarLocal(salaoMain);
             list.remove(salaoMain);
             tvSalao.refresh();
         }
+    }
+
+    public void btRefreshActionHandler(ActionEvent e) throws IOException {
+        tvSalao.refresh();
     }
 
     public void btNovoSalaoActionHandler(ActionEvent e) throws IOException{

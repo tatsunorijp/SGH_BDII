@@ -41,7 +41,7 @@ public class ControleTelaPrincipalGerente implements Initializable{
         window.setFragment("/sistemahotel/view/produto/Produtos.fxml",apPrincipal);
     }
     public void showHabitacoes(ActionEvent event) throws IOException {
-        window.setFragment("/sistemahotel/view/locais/Habitacoes.fxml",apPrincipal);
+        window.setFragment("/sistemahotel/view/locais/Habitacao.fxml",apPrincipal);
     }
     public void showSalaoEventos(ActionEvent event) throws IOException {
         window.setFragment("/sistemahotel/view/locais/SalaoEventos.fxml",apPrincipal);
