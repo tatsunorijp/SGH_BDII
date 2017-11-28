@@ -1,12 +1,14 @@
 package sistemahotel.model.pessoa;
 
 import com.sun.istack.internal.NotNull;
+import org.hibernate.annotations.Where;
 
 import javax.persistence.*;
 import java.time.LocalDate;
 
 
 @Entity
+@Where(clause = "ativo = 1")
 public abstract class Pessoa {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -19,6 +21,7 @@ public abstract class Pessoa {
     private String RG;
     private String nome;
     private LocalDate dataDeNascimento;
+    protected Boolean ativo = true;
 
     @Override
     public String toString() {

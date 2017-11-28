@@ -44,7 +44,7 @@ public class Persistencia {
     public void deletar(Object object){
         Session session = ssf.openSession();
         Transaction tx = session.beginTransaction();
-        session.delete(object);
+//        session.deleto(object);
         tx.commit();
         session.close();
     }

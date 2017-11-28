@@ -47,6 +47,7 @@ public class UsuarioDAO {
     }
 
     public void Deletar(Usuario usuario) {
-        persistencia.deletar(usuario);
+        usuario.ativo = false;
+        persistencia.alterar(usuario);
     }
 }

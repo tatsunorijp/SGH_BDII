@@ -50,7 +50,8 @@ public class LocalDAO {
     }
 
     public void DeletarLocal(Local local){
-        persist.deletar(local);
+        local.ativo = false;
+        persist.alterar(local);
     }
 
 }

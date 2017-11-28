@@ -71,7 +71,8 @@ public class ControleTelaHabitacao implements Initializable {
     }
 
     public void btRefreshActionHandler(ActionEvent e) throws IOException {
-        tvHabitacao.refresh();
+        list = FXCollections.observableList(pegaListas.listHabitacao());
+        tvHabitacao.setItems(FXCollections.observableList(list));
     }
 
     public void btAlterarHabitacaoActionHandler(ActionEvent e){

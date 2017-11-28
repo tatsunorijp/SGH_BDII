@@ -63,7 +63,8 @@ public class ControleTelaSalaoFestas implements Initializable{
     }
 
     public void btRefreshActionHandler(ActionEvent e) throws IOException {
-        tvSalao.refresh();
+        list = FXCollections.observableList(pegaListas.listSalaoFestas());
+        tvSalao.setItems(FXCollections.observableList(list));
     }
 
     public void btNovoSalaoActionHandler(ActionEvent e) throws IOException{

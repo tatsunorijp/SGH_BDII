@@ -1,11 +1,16 @@
 package sistemahotel.model.local;
 
+import org.hibernate.annotations.SQLDelete;
+import org.hibernate.annotations.Where;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 
 @Entity
+@SQLDelete(sql = "UPDATE Local" +  "SET ativo = false " + "WHERE id = ?")
+@Where(clause = "ativo = 1")
 public abstract class Local {
 
     @Id
@@ -16,6 +21,7 @@ public abstract class Local {
     protected String status;
     protected String informacoesAdicionais;
     protected String preco;
+    protected Boolean ativo = true;
 
     @Override
     public String toString() {
