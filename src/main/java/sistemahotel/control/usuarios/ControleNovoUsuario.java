@@ -61,7 +61,7 @@ public class ControleNovoUsuario implements Initializable {
             usuarioDAO.Novo(tfNome.getText(), tfLogin.getText(), tfSenha.getText(), tfCPF.getText(), tfRG.getText(),
                             cbTipo.getValue().toString(), dtDataDeNascimento.getValue());
             controleTelas.notificacao("Cadastro efetuado",
-                                      "Novo usuario adicionado ao banco de dados");
+                                      "novo usuario adicionado ao banco de dados");
         }
     }
 

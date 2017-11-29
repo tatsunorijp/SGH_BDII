@@ -1,11 +1,16 @@
 package sistemahotel.model.produto;
 
+import org.hibernate.annotations.SQLDelete;
+import org.hibernate.annotations.Where;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 
 @Entity
+//@SQLDelete(sql = "update Produto set ativo = 0 where id = ?")
+@Where(clause = "ativo = 1")
 public class Produto {
     @Id
     @GeneratedValue
@@ -14,6 +19,15 @@ public class Produto {
     private String quantidade;
     private String preco;
     private String alertaEstoque;
+    private Boolean ativo = true;
+
+    public Boolean getAtivo() {
+        return ativo;
+    }
+
+    public void setAtivo(Boolean ativo) {
+        this.ativo = ativo;
+    }
 
     public Long getId() {
         return id;

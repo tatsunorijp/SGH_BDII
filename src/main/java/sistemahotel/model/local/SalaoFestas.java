@@ -1,13 +1,15 @@
 package sistemahotel.model.local;
 
+import org.hibernate.annotations.SQLDelete;
+import org.hibernate.annotations.Where;
 import sistemahotel.model.local.Local;
 
 import javax.persistence.Entity;
 
 @Entity
 public class SalaoFestas extends Local {
-    String maximoPessoas;
-    String informacoesAdicionais;
+    private String maximoPessoas;
+    private String informacoesAdicionais;
 
     public SalaoFestas() {
         this.tipo = "Salao de Festas";

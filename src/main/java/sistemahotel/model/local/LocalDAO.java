@@ -6,11 +6,6 @@ public class LocalDAO {
 
     Persistencia persist = Persistencia.getInstancia();
 
-
-
-
-
-
     public void NovaHabitacao(String numero, String camasSolteiro, String camasCasal, String preco, String infoAdicionais){
         Habitacao habitacao = new Habitacao();
         habitacao.setNumero(numero);

@@ -55,6 +55,11 @@
                                     <Insets />
                                  </HBox.margin>
                               </JFXTextField>
+                              <JFXButton fx:id="btRefresh" onAction="#btRefreshActionHandler" text="R" textFill="WHITE">
+                                 <HBox.margin>
+                                    <Insets top="2.0" />
+                                 </HBox.margin>
+                              </JFXButton>
                            </children>
                            <HBox.margin>
                               <Insets left="580.0" top="5.0" />

@@ -9,7 +9,6 @@ import javax.persistence.Id;
 
 
 @Entity
-@SQLDelete(sql = "UPDATE Local" +  "SET ativo = false " + "WHERE id = ?")
 @Where(clause = "ativo = 1")
 public abstract class Local {
 

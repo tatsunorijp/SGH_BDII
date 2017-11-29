@@ -55,7 +55,7 @@ public class ControleNovaHabitacao implements Initializable {
             controleTelas.popupAviso("Campos inválidos", "Campos com * são obrigatórios");
         } else {
             localdao.NovaHabitacao(tfNumero.getText(), tfSolteiro.getText(), tfCasal.getText(), tfPreco.getText(), taAdicionais.getText());
-            controleTelas.notificacao("Cadastro efetuado", "Novo produto adicionado ao banco de dados");
+            controleTelas.notificacao("Cadastro efetuado", "novo produto adicionado ao banco de dados");
             controleTelas.fechaJanela(event);
         }
     }

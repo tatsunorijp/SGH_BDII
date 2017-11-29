@@ -53,8 +53,8 @@ public class ControleNovoProduto implements Initializable{
         if (tfNome.getText().isEmpty() || tfPreco.getText().isEmpty()) {
             controleTelas.popupAviso("Campos inválidos", "Campos com * são obrigatórios");
         } else {
-            produtoDAO.Novo(tfNome.getText(), tfQuantidadeInicial.getText(), tfPreco.getText(), tfAlertaDeEstoque.getText());
-            controleTelas.notificacao("Cadastro efetuado", "Novo produto adicionado ao banco de dados");
+            produtoDAO.novo(tfNome.getText(), tfQuantidadeInicial.getText(), tfPreco.getText(), tfAlertaDeEstoque.getText());
+            controleTelas.notificacao("Cadastro efetuado", "novo produto adicionado ao banco de dados");
             controleTelas.fechaJanela(event);
         }
     }

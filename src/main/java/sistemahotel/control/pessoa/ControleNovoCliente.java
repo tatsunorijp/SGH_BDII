@@ -69,7 +69,7 @@ public class ControleNovoCliente implements Initializable {
                             tfInformacoesAdicionais.getText(), tfCPF.getText(), tfRG.getText(),
                             dtDataDeNascimento.getValue());
             controleTelas.notificacao("Cadastro efetuado",
-                                      "Novo cliente adicionado ao banco de dados");
+                                      "novo cliente adicionado ao banco de dados");
             controleTelas.novaJanela("/sistemahotel/view/Clientes.fxml", event);
         }
     }

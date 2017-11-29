@@ -82,12 +82,17 @@ public class ControleTelaProdutos implements Initializable {
         controleTelas.novaJanelaSobreposta("/sistemahotel/view/produto/NovoProduto.fxml",event);
     }
 
+    public void btRefreshActionHandler(ActionEvent e) throws IOException {
+        list = FXCollections.observableList(pegaListas.listProduto());
+        tvProdutos.setItems(FXCollections.observableList(list));
+    }
+
     public void btAlterarProdutoActionHandler(ActionEvent event) throws IOException{
         if (tfNome.getText().isEmpty() || tfPreco.getText().isEmpty()) {
             controleTelas.popupAviso("Campos inválidos", "Campos com * são obrigatórios");
         } else {
 
-            list.add(produtoDAO.Alterar(tfNome.getText(), tfEstoque.getText(), tfPreco.getText(), tfAlerta.getText(),
+            list.add(produtoDAO.alterar(tfNome.getText(), tfEstoque.getText(), tfPreco.getText(), tfAlerta.getText(),
                     produtoMain.getId()));
             list.remove(produtoMain);
             controleTelas.notificacao("Alteração efetuada", "Alteração do produto concluída no banco de dados");
@@ -100,7 +105,7 @@ public class ControleTelaProdutos implements Initializable {
                 "Você está excluindo um produto!",
                 "Você realmente deseja excluir o produto?");
         if (a) {
-            produtoDAO.Deleter(produtoMain);
+            produtoDAO.deletar(produtoMain);
             list.remove(produtoMain);
             tvProdutos.refresh();
         }
