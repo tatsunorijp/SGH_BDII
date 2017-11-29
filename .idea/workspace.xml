@@ -2,27 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9c934395-a98d-4c7c-a5f9-c59ac28c6334" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Hibernate_5_2_10_5_2_10.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Hibernate_5_2_10_5_2_10.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/JunitTestes/TesteProdutos.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/org_controlsfx_controlsfx_8_40_14.xml" afterPath="$PROJECT_DIR$/.idea/libraries/org_controlsfx_controlsfx_8_40_14.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/sistemahotel/control/local/ControleNovaHabitacao.java" afterPath="$PROJECT_DIR$/src/main/java/sistemahotel/control/local/ControleNovaHabitacao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/sistemahotel/control/local/ControleNovoSalao.java" afterPath="$PROJECT_DIR$/src/main/java/sistemahotel/control/local/ControleNovoSalao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/sistemahotel/control/local/ControleTelaHabitacao.java" afterPath="$PROJECT_DIR$/src/main/java/sistemahotel/control/local/ControleTelaHabitacao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/sistemahotel/control/local/ControleTelaSalaoFestas.java" afterPath="$PROJECT_DIR$/src/main/java/sistemahotel/control/local/ControleTelaSalaoFestas.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/sistemahotel/control/pessoa/ControleNovoCliente.java" afterPath="$PROJECT_DIR$/src/main/java/sistemahotel/control/pessoa/ControleNovoCliente.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/sistemahotel/control/produto/ControleNovoProduto.java" afterPath="$PROJECT_DIR$/src/main/java/sistemahotel/control/produto/ControleNovoProduto.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/sistemahotel/control/produto/ControleTelaProdutos.java" afterPath="$PROJECT_DIR$/src/main/java/sistemahotel/control/produto/ControleTelaProdutos.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/sistemahotel/control/usuarios/ControleNovoUsuario.java" afterPath="$PROJECT_DIR$/src/main/java/sistemahotel/control/usuarios/ControleNovoUsuario.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/sistemahotel/model/local/Habitacao.java" afterPath="$PROJECT_DIR$/src/main/java/sistemahotel/model/local/Habitacao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/sistemahotel/model/local/Local.java" afterPath="$PROJECT_DIR$/src/main/java/sistemahotel/model/local/Local.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/sistemahotel/model/local/LocalDAO.java" afterPath="$PROJECT_DIR$/src/main/java/sistemahotel/model/local/LocalDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/sistemahotel/model/local/SalaoFestas.java" afterPath="$PROJECT_DIR$/src/main/java/sistemahotel/model/local/SalaoFestas.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/sistemahotel/model/produto/Produto.java" afterPath="$PROJECT_DIR$/src/main/java/sistemahotel/model/produto/Produto.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/sistemahotel/model/produto/ProdutoDAO.java" afterPath="$PROJECT_DIR$/src/main/java/sistemahotel/model/produto/ProdutoDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/sistemahotel/view/locais/Habitacao.fxml" afterPath="$PROJECT_DIR$/src/main/java/sistemahotel/view/locais/Habitacao.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/sistemahotel/view/locais/SalaoEventos.fxml" afterPath="$PROJECT_DIR$/src/main/java/sistemahotel/view/locais/SalaoEventos.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/sistemahotel/view/produto/Produtos.fxml" afterPath="$PROJECT_DIR$/src/main/java/sistemahotel/view/produto/Produtos.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SGH/sistemahotel/view/locais/Habitacao.fxml" afterPath="$PROJECT_DIR$/out/production/SGH/sistemahotel/view/locais/Habitacao.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SGH/sistemahotel/view/produto/Produtos.fxml" afterPath="$PROJECT_DIR$/out/production/SGH/sistemahotel/view/produto/Produtos.fxml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -68,113 +52,24 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ControleTelaProdutos.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/sistemahotel/control/produto/ControleTelaProdutos.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="394">
-              <caret line="85" column="68" lean-forward="false" selection-start-line="85" selection-start-column="68" selection-end-line="85" selection-end-column="68" />
-              <folding>
-                <element signature="method#initialize#0;class#ControleTelaProdutos#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ControleTelas.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/sistemahotel/control/ControleTelas.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-266">
-              <caret line="65" column="0" lean-forward="false" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ControleTelaReserva.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/sistemahotel/control/reserva/ControleTelaReserva.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="620">
-              <caret line="66" column="54" lean-forward="true" selection-start-line="66" selection-start-column="54" selection-end-line="66" selection-end-column="54" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ReservaDAO.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/sistemahotel/model/reserva/ReservaDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sgh.Produto" pinned="false" current-in-tab="false">
-        <entry file="dbDummy://dbtable:/df8ffc05/fe18d28b-ad48-4d29-b384-f916c4d41477/sgh.Produto">
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ControleTelaSalaoFestas.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/sistemahotel/control/local/ControleTelaSalaoFestas.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="349">
-              <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="67" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Produto.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/sistemahotel/model/produto/Produto.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="23" column="31" lean-forward="false" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
-              <folding>
-                <element signature="e#611#612#0" expanded="true" />
-                <element signature="e#654#655#0" expanded="true" />
-                <element signature="e#688#689#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProdutoDAO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/sistemahotel/model/produto/ProdutoDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="634">
-              <caret line="40" column="23" lean-forward="false" selection-start-line="40" selection-start-column="23" selection-end-line="40" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ClienteDAO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/sistemahotel/model/pessoa/ClienteDAO.java">
+      <file leaf-file-name="Persistencia.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/sistemahotel/model/infraestrutura/Persistencia.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="414">
-              <caret line="43" column="30" lean-forward="true" selection-start-line="43" selection-start-column="30" selection-end-line="43" selection-end-column="30" />
+              <caret line="30" column="8" lean-forward="true" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="8" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UsuarioDAO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/sistemahotel/model/pessoa/UsuarioDAO.java">
+      <file leaf-file-name="TesteProdutos.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/JunitTestes/TesteProdutos.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="574">
-              <caret line="44" column="40" lean-forward="false" selection-start-line="44" selection-start-column="40" selection-end-line="44" selection-end-column="40" />
-              <folding />
+            <state relative-caret-position="234">
+              <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -190,6 +85,7 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="UPDATE_TYPE" value="MERGE" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GradleLocalSettings">
@@ -200,9 +96,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/sistemahotel/view/reserva/TelaReservas.java" />
-        <option value="$PROJECT_DIR$/src/main/java/sistemahotel/view/reserva/ControleTelaReserva.java" />
-        <option value="$PROJECT_DIR$/src/main/java/sistemahotel/view/reserva/TelaReservas.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/sistemahotel/control/ControleTelas.java" />
         <option value="$PROJECT_DIR$/src/main/java/sistemahotel/control/local/ControleTelaLocais.java" />
         <option value="$PROJECT_DIR$/src/main/java/sistemahotel/control/ControleTelaPrincipal.java" />
@@ -241,7 +134,6 @@
         <option value="$PROJECT_DIR$/src/main/java/sistemahotel/control/local/ControleNovoSalao.java" />
         <option value="$PROJECT_DIR$/src/main/java/sistemahotel/model/infraestrutura/RetornaListas.java" />
         <option value="$PROJECT_DIR$/src/main/java/sistemahotel/Main.java" />
-        <option value="$PROJECT_DIR$/src/main/java/sistemahotel/model/infraestrutura/Persistencia.java" />
         <option value="$PROJECT_DIR$/src/main/java/sistemahotel/model/local/LocalDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/sistemahotel/model/local/Habitacao.java" />
         <option value="$PROJECT_DIR$/src/main/java/sistemahotel/model/local/SalaoFestas.java" />
@@ -251,6 +143,10 @@
         <option value="$PROJECT_DIR$/src/main/java/sistemahotel/model/produto/Produto.java" />
         <option value="$PROJECT_DIR$/src/main/java/sistemahotel/model/produto/ProdutoDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/sistemahotel/control/produto/ControleTelaProdutos.java" />
+        <option value="$PROJECT_DIR$/src/main/java/sistemahotel/model/infraestrutura/Persistencia.java" />
+        <option value="$PROJECT_DIR$/src/main/java/JunitTestes/Persistencia.java" />
+        <option value="$PROJECT_DIR$/src/main/java/JunitTestes/Persistencia2.java" />
+        <option value="$PROJECT_DIR$/src/main/java/JunitTestes/TesteProdutos.java" />
       </list>
     </option>
   </component>
@@ -370,7 +266,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="model" />
+              <option name="myItemId" value="view" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -400,41 +296,33 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="control" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SGH" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SGH" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sistemahotel" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="control" />
+              <option name="myItemId" value="view" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="produto" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SGH" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SGH" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -450,26 +338,27 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.externalTools" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/jfoenix.jar!/" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/junit-4.12.jar!/" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
     <property name="database.data.extractors.current.id" value="SQL Inserts" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/java/sistemahotel/view/usuarios" />
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/java/sistemahotel/view/telaprincipal" />
-      <recent name="$PROJECT_DIR$/src/main/java/sistemahotel/view" />
+      <recent name="$PROJECT_DIR$/src/main/java/sistemahotel/view/reserva" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="JunitTestes" />
       <recent name="sistemahotel.control.usuarios" />
       <recent name="sistemahotel.model.pessoa" />
       <recent name="sistemahotel.control" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/sistemahotel/view/usuarios" />
       <recent name="$PROJECT_DIR$/src/main/java/sistemahotel/view/telaprincipal" />
-      <recent name="$PROJECT_DIR$/src/main/java/sistemahotel/view/reserva" />
+      <recent name="$PROJECT_DIR$/src/main/java/sistemahotel/view" />
     </key>
   </component>
   <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
@@ -613,7 +502,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.TesteProdutos">
     <configuration default="false" name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -632,6 +521,32 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="SGH" />
       <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="TesteProdutos" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="JunitTestes.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="SGH" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="JunitTestes" />
+      <option name="MAIN_CLASS_NAME" value="JunitTestes.TesteProdutos" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
       <method />
     </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -1021,12 +936,14 @@
     <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
       <method />
     </configuration>
-    <list size="1">
+    <list size="2">
       <item index="0" class="java.lang.String" itemvalue="Application.Main" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.TesteProdutos" />
     </list>
     <recent_temporary>
-      <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="Application.Main" />
+      <list size="2">
+        <item index="0" class="java.lang.String" itemvalue="JUnit.TesteProdutos" />
+        <item index="1" class="java.lang.String" itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -1059,7 +976,7 @@
       <workItem from="1511300380723" duration="2088000" />
       <workItem from="1511434298728" duration="1055000" />
       <workItem from="1511479106588" duration="2405000" />
-      <workItem from="1511797913275" duration="9292000" />
+      <workItem from="1511797913275" duration="14019000" />
     </task>
     <task id="LOCAL-00001" summary="Tela gerenciador locais iniciada">
       <created>1507236046930</created>
@@ -1138,11 +1055,35 @@
       <option name="project" value="LOCAL" />
       <updated>1511296520678</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="exclusao logica em produtos implementada&#10;botoes de refresh organizado nas telas de habitacao e salao&#10;adicionado botao de refresh na tela gerenciadora de produtos">
+      <created>1511981728559</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1511981728559</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="TesteProdutos - 2017.11.29 at 19h 57m 17s.xml">
+      <configuration name="TesteProdutos" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TesteProdutos - 2017.11.29 at 19h 58m 10s.xml">
+      <configuration name="TesteProdutos" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TesteProdutos - 2017.11.29 at 20h 23m 56s.xml">
+      <configuration name="TesteProdutos" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TesteProdutos - 2017.11.29 at 20h 24m 16s.xml">
+      <configuration name="TesteProdutos" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TesteProdutos - 2017.11.29 at 20h 24m 48s.xml">
+      <configuration name="TesteProdutos" configurationId="JUnit" />
+    </history-entry>
+  </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="96391000" />
+    <option name="totallyTimeSpent" value="101118000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
@@ -1235,7 +1176,8 @@
     <MESSAGE value="efetuação de reservas funcionando, exceto a checagem de colisão de datas" />
     <MESSAGE value="criadas telas iniciais separadas por tipo de usuario, implementacao da tela de gerencia de usuario" />
     <MESSAGE value="alterar usuario e excluir usuario" />
-    <option name="LAST_COMMIT_MESSAGE" value="alterar usuario e excluir usuario" />
+    <MESSAGE value="exclusao logica em produtos implementada&#10;botoes de refresh organizado nas telas de habitacao e salao&#10;adicionado botao de refresh na tela gerenciadora de produtos" />
+    <option name="LAST_COMMIT_MESSAGE" value="exclusao logica em produtos implementada&#10;botoes de refresh organizado nas telas de habitacao e salao&#10;adicionado botao de refresh na tela gerenciadora de produtos" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1248,17 +1190,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/sistemahotel/view/usuarios/Clientes.fxml" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/sistemahotel/view/telaprincipal/TelaPrincipal.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/sistemahotel/view/pessoa/Clientes.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1414,14 +1345,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sistemahotel/model/infraestrutura/RetornaListas.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1039">
-          <caret line="172" column="47" lean-forward="false" selection-start-line="172" selection-start-column="47" selection-end-line="172" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/lib/mysql-connector-java-5.1.42-bin.jar!/com/mysql/jdbc/PreparedStatement.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -1484,18 +1407,6 @@
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sistemahotel/model/infraestrutura/Persistencia.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <marker date="1511974038896" expanded="false" signature="1377:1388" ph=" { " />
-            <marker date="1511974038896" expanded="false" signature="1399:1405" ph=" }" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1611,7 +1522,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/sistemahotel/model/pessoa/ClienteDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
-          <caret line="43" column="30" lean-forward="true" selection-start-line="43" selection-start-column="30" selection-end-line="43" selection-end-column="30" />
+          <caret line="43" column="30" lean-forward="false" selection-start-line="43" selection-start-column="30" selection-end-line="43" selection-end-column="30" />
           <folding />
         </state>
       </provider>
@@ -1633,14 +1544,6 @@
             <element signature="e#654#655#0" expanded="true" />
             <element signature="e#688#689#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/sistemahotel/model/produto/ProdutoDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="634">
-          <caret line="40" column="23" lean-forward="false" selection-start-line="40" selection-start-column="23" selection-end-line="40" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1686,16 +1589,58 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/sistemahotel/control/reserva/ControleTelaReserva.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="620">
-          <caret line="66" column="54" lean-forward="true" selection-start-line="66" selection-start-column="54" selection-end-line="66" selection-end-column="54" />
+          <caret line="66" column="54" lean-forward="false" selection-start-line="66" selection-start-column="54" selection-end-line="66" selection-end-column="54" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/sistemahotel/model/reserva/ReservaDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
+        <state relative-caret-position="-620">
           <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sistemahotel/model/produto/ProdutoDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="40" column="23" lean-forward="false" selection-start-line="40" selection-start-column="23" selection-end-line="40" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sistemahotel/model/infraestrutura/RetornaListas.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="18" column="37" lean-forward="true" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/sistemahotel/model/infraestrutura/Persistencia.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="30" column="8" lean-forward="true" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/JunitTestes/Persistencia2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="520">
+          <caret line="31" column="8" lean-forward="true" selection-start-line="31" selection-start-column="8" selection-end-line="32" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/JunitTestes/TesteProdutos.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -1,7 +1,9 @@
 <component name="libraryTable">
   <library name="org.controlsfx:controlsfx:8.40.14" type="repository">
     <properties maven-id="org.controlsfx:controlsfx:8.40.14" />
-    <CLASSES />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Downloads/junit-4.12.jar!/" />
+    </CLASSES>
     <JAVADOC />
     <SOURCES />
   </library>

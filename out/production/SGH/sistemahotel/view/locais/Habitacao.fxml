@@ -16,7 +16,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="720.0" prefWidth="1132.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sistemahotel.control.local.ControleTelaHabitacao">
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="720.0" prefWidth="1132.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sistemahotel.control.local.ControleTelaHabitacao">
    <children>
       <BorderPane layoutX="329.0" layoutY="157.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <top>
@@ -54,12 +54,12 @@
                                     <Insets />
                                  </HBox.margin>
                               </JFXTextField>
+                              <JFXButton fx:id="btRefresh" onAction="#btRefreshActionHandler" prefHeight="41.0" prefWidth="78.0" text="R" textFill="WHITE" />
                            </children>
                            <HBox.margin>
                               <Insets left="580.0" top="5.0" />
                            </HBox.margin>
                         </HBox>
-                        <JFXButton fx:id="btRefresh" onAction="#btRefreshActionHandler" prefHeight="41.0" prefWidth="78.0" text="R" textFill="WHITE" />
                      </children>
                   </HBox>
                </children>
