@@ -52,7 +52,7 @@ public class ControleNovoProduto implements Initializable{
 
     @FXML
     void btConfirmarActionHandler(ActionEvent event) {
-        if (tfNome.getText().isEmpty() || tfPreco.getText().isEmpty() || tfQuantidadeInicial.getText().isEmpty()) {
+        if (tfNome.getText().isEmpty() || tfPreco.getText().isEmpty() || tfQuantidadeInicial.getText().isEmpty() || tfAlertaDeEstoque.getText().isEmpty()) {
             controleTelas.popupAviso("Campos inválidos", "Campos com * são obrigatórios");
         } else {
             if( (!util.apenasNumeros(tfPreco.getText())) || (!util.apenasNumeros(tfQuantidadeInicial.getText())) ||

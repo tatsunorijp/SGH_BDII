@@ -117,8 +117,4 @@ public class ReservaDAO {
         persistencia.alterar(reserva);
     }
 
-    public void adicionarConsumacao(Reserva reserva){
-
-    }
-
 }
