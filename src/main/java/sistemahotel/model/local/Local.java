@@ -74,4 +74,12 @@ public abstract class Local {
     public void setPreco(String preco) {
         this.preco = preco;
     }
+
+    public Boolean getAtivo() {
+        return ativo;
+    }
+
+    public void setAtivo(Boolean ativo) {
+        this.ativo = ativo;
+    }
 }

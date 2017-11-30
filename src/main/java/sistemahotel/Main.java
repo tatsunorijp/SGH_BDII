@@ -20,11 +20,10 @@ import static sistemahotel.model.infraestrutura.RetornaListas.persistencia;
  * Created by marcelo on 19/09/17.
  */
 public class Main extends  Application{
+
     public static void main(String[] args){
-        Persistencia.getInstancia().startSsf();
-        //launch(args);
-        Result result = JUnitCore.runClasses(TesteLocais.class);
-        System.out.println(result.wasSuccessful());
+//        Persistencia.getInstancia().startSsf();
+        launch(args);
     }
 
 

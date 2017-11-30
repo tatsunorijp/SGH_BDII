@@ -1,26 +1,23 @@
 package JunitTestes;
 import junit.framework.TestCase;
-import org.hibernate.IdentifierLoadAccess;
-import org.hibernate.MultiIdentifierLoadAccess;
-import org.hibernate.Session;
-import org.hibernate.Transaction;
+import org.hibernate.*;
+import org.hibernate.cfg.Configuration;
 import org.hibernate.query.Query;
 import org.junit.Test;
+import org.junit.runner.JUnitCore;
+import org.junit.runner.Result;
 import sistemahotel.model.infraestrutura.Persistencia;
 import sistemahotel.model.local.Habitacao;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import sistemahotel.model.local.LocalDAO;
 
 import static org.junit.Assert.*;
 
 
 public class TesteLocais{
-    Persistencia persistencia = Persistencia.getInstancia();
-    Session session = persistencia.getSsf().openSession();
-
-    /*@Test
+    SessionFactory ssf = new Configuration().configure().buildSessionFactory();
+    Session session = ssf.openSession();
+    LocalDAO dao;
+    @Test
     public void testeCriaEntidade(){
         Habitacao habteste = new Habitacao();
         habteste.setCamasDeCasal("3");
@@ -28,16 +25,46 @@ public class TesteLocais{
         habteste.setNumero("1");
         habteste.setPreco("29");
         assertNull(habteste.getId());
-        persistencia.persistir(habteste);
-        assertNotNull(habteste.getId());
-    }*/
+
+        Transaction tx = session.beginTransaction();
+        session.save(habteste);
+        tx.commit();
+
+        System.out.println(habteste.getId());
+    }
 
     @Test
     public void testeAddBd(){
         Habitacao habteste = new Habitacao();
-        persistencia.persistir(habteste);
+
+        Transaction tx = session.beginTransaction();
+        session.save(habteste);
+        tx.commit();
+
         IdentifierLoadAccess<Habitacao> multiLoadAccess = session.byId(Habitacao.class);
-        Habitacao lhabteste = multiLoadAccess.load(habteste.getId());
-        assertNotNull(lhabteste);
+        Habitacao habtestebd = multiLoadAccess.load(habteste.getId());
+        System.out.println(habtestebd.getAtivo());
+        System.out.println(habtestebd.getId());
     }
+
+    @Test
+    public void testeExcluiBd(){
+        Habitacao habteste = new Habitacao();
+
+        Transaction tx = session.beginTransaction();
+        session.save(habteste);
+        tx.commit();
+
+        tx = session.beginTransaction();
+        habteste.setAtivo(false);
+        session.update(habteste);
+        tx.commit();
+
+
+        IdentifierLoadAccess<Habitacao> multiLoadAccess = session.byId(Habitacao.class);
+        Habitacao habtestebd = multiLoadAccess.load(habteste.getId());
+
+        System.out.println(habtestebd.getAtivo());
+    }
+
 }
