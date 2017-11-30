@@ -53,28 +53,26 @@ public class TesteProdutos extends TestCase{
     }
 
     @Test
-    public void testeExcluiHabBd(){
-        Habitacao habteste = new Habitacao();
+    public void testeExcluiProdutoBd(){
+        Produto produto = new Produto();
 
         Transaction tx = session.beginTransaction();
-        session.save(habteste);
+        session.save(produto);
         tx.commit();
 
-        IdentifierLoadAccess<Habitacao> multiLoadAccess = session.byId(Habitacao.class);
-        Habitacao habtestebd = multiLoadAccess.load(habteste.getId());
-
-        System.out.println(habtestebd.getAtivo());
+        IdentifierLoadAccess<Produto> multiLoadAccess = session.byId(Produto.class);
+        Produto produtoBd = multiLoadAccess.load(produto.getId());
 
         tx = session.beginTransaction();
-        habteste.setAtivo(false);
-        session.update(habteste);
+        produto.setAtivo(false);
+        session.update(produto);
         tx.commit();
 
 
-        multiLoadAccess = session.byId(Habitacao.class);
-        habtestebd = multiLoadAccess.load(habteste.getId());
+        multiLoadAccess = session.byId(Produto.class);
+        produtoBd = multiLoadAccess.load(produto.getId());
 
-        System.out.println(habtestebd.getAtivo());
+        assertFalse(produtoBd.getAtivo());
     }
 
 }
