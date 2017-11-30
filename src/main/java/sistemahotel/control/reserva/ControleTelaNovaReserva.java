@@ -1,12 +1,12 @@
 package sistemahotel.control.reserva;
 
+import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXTextField;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -48,9 +48,9 @@ public class ControleTelaNovaReserva implements Initializable{
     @FXML
     TableColumn tcLocalPreco;
     @FXML
-    DatePicker dpDataCheckIn;
+    JFXDatePicker dpDataCheckIn;
     @FXML
-    DatePicker dpDataCheckOut;
+    JFXDatePicker dpDataCheckOut;
 
     private Cliente cliente = null;
     private Local local = null;
@@ -74,8 +74,8 @@ public class ControleTelaNovaReserva implements Initializable{
 
         olLocais= FXCollections.observableList(RetornaListas.listHabitacao());
         tcLocalNumero.setCellValueFactory( new PropertyValueFactory<>("numero"));
-        tcLocalCamasSolteiro.setCellValueFactory( new PropertyValueFactory<>("tipo"));
-        tcLocalCamasCasal.setCellValueFactory( new PropertyValueFactory<>("tipo"));
+        tcLocalCamasSolteiro.setCellValueFactory( new PropertyValueFactory<>("camasDeSolteiro"));
+        tcLocalCamasCasal.setCellValueFactory( new PropertyValueFactory<>("camasDeCasal"));
         tcLocalPreco.setCellValueFactory( new PropertyValueFactory<>("preco"));
         tvLocais.setItems(FXCollections.observableList(olLocais));
         tvLocais.getSelectionModel().selectedItemProperty().addListener(
@@ -98,7 +98,7 @@ public class ControleTelaNovaReserva implements Initializable{
             dpDataCheckIn.getValue()  == null ||
             dpDataCheckOut.getValue() == null)  { janela.popupAviso("Campos inválidos", "Campos com * são obrigatórios");
         } else {
-            if ( InstanciaReservaDAO.checarIndisponibilidade(local, dpDataCheckIn.getValue(), dpDataCheckOut.getValue()) ) {
+            if ( ReservaDAO.checarIndisponibilidade(local, dpDataCheckIn.getValue(), dpDataCheckOut.getValue()) ) {
                 janela.popupAviso("Data inválida", "Esta habitação está ocupada nesta data");
             } else {
                 InstanciaReservaDAO.novaReserva(cliente, local, dpDataCheckIn.getValue(), dpDataCheckOut.getValue(), tfQtdhospede.getText());

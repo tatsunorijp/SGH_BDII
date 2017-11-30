@@ -26,6 +26,11 @@ public class Reserva {
     private String qtdhospede;
     private String nomeDoEvento;
 
+    @Override
+    public String toString(){
+        return cliente.getNome();
+    }
+
     public Long getId() {
         return id;
     }

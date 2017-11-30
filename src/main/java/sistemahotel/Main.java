@@ -37,7 +37,7 @@ public class Main extends  Application{
         primaryStage.initStyle(StageStyle.UNDECORATED);
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
-        Usuario admin = new Usuario();
+        //Usuario admin = new Usuario();
 
     }
 }

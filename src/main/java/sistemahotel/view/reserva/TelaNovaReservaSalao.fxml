@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.effect.DropShadow?>
@@ -19,7 +19,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="615.0" prefWidth="827.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sistemahotel.control.reserva.ControleTelaNovaReservaSalao">
+<AnchorPane prefHeight="615.0" prefWidth="827.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sistemahotel.control.reserva.ControleTelaNovaReservaSalao">
     <children>
         <HBox layoutX="211.0" layoutY="-128.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
@@ -64,7 +64,7 @@
                                     <columns>
                                         <TableColumn fx:id="tcLocalNumero" prefWidth="100.0" text="Numero" />
                                         <TableColumn fx:id="tcLocalLotacaoMax" prefWidth="113.0" text="Lotaçao Max." />
-                                        <TableColumn fx:id="tcLocalPreco" prefWidth="132.0" text="Preco" />
+                                        <TableColumn fx:id="tcLocalPreco" prefWidth="132.0" text="Preco (R$)" />
                                     </columns>
                                     <BorderPane.margin>
                                         <Insets bottom="25.0" right="15.0" top="5.0" />
@@ -93,7 +93,7 @@
                                         <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                             <children>
                                                 <ImageView fitHeight="29.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true" />
-                                                <JFXTextField fx:id="tfFiltroLocal" prefHeight="23.0" prefWidth="315.0" promptText="Procurar por tipo" />
+                                                <JFXTextField fx:id="tfFiltroLocal" prefHeight="23.0" prefWidth="315.0" promptText="Procurar por tipo" text="Procurar por numero" />
                                             </children>
                                         </HBox>
                                     </children>
@@ -128,8 +128,8 @@
                                             <GridPane.margin>
                                                 <Insets right="20.0" />
                                             </GridPane.margin></JFXTextField>
-                                        <DatePicker fx:id="dpDataCheckIn" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                                        <DatePicker fx:id="dpDataCheckOut" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                              <JFXDatePicker fx:id="dpDataCheckIn" prefHeight="26.0" prefWidth="238.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <JFXDatePicker fx:id="dpDataCheckOut" prefHeight="26.0" prefWidth="241.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
                                     </children>
                                 </GridPane>
                             </bottom>

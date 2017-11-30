@@ -10,7 +10,7 @@ import javax.persistence.Id;
 
 @Entity
 @Where(clause = "ativo = 1")
-public abstract class Local {
+public abstract class Local implements Comparable<Local>{
 
     @Id
     @GeneratedValue
@@ -24,7 +24,12 @@ public abstract class Local {
 
     @Override
     public String toString() {
-        return getTipo();
+        return getNumero();
+    }
+
+    @Override
+    public int compareTo(Local local) {
+        return numero.compareTo(local.numero);
     }
 
     public Long getId() {
