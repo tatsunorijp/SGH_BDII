@@ -22,7 +22,7 @@
                   <Image url="@../model/imagens/login/Dark_Material_Design_wallpaper.jpg" />
                </image>
             </ImageView>
-            <Text fill="WHITE" layoutX="71.0" layoutY="126.626953125" strokeType="OUTSIDE" strokeWidth="0.0" text="Trabalhinho de ISS">
+            <Text fill="WHITE" layoutX="71.0" layoutY="126.626953125" strokeType="OUTSIDE" strokeWidth="0.0" text="SGH">
                <font>
                   <Font size="30.0" />
                </font>
@@ -30,11 +30,11 @@
                   <DropShadow height="60.0" radius="29.5" width="60.0" />
                </effect>
             </Text>
-            <Text fill="WHITE" layoutX="75.0" layoutY="150.05078125" strokeType="OUTSIDE" strokeWidth="0.0" text="Onde só queremos passar de">
+            <Text fill="WHITE" layoutX="75.0" layoutY="150.05078125" strokeType="OUTSIDE" strokeWidth="0.0">
                <effect>
                   <DropShadow height="60.0" radius="29.5" width="60.0" />
                </effect></Text>
-            <Text fill="WHITE" layoutX="76.0" layoutY="167.05078125" strokeType="OUTSIDE" strokeWidth="0.0" text="boas na matéria">
+            <Text fill="WHITE" layoutX="76.0" layoutY="167.05078125" strokeType="OUTSIDE" strokeWidth="0.0">
                <effect>
                   <DropShadow height="60.0" radius="29.5" width="60.0" />
                </effect></Text>
@@ -46,11 +46,11 @@
       </Pane>
       <AnchorPane layoutX="437.0" layoutY="34.0" opacity="0.9" prefHeight="414.0" prefWidth="250.0" style="-fx-background-color: #ab0000;" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="30.0">
          <children>
-            <JFXTextField fx:id="tfUser" focusColor="#ffcbcb" labelFloat="true" layoutX="31.0" layoutY="236.0" prefHeight="25.0" prefWidth="192.0" promptText="User" unFocusColor="WHITE" AnchorPane.bottomAnchor="159.0" AnchorPane.leftAnchor="31.0" AnchorPane.rightAnchor="31.0">
+            <JFXTextField fx:id="tfUser" focusColor="#ffcbcb" labelFloat="true" layoutX="31.0" layoutY="236.0" onAction="#iniciar" prefHeight="25.0" prefWidth="192.0" promptText="Usuario" unFocusColor="WHITE" AnchorPane.bottomAnchor="159.0" AnchorPane.leftAnchor="31.0" AnchorPane.rightAnchor="31.0">
                <effect>
                   <ColorAdjust brightness="1.0" />
                </effect></JFXTextField>
-            <JFXPasswordField fx:id="tfPassword" focusColor="#ff6868" layoutX="31.0" layoutY="275.0" prefHeight="25.0" prefWidth="192.0" promptText="Password" unFocusColor="WHITE" AnchorPane.bottomAnchor="120.0" AnchorPane.leftAnchor="31.0" AnchorPane.rightAnchor="31.0">
+            <JFXPasswordField fx:id="tfPassword" focusColor="#ff6868" layoutX="31.0" layoutY="275.0" onAction="#iniciar" prefHeight="25.0" prefWidth="192.0" promptText="Senha" unFocusColor="WHITE" AnchorPane.bottomAnchor="120.0" AnchorPane.leftAnchor="31.0" AnchorPane.rightAnchor="31.0">
                <effect>
                   <ColorAdjust brightness="1.0" />
                </effect></JFXPasswordField>

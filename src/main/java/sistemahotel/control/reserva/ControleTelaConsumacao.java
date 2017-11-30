@@ -84,14 +84,19 @@ public class ControleTelaConsumacao implements Initializable{
 
     @FXML
     void btConfirmarActionHandler(ActionEvent event) {
+        if( (!util.apenasNumeros(tfQtd.getText())) || (tfQtd.getText().equals("")) ){
+            controleTelas.popupAviso("Campo inválido", "Digite corretamente a quantidade do produto");
+        }else{
+            a = controleTelas.continuarOuCancelar("Menssagem de confirmação",
+                    "Você esta adicionando uma consumação!",
+                    "Você realmente deseja adicionar o produto?");
+            if (a) {
 
-        a = controleTelas.continuarOuCancelar("Menssagem de confirmação",
-                "Você adicionando uma consumação!",
-                "Você realmente deseja adicionar o produto?");
-        if (a) {
-            consumacaoDAO.addConsumo(produtoMain, tfQtd.getText(), reservaMain);
-            controleTelas.notificacao("Consumo cadastro", "Novo consumo adicionado a reserva");
-            controleTelas.fechaJanela(event);
+
+                consumacaoDAO.addConsumo(produtoMain, tfQtd.getText(), reservaMain);
+                controleTelas.notificacao("Consumo cadastro", "Novo consumo adicionado a reserva");
+                controleTelas.fechaJanela(event);
+            }
         }
 
     }

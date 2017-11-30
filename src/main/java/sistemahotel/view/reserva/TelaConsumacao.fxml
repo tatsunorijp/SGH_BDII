@@ -120,7 +120,7 @@
                                                 <Insets />
                                             </GridPane.margin>
                                         </Text>
-                                        <JFXTextField fx:id="tfQtd" prefHeight="23.0" prefWidth="221.0" promptText="Ex: 10" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                        <JFXTextField fx:id="tfQtd" focusColor="#ff6767" prefHeight="23.0" prefWidth="221.0" promptText="Ex: 10" unFocusColor="#ab0000" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                             <GridPane.margin>
                                                 <Insets right="20.0" />
                                             </GridPane.margin></JFXTextField>
