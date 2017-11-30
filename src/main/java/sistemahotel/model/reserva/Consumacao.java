@@ -20,7 +20,7 @@ public class Consumacao implements Comparable<Consumacao>{
     private String quantidade;
     @ManyToOne
     private Reserva reserva; //chave
-
+    private Boolean ativo = true;
     @Override
     public String toString(){
         return this.produto;
@@ -29,6 +29,14 @@ public class Consumacao implements Comparable<Consumacao>{
     @Override
     public int compareTo(Consumacao consumacao) {
         return produto.compareTo(consumacao.getProduto());
+    }
+
+    public Boolean getAtivo() {
+        return ativo;
+    }
+
+    public void setAtivo(Boolean ativo) {
+        this.ativo = ativo;
     }
 
     public Long getId() {

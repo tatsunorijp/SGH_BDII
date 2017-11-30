@@ -1,12 +1,17 @@
 package sistemahotel.model.reserva;
 
+import org.hibernate.annotations.Where;
 import sistemahotel.model.infraestrutura.Persistencia;
 import sistemahotel.model.produto.Produto;
 import sistemahotel.model.produto.ProdutoDAO;
 
+import javax.persistence.Entity;
+
 /**
  * Created by tatsunori on 30/11/17.
  */
+@Entity
+@Where(clause = "ativo = 1")
 public class ConsumacaoDAO {
     private static ConsumacaoDAO instancia = null;
     private Persistencia persistencia = Persistencia.getInstancia();
@@ -22,7 +27,7 @@ public class ConsumacaoDAO {
         return instancia;
     }
 
-    public boolean addConsumo(Produto produto, String quantidade, Reserva reserva) {
+    public Boolean addConsumo(Produto produto, String quantidade, Reserva reserva) {
         int qtd = Integer.valueOf(quantidade);
         int estoque = Integer.valueOf(produto.getQuantidade());
         int resultado = estoque - qtd;
@@ -42,6 +47,11 @@ public class ConsumacaoDAO {
         }
 
         return false;
+    }
+
+    public void deleteConsumacao(Consumacao consumacao){
+        consumacao.setAtivo(false);
+        Persistencia.getInstancia().alterar(consumacao);
     }
 
 

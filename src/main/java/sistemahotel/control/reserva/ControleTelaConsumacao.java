@@ -100,7 +100,7 @@ public class ControleTelaConsumacao implements Initializable{
                     controleTelas.notificacao("Consumo salvo", "Novo consumo adicionado a reserva");
                     controleTelas.fechaJanela(event);
                 }else{
-                    controleTelas.popupAviso("Operação não efetuada", "Não há estoque suficiente");
+                    controleTelas.popupAviso("Operação não efetuada", "Estoque insuficiente para a consumação");
                 }
             }
         }
