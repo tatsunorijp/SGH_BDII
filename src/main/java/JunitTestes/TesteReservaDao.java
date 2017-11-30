@@ -55,6 +55,8 @@ public class TesteReservaDao{
 
         Cliente cliente = new Cliente();
         Habitacao hab = new Habitacao();
+        Persistencia.getInstancia().persistir(cliente);
+        Persistencia.getInstancia().persistir(hab);
         LocalDate in = LocalDate.now();
         LocalDate out = LocalDate.now().plusDays(5);
         reservadao.novaReserva(cliente, hab, in, out,"5");
@@ -70,9 +72,12 @@ public class TesteReservaDao{
 
     @Test
     public void cancelarReserva() throws Exception {
+        Persistencia.getInstancia().startSsf();
 
         Cliente cliente = new Cliente();
         Habitacao hab = new Habitacao();
+        Persistencia.getInstancia().persistir(cliente);
+        Persistencia.getInstancia().persistir(hab);
         LocalDate in = LocalDate.now();
         LocalDate out = LocalDate.now().plusDays(1);
 
@@ -87,9 +92,12 @@ public class TesteReservaDao{
 
     @Test
     public void fazerCheckIn() throws Exception {
+        Persistencia.getInstancia().startSsf();
 
         Cliente cliente = new Cliente();
         Habitacao hab = new Habitacao();
+        Persistencia.getInstancia().persistir(cliente);
+        Persistencia.getInstancia().persistir(hab);
         LocalDate in = LocalDate.now();
         LocalDate out = LocalDate.now().plusDays(1);
 
@@ -104,9 +112,12 @@ public class TesteReservaDao{
 
     @Test
     public void fazerCheckOut() throws Exception {
+        Persistencia.getInstancia().startSsf();
 
         Cliente cliente = new Cliente();
         Habitacao hab = new Habitacao();
+        Persistencia.getInstancia().persistir(cliente);
+        Persistencia.getInstancia().persistir(hab);
         LocalDate in = LocalDate.now();
         LocalDate out = LocalDate.now().plusDays(1);
 
@@ -122,8 +133,13 @@ public class TesteReservaDao{
     @Test
     public void estenderReserva() throws Exception {
 
+        Persistencia.getInstancia().startSsf();
+
+
         Cliente cliente = new Cliente();
         Habitacao hab = new Habitacao();
+        Persistencia.getInstancia().persistir(cliente);
+        Persistencia.getInstancia().persistir(hab);
         LocalDate in = LocalDate.now();
         LocalDate out = LocalDate.now().plusDays(1);
 
