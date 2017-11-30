@@ -2,6 +2,8 @@ package sistemahotel.control.local;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
@@ -115,6 +117,43 @@ public class ControleTelaHabitacao implements Initializable {
         SortedList<Habitacao> sortedData = new SortedList<>(filteredData);
         sortedData.comparatorProperty().bind(tvHabitacao.comparatorProperty());
         tvHabitacao.setItems(sortedData);
+
+        tfNumero.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue,
+                                String newValue) {
+                if (!newValue.matches("\\d*")) {
+                    tfNumero.setText(newValue.replaceAll("[^\\d]", ""));
+                }
+            }
+        });
+        tfPreco.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue,
+                                String newValue) {
+                if (!newValue.matches("\\d*")) {
+                    tfPreco.setText(newValue.replaceAll("[^\\d]", ""));
+                }
+            }
+        });
+        tfCamaCasal.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue,
+                                String newValue) {
+                if (!newValue.matches("\\d*")) {
+                    tfCamaCasal.setText(newValue.replaceAll("[^\\d]", ""));
+                }
+            }
+        });
+        tfCamaSolteiro.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue,
+                                String newValue) {
+                if (!newValue.matches("\\d*")) {
+                    tfCamaSolteiro.setText(newValue.replaceAll("[^\\d]", ""));
+                }
+            }
+        });
     }
 
     public void selecaoDeItens(Habitacao habitacao){

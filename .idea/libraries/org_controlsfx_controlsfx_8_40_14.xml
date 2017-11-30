@@ -2,7 +2,7 @@
   <library name="org.controlsfx:controlsfx:8.40.14" type="repository">
     <properties maven-id="org.controlsfx:controlsfx:8.40.14" />
     <CLASSES>
-      <root url="jar://$USER_HOME$/Downloads/junit-4.12.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/controlsfx-8.40.14.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
