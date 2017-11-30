@@ -3,6 +3,8 @@ package sistemahotel.control.local;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXTextField;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -51,7 +53,7 @@ public class ControleNovoSalao implements Initializable{
             controleTelas.popupAviso("Campos inválidos", "Campos com * são obrigatórios");
         } else {
             localdao.NovoSalao(tfNumero.getText(), tfMaximo.getText(), taAdicionais.getText(), tfPreco.getText());
-            controleTelas.notificacao("Cadastro efetuado", "novo produto adicionado ao banco de dados");
+            controleTelas.notificacao("Cadastro efetuado", "Novo salao adicionado ao banco de dados");
             controleTelas.fechaJanela(event);
         }
     }
@@ -72,6 +74,34 @@ public class ControleNovoSalao implements Initializable{
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        tfNumero.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue,
+                                String newValue) {
+                if (!newValue.matches("\\d*")) {
+                    tfNumero.setText(newValue.replaceAll("[^\\d]", ""));
+                }
+            }
+        });
 
+        tfPreco.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue,
+                                String newValue) {
+                if (!newValue.matches("\\d*")) {
+                    tfPreco.setText(newValue.replaceAll("[^\\d]", ""));
+                }
+            }
+        });
+
+        tfMaximo.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue,
+                                String newValue) {
+                if (!newValue.matches("\\d*")) {
+                    tfMaximo.setText(newValue.replaceAll("[^\\d]", ""));
+                }
+            }
+        });
     }
 }

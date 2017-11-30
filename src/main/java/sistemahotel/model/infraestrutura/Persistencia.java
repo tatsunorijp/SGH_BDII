@@ -4,6 +4,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
+import sistemahotel.model.local.Habitacao;
 
 public class Persistencia {
 
@@ -48,6 +49,7 @@ public class Persistencia {
         tx.commit();
         session.close();
     }
+
 
     public static SessionFactory getSsf() {
         return ssf;

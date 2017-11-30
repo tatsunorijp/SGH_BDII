@@ -2,6 +2,8 @@ package sistemahotel.control.local;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
@@ -22,7 +24,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class ControleTelaSalaoFestas implements Initializable{
+public class ControleTelaSalaoEventos implements Initializable{
     @FXML
     TableView tvSalao;
     @FXML
@@ -110,6 +112,35 @@ public class ControleTelaSalaoFestas implements Initializable{
         SortedList<SalaoFestas> sortedData = new SortedList<>(filteredData);
         sortedData.comparatorProperty().bind(tvSalao.comparatorProperty());
         tvSalao.setItems(sortedData);
+        tfNumero.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue,
+                                String newValue) {
+                if (!newValue.matches("\\d*")) {
+                    tfNumero.setText(newValue.replaceAll("[^\\d]", ""));
+                }
+            }
+        });
+
+        tfPreco.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue,
+                                String newValue) {
+                if (!newValue.matches("\\d*")) {
+                    tfPreco.setText(newValue.replaceAll("[^\\d]", ""));
+                }
+            }
+        });
+
+        tfMaxPessoas.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue,
+                                String newValue) {
+                if (!newValue.matches("\\d*")) {
+                    tfMaxPessoas.setText(newValue.replaceAll("[^\\d]", ""));
+                }
+            }
+        });
 
     }
 
