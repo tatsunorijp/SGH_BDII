@@ -41,6 +41,9 @@ public class ControleTelaProdutos implements Initializable {
 
     @FXML
     private JFXTextField tfAlerta;
+
+    @FXML
+            private JFXTextField tfMovEstoque;
     boolean a;
     Produto produtoMain;
     ProdutoDAO produtoDAO = ProdutoDAO.getInstancia();
@@ -108,6 +111,19 @@ public class ControleTelaProdutos implements Initializable {
             produtoDAO.deletar(produtoMain);
             list.remove(produtoMain);
             tvProdutos.refresh();
+        }
+    }
+
+    public void btMovimentarEstoqueActionHandler(ActionEvent event){
+        a = controleTelas.continuarOuCancelar("Menssagem de confirmação",
+                "Você está adicionando em estoque!",
+                "Você realmente deseja executar esta ação?");
+        if (a) {
+            produtoDAO.movimentarEstoque(tfMovEstoque.getText(), produtoMain);
+            tfMovEstoque.setText("");
+            list = FXCollections.observableList(pegaListas.listProduto());
+            tvProdutos.setItems(FXCollections.observableList(list));
+
         }
     }
     public void selecaoDeItens(Produto produto){
