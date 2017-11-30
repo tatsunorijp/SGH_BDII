@@ -9,6 +9,7 @@ import sistemahotel.model.local.Local;
 import sistemahotel.model.local.SalaoFestas;
 import sistemahotel.model.pessoa.*;
 import sistemahotel.model.produto.Produto;
+import sistemahotel.model.reserva.Consumacao;
 import sistemahotel.model.reserva.Reserva;
 
 
@@ -120,6 +121,28 @@ public class RetornaListas{
         }
         return pessoas;
     }
+    public static List<Consumacao> listConsumacao(Reserva reserva) {
+        ssf = persistencia.getSsf();
+        Session session = ssf.openSession();
+        Transaction transaction = null;
+
+        long auxid = reserva.getId();
+
+        List<Consumacao> consumacao = null;
+
+        try {
+            transaction = session.beginTransaction();
+            consumacao = session.createQuery("FROM Consumacao WHERE reserva.id = :id").setParameter("id", auxid).list();
+            transaction.commit();
+        } catch (HibernateException e) {
+            if (transaction != null) transaction.rollback();
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+        return consumacao;
+    }
+
 
     public static List<Cliente> listClientes() {
         ssf = persistencia.getSsf();

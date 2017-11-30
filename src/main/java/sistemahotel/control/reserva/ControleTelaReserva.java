@@ -227,7 +227,26 @@ public class ControleTelaReserva implements Initializable{
     }
 
     public void btConsumacaoActionHandler(ActionEvent event) throws IOException{
-        janela.novaJanelaSobreposta("/sistemahotel/view/reserva/TelaConsumacao.fxml",event);
+        Stage stage = new Stage();
+        stage.initStyle(StageStyle.UNDECORATED);
+        stage.initModality(Modality.APPLICATION_MODAL);
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("/sistemahotel/view/reserva/TelaConsumacao.fxml"));
+        Parent root = null;
+        try {
+            root = loader.load();
+        } catch (IOException e1) {
+            e1.printStackTrace();
+        }
+        Scene scene = new Scene(root);
+        scene.getStylesheets().add("TableViewCSS.css");
+        stage.setScene(scene);
+
+        ControleTelaConsumacao controller = loader.getController();
+        controller.setReserva(reservaMain);
+
+        stage.show();
+//        janela.novaJanelaSobreposta("/sistemahotel/view/reserva/TelaConsumacao.fxml",event);
     }
 
     public void btCancelaReservaActionHandler(ActionEvent event) throws IOException{

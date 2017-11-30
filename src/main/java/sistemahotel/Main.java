@@ -22,22 +22,18 @@ import static sistemahotel.model.infraestrutura.RetornaListas.persistencia;
 public class Main extends  Application{
     public static void main(String[] args){
         Persistencia.getInstancia().startSsf();
-        //launch(args);
-        Result result = JUnitCore.runClasses(TesteLocais.class);
-        System.out.println(result.wasSuccessful());
+        launch(args);
     }
 
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("/sistemahotel/view/Login.fxml"));
         Parent root = loader.load();
         primaryStage.initStyle(StageStyle.UNDECORATED);
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
-        //Usuario admin = new Usuario();
 
     }
 }
