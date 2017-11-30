@@ -79,4 +79,12 @@ public abstract class Local implements Comparable<Local>{
     public void setPreco(String preco) {
         this.preco = preco;
     }
+
+    public Boolean getAtivo() {
+        return ativo;
+    }
+
+    public void setAtivo(Boolean ativo) {
+        this.ativo = ativo;
+    }
 }

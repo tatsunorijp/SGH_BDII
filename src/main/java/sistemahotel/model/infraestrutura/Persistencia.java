@@ -50,7 +50,6 @@ public class Persistencia {
         session.close();
     }
 
-
     public static SessionFactory getSsf() {
         return ssf;
     }
