@@ -1,10 +1,16 @@
 package JunitTestes;
 import junit.framework.TestCase;
+import org.hibernate.IdentifierLoadAccess;
+import org.hibernate.MultiIdentifierLoadAccess;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 import org.junit.Test;
 import sistemahotel.model.infraestrutura.Persistencia;
 import sistemahotel.model.local.Habitacao;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.Assert.*;
@@ -15,7 +21,7 @@ public class TesteLocais{
     Session session = persistencia.getSsf().openSession();
 
     /*@Test
-    public void testeCria(){
+    public void testeCriaEntidade(){
         Habitacao habteste = new Habitacao();
         habteste.setCamasDeCasal("3");
         habteste.setCamasDeSolteiro("2");
@@ -27,12 +33,11 @@ public class TesteLocais{
     }*/
 
     @Test
-    public void testeRead(){
+    public void testeAddBd(){
         Habitacao habteste = new Habitacao();
-        Long idhab = habteste.getId();
         persistencia.persistir(habteste);
-        System.out.println(idhab);
-        List lhabteste = session.createQuery("FROM Habitacao WHERE id = :idhab").list();
+        IdentifierLoadAccess<Habitacao> multiLoadAccess = session.byId(Habitacao.class);
+        Habitacao lhabteste = multiLoadAccess.load(habteste.getId());
         assertNotNull(lhabteste);
     }
 }
