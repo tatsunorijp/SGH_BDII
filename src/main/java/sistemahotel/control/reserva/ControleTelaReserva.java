@@ -9,6 +9,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -18,6 +19,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.event.ActionEvent;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -49,7 +51,9 @@ public class ControleTelaReserva implements Initializable{
     @FXML
     TableColumn tcCliente;
     @FXML
-    TableColumn tcLocal;
+    TableColumn tcNumeroLocal;
+    @FXML
+    TableColumn tcTipoLocal;
     @FXML
     TableColumn tcQtdhospede;
     @FXML
@@ -65,7 +69,7 @@ public class ControleTelaReserva implements Initializable{
     @FXML
     SpreadsheetView svReservas;
 
-    Reserva reservaMain;
+    Reserva reservaMain = null;
 
     private ObservableList olReservas;
     private ReservaDAO InstanciaReservaDAO = ReservaDAO.getInstancia();
@@ -83,9 +87,10 @@ public class ControleTelaReserva implements Initializable{
         Collections.sort(auxlist);
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM");
         olReservas = FXCollections.observableList(auxlist);
+        tcTipoLocal.setCellValueFactory((Callback<TableColumn.CellDataFeatures<Reserva, String>, ObservableValue<String>>) r -> new SimpleStringProperty(r.getValue().getLocal().getTipo()));
         tcStatus.setCellValueFactory( new PropertyValueFactory<>("status"));
         tcCliente.setCellValueFactory((Callback<TableColumn.CellDataFeatures<Reserva, String>, ObservableValue<String>>) r -> new SimpleStringProperty(r.getValue().getCliente().getNome()));
-        tcLocal.setCellValueFactory((Callback<TableColumn.CellDataFeatures<Reserva, String>, ObservableValue<String>>) r -> new SimpleStringProperty(r.getValue().getLocal().getNumero()));
+        tcNumeroLocal.setCellValueFactory((Callback<TableColumn.CellDataFeatures<Reserva, String>, ObservableValue<String>>) r -> new SimpleStringProperty(r.getValue().getLocal().getNumero()));
         tcQtdhospede.setCellValueFactory( new PropertyValueFactory<>("qtdhospede"));
         tcDataCheckIn.setCellValueFactory(new PropertyValueFactory<>("dataCheckIn"));
         tcDataCheckOut.setCellValueFactory(new PropertyValueFactory<>("dataCheckOut"));
@@ -94,6 +99,19 @@ public class ControleTelaReserva implements Initializable{
                 (observable, oldvalue, newValue) -> selecaoReserva((Reserva) newValue)
         );
         setUpFilter(olReservas, tfFiltro, tvReservas);
+
+        tvReservas.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent click) {
+                if(click.getClickCount() == 2){
+                    if(reservaMain.getLocal().getTipo() == "Habitacao"){
+                        //janela.novaJanelaSobreposta("/sistemahotel/view/reserva/TelaInformacoesHab.fxml",event);
+                    } else {
+                        //janela.novaJanelaSobreposta("/sistemahotel/view/reserva/TelaInformacoesSalao.fxml",event);
+                    }
+                }
+            }
+        });
 
     }
 
@@ -171,7 +189,7 @@ public class ControleTelaReserva implements Initializable{
 
     public void btCheckInActionHandler(ActionEvent event) throws IOException{
 
-        System.out.println(reservaMain.getStatus());
+        if(reservaMain == null) return;
 
         if (!Objects.equals(reservaMain.getStatus(), "Agendada"))  {
             janela.popupAviso("Ação inválida", "A reserva deve estar 'Agendada' para que se possa realizar esta ação.");
@@ -187,6 +205,8 @@ public class ControleTelaReserva implements Initializable{
     }
 
     public void btCheckOutActionHandler(ActionEvent event) throws IOException{
+
+        if(reservaMain == null) return;
 
         if (!Objects.equals(reservaMain.getStatus(), "Em andamento"))  {
             janela.popupAviso("Ação inválida", "A reserva deve estar 'Em andamento' para que se possa realizar esta ação.");
@@ -217,6 +237,8 @@ public class ControleTelaReserva implements Initializable{
     }
 
     public void btEstenderReservaActionHandler(ActionEvent event) throws IOException{
+
+        if(reservaMain == null) return;
 
         if (!Objects.equals(reservaMain.getStatus(), "Agendada") && !Objects.equals(reservaMain.getStatus(), "Em andamento"))  {
             janela.popupAviso("Ação inválida", "A reserva deve estar 'Agendada' ou 'Em andamento' para que se possa realizar esta ação.");
@@ -272,6 +294,8 @@ public class ControleTelaReserva implements Initializable{
 
     public void btConsumacaoActionHandler(ActionEvent event) throws IOException{
 
+        if(reservaMain == null) return;
+
         Stage stage = new Stage();
         stage.initStyle(StageStyle.UNDECORATED);
         stage.initModality(Modality.APPLICATION_MODAL);
@@ -295,6 +319,8 @@ public class ControleTelaReserva implements Initializable{
     }
 
     public void btCancelaReservaActionHandler(ActionEvent event) throws IOException{
+
+        if(reservaMain == null) return;
         boolean msg = janela.continuarOuCancelar("Menssagem de confirmação",
                 "Você está cancelando uma reserva!",
                 "Você realmente deseja cancelar esta reserva?");

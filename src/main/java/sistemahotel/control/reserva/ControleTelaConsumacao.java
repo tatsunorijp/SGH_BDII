@@ -84,6 +84,9 @@ public class ControleTelaConsumacao implements Initializable{
 
     @FXML
     void btConfirmarActionHandler(ActionEvent event) {
+
+        if(produtoMain == null) return;
+
         if( (!util.apenasNumeros(tfQtd.getText())) || (tfQtd.getText().equals("")) ){
             controleTelas.popupAviso("Campo inválido", "Digite corretamente a quantidade do produto");
         }else{

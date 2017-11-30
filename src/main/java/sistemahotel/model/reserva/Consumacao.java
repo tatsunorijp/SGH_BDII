@@ -9,7 +9,7 @@ import javax.persistence.ManyToOne;
  * Created by tatsunori on 30/11/17.
  */
 @Entity
-public class Consumacao {
+public class Consumacao implements Comparable<Consumacao>{
 
     @Id
     @GeneratedValue
@@ -20,6 +20,16 @@ public class Consumacao {
     private String quantidade;
     @ManyToOne
     private Reserva reserva; //chave
+
+    @Override
+    public String toString(){
+        return this.produto;
+    }
+
+    @Override
+    public int compareTo(Consumacao consumacao) {
+        return produto.compareTo(consumacao.getProduto());
+    }
 
     public Long getId() {
         return id;

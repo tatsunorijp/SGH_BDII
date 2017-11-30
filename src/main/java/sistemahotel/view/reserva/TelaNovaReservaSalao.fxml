@@ -128,8 +128,8 @@
                                             <GridPane.margin>
                                                 <Insets right="20.0" />
                                             </GridPane.margin></JFXTextField>
-                              <JFXDatePicker fx:id="dpDataCheckIn" prefHeight="26.0" prefWidth="238.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                              <JFXDatePicker fx:id="dpDataCheckOut" prefHeight="26.0" prefWidth="241.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                              <JFXDatePicker fx:id="dpDataCheckIn" defaultColor="#9d1818" prefHeight="26.0" prefWidth="238.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <JFXDatePicker fx:id="dpDataCheckOut" defaultColor="#9d1818" prefHeight="26.0" prefWidth="241.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
                                     </children>
                                 </GridPane>
                             </bottom>
