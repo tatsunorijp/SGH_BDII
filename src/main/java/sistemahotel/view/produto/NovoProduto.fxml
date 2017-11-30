@@ -59,7 +59,7 @@
                         <JFXTextField fx:id="tfNome" focusColor="#ff6767" prefHeight="26.0" prefWidth="93.0" promptText="*Nome" unFocusColor="#ab0000" />
                         <JFXTextField fx:id="tfPreco" focusColor="#ff6767" promptText="*Preco (Ex: 3.99)" unFocusColor="#ab0000" GridPane.rowIndex="2" />
                         <JFXTextField fx:id="tfQuantidadeInicial" focusColor="#ff6767" promptText="*Quantidade inicial" unFocusColor="#ab0000" GridPane.rowIndex="4" />
-                        <JFXTextField fx:id="tfAlertaDeEstoque" focusColor="#ff6767" promptText="Alerta de estoque" unFocusColor="#ab0000" GridPane.rowIndex="6" />
+                        <JFXTextField fx:id="tfAlertaDeEstoque" focusColor="#ff6767" promptText="*Alerta de estoque" unFocusColor="#ab0000" GridPane.rowIndex="6" />
                      </children>
                   </GridPane>
                   <JFXButton fx:id="btLimpar" layoutX="448.0" layoutY="355.0" onAction="#btLimparActionHandler" style="-fx-background-color: #ab0000;" text="Limpar" textFill="WHITE" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="23.0" />
