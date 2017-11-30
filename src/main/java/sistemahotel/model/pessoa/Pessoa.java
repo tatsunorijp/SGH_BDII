@@ -9,7 +9,7 @@ import java.time.LocalDate;
 
 @Entity
 @Where(clause = "ativo = 1")
-public abstract class Pessoa {
+public abstract class Pessoa implements Comparable<Pessoa>{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     protected Long id;
@@ -26,6 +26,11 @@ public abstract class Pessoa {
     @Override
     public String toString() {
         return getNome();
+    }
+
+    @Override
+    public int compareTo(Pessoa pessoa) {
+        return nome.compareTo(pessoa.getNome());
     }
 
     public Long getId() {

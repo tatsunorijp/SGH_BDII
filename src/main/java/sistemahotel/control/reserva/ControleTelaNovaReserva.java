@@ -12,11 +12,14 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import sistemahotel.control.ControleTelas;
 import sistemahotel.model.infraestrutura.RetornaListas;
+import sistemahotel.model.local.Habitacao;
 import sistemahotel.model.local.Local;
 import sistemahotel.model.pessoa.Cliente;
 import sistemahotel.model.reserva.ReservaDAO;
 
 import java.net.URL;
+import java.util.Collections;
+import java.util.List;
 import java.util.ResourceBundle;
 
 import static sistemahotel.model.infraestrutura.Util.setUpFilter;
@@ -62,7 +65,9 @@ public class ControleTelaNovaReserva implements Initializable{
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        olClientes= FXCollections.observableList(RetornaListas.listClientes());
+        List<Cliente> auxcliente = RetornaListas.listClientes();
+        Collections.sort(auxcliente);
+        olClientes= FXCollections.observableList(auxcliente);
         tcClienteNome.setCellValueFactory( new PropertyValueFactory<>("nome"));
         tcClienteCPF.setCellValueFactory( new PropertyValueFactory<>("CPF"));
         tvClientes.setItems(FXCollections.observableList(olClientes));
@@ -71,8 +76,9 @@ public class ControleTelaNovaReserva implements Initializable{
         );
         setUpFilter(olClientes, tfFiltroCliente, tvClientes);
 
-
-        olLocais= FXCollections.observableList(RetornaListas.listHabitacao());
+        List<Habitacao> auxlocal = RetornaListas.listHabitacao();
+        Collections.sort(auxlocal);
+        olLocais= FXCollections.observableList(auxlocal);
         tcLocalNumero.setCellValueFactory( new PropertyValueFactory<>("numero"));
         tcLocalCamasSolteiro.setCellValueFactory( new PropertyValueFactory<>("camasDeSolteiro"));
         tcLocalCamasCasal.setCellValueFactory( new PropertyValueFactory<>("camasDeCasal"));
@@ -103,7 +109,7 @@ public class ControleTelaNovaReserva implements Initializable{
             } else {
                 InstanciaReservaDAO.novaReserva(cliente, local, dpDataCheckIn.getValue(), dpDataCheckOut.getValue(), tfQtdhospede.getText());
                 janela.notificacao("Reserva efetuada", "Nova reserva agendada no banco de dados");
-                janela.novaJanela("/sistemahotel/view/telaprincipal/TelaPrincipal.fxml", event);
+                janela.fechaJanela(event);
             }
         }
     }
