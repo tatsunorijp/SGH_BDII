@@ -78,12 +78,13 @@
                <top>
                       <TableView fx:id="tvReservas" prefHeight="311.0" prefWidth="944.0" stylesheets="@../../../../resources/TableViewCSS.css" BorderPane.alignment="CENTER">
                           <columns>
-                              <TableColumn fx:id="tcStatus" prefWidth="172.0" text="Status" />
-                              <TableColumn fx:id="tcCliente" prefWidth="340.0" text="Cliente" />
-                        <TableColumn fx:id="tcLocal" prefWidth="140.0" text="Local" />
-                        <TableColumn fx:id="tcQtdhospede" prefWidth="124.0" text="Qtd Pessoas" />
-                        <TableColumn fx:id="tcDataCheckIn" prefWidth="175.0" text="Data Check-in" />
-                        <TableColumn fx:id="tcDataCheckOut" prefWidth="180.0" text="Data Check-out" />
+                        <TableColumn fx:id="tcTipoLocal" prefWidth="149.0" text="TIpo do local" />
+                              <TableColumn fx:id="tcStatus" prefWidth="142.0" text="Status" />
+                              <TableColumn fx:id="tcCliente" prefWidth="325.0" text="Cliente" />
+                        <TableColumn fx:id="tcNumeroLocal" prefWidth="109.0" text="# do Local" />
+                        <TableColumn fx:id="tcQtdhospede" minWidth="0.0" prefWidth="117.0" text="Qtd Pessoas" />
+                        <TableColumn fx:id="tcDataCheckIn" prefWidth="141.0" text="Data Check-in" />
+                        <TableColumn fx:id="tcDataCheckOut" prefWidth="148.0" text="Data Check-out" />
                           </columns>
                       </TableView>
                </top>
