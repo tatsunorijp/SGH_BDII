@@ -168,7 +168,7 @@ public class ControleTelaReserva implements Initializable{
         for(int i = 0; i< reservaGrid.getRowCount(); i++){
             for(int j = 0; j< reservaGrid.getRows().get(i).size(); j++){
 
-                celldate = dpDataInicio.getValue().plusDays(i+j);
+                celldate = dpDataInicio.getValue().plusDays(j);
 
                 if(ReservaDAO.checarIndisponibilidade(listlocais.get(i), celldate, celldate)){
                     reservaGrid.getRows().get(i).get(j).setStyle("-fx-background-color: blue");
