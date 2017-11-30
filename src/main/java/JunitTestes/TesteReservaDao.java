@@ -1,5 +1,6 @@
 package JunitTestes;
 
+import junit.framework.TestCase;
 import org.hibernate.IdentifierLoadAccess;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -16,11 +17,12 @@ import java.time.LocalDate;
 
 import static org.junit.Assert.*;
 
-public class TesteReservaDao {
+public class TesteReservaDao{
 
     SessionFactory ssf = new Configuration().configure().buildSessionFactory();
     Session session = ssf.openSession();
     ReservaDAO reservadao = ReservaDAO.getInstancia();
+
 
     @Test
     public void novaReserva() throws Exception {

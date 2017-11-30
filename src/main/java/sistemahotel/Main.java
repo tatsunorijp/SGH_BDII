@@ -34,6 +34,11 @@ public class Main extends  Application{
         primaryStage.initStyle(StageStyle.UNDECORATED);
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
+        Usuario user = new Usuario();
+        user.setTipo("Admin");
+        user.setLogin("admin");
+        user.setSenha("admin");
+        Persistencia.getInstancia().persistir(user);
 
     }
 }

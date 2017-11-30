@@ -12,6 +12,7 @@ import sistemahotel.model.infraestrutura.Persistencia;
 import sistemahotel.model.local.Habitacao;
 import sistemahotel.model.local.LocalDAO;
 import sistemahotel.model.produto.Produto;
+import sistemahotel.model.produto.ProdutoDAO;
 
 import java.lang.annotation.Annotation;
 
@@ -23,7 +24,8 @@ import static org.junit.Assert.assertNull;
 public class TesteProdutos extends TestCase{
     SessionFactory ssf = new Configuration().configure().buildSessionFactory();
     Session session = ssf.openSession();
-    LocalDAO dao;
+    ProdutoDAO produtoDAO = ProdutoDAO.getInstancia();
+
     @Test
     public void testeNome(){
         Produto produto = new Produto();
@@ -41,11 +43,11 @@ public class TesteProdutos extends TestCase{
 
     @Test
     public void testeAddProdutoBd(){
-        Produto produto = new Produto();
+        Persistencia.getInstancia().startSsf();
 
-        Transaction tx = session.beginTransaction();
-        session.save(produto);
-        tx.commit();
+        Produto produto = null;
+
+        produto = produtoDAO.novo(null,null,null,null);
 
         IdentifierLoadAccess<Produto> multiLoadAccess = session.byId(Produto.class);
         Produto produtoBd = multiLoadAccess.load(produto.getId());
@@ -54,25 +56,16 @@ public class TesteProdutos extends TestCase{
 
     @Test
     public void testeExcluiProdutoBd(){
-        Produto produto = new Produto();
+        Persistencia.getInstancia().startSsf();
 
-        Transaction tx = session.beginTransaction();
-        session.save(produto);
-        tx.commit();
+        Produto produto = null;
+
+        produto = produtoDAO.novo(null,null,null,null);
+        produtoDAO.deletar(produto);
 
         IdentifierLoadAccess<Produto> multiLoadAccess = session.byId(Produto.class);
         Produto produtoBd = multiLoadAccess.load(produto.getId());
-
-        tx = session.beginTransaction();
-        produto.setAtivo(false);
-        session.update(produto);
-        tx.commit();
-
-
-        multiLoadAccess = session.byId(Produto.class);
-        produtoBd = multiLoadAccess.load(produto.getId());
-
-        assertFalse(produtoBd.getAtivo());
+        Assert.assertNull(produtoBd);
     }
 
 }
