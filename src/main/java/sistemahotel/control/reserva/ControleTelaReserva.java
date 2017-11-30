@@ -2,6 +2,7 @@ package sistemahotel.control.reserva;
 
 import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXTextField;
+import javafx.application.Platform;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -78,7 +79,10 @@ public class ControleTelaReserva implements Initializable{
         dpDataFim.setValue(LocalDate.now().plusDays(15));
         setUpSpreadSheet();
 
-        olReservas = FXCollections.observableList(RetornaListas.listReserva());
+        List<Reserva> auxlist = RetornaListas.listReserva();
+        Collections.sort(auxlist);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM");
+        olReservas = FXCollections.observableList(auxlist);
         tcStatus.setCellValueFactory( new PropertyValueFactory<>("status"));
         tcCliente.setCellValueFactory((Callback<TableColumn.CellDataFeatures<Reserva, String>, ObservableValue<String>>) r -> new SimpleStringProperty(r.getValue().getCliente().getNome()));
         tcLocal.setCellValueFactory((Callback<TableColumn.CellDataFeatures<Reserva, String>, ObservableValue<String>>) r -> new SimpleStringProperty(r.getValue().getLocal().getNumero()));
@@ -187,18 +191,58 @@ public class ControleTelaReserva implements Initializable{
         if (!Objects.equals(reservaMain.getStatus(), "Em andamento"))  {
             janela.popupAviso("Ação inválida", "A reserva deve estar 'Em andamento' para que se possa realizar esta ação.");
         } else {
-            janela.novaJanelaSobreposta("/sistemahotel/view/reserva/TelaCheckOut.fxml",event);
+
+            Stage stage = new Stage();
+            stage.initStyle(StageStyle.UNDECORATED);
+            stage.initModality(Modality.APPLICATION_MODAL);
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("/sistemahotel/view/reserva/TelaCheckOut.fxml"));
+            Parent root = null;
+            try {
+                root = loader.load();
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
+            Scene scene = new Scene(root);
+            scene.getStylesheets().add("TableViewCSS.css");
+            stage.setScene(scene);
+
+            ControleTelaCheckOut controller = loader.getController();
+            controller.setReserva(reservaMain);
+
+            stage.show();
+
+            //janela.novaJanelaSobreposta("/sistemahotel/view/reserva/TelaCheckOut.fxml",event);
         }
     }
 
     public void btEstenderReservaActionHandler(ActionEvent event) throws IOException{
 
-        System.out.println(reservaMain.getStatus());
-
         if (!Objects.equals(reservaMain.getStatus(), "Agendada") && !Objects.equals(reservaMain.getStatus(), "Em andamento"))  {
             janela.popupAviso("Ação inválida", "A reserva deve estar 'Agendada' ou 'Em andamento' para que se possa realizar esta ação.");
         } else {
-            customNovaJanelaSobreposta("/sistemahotel/view/reserva/TelaEstenderReserva.fxml", reservaMain);
+
+            Stage stage = new Stage();
+            stage.initStyle(StageStyle.UNDECORATED);
+            stage.initModality(Modality.APPLICATION_MODAL);
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("/sistemahotel/view/reserva/TelaEstenderReserva.fxml"));
+            Parent root = null;
+            try {
+                root = loader.load();
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
+            Scene scene = new Scene(root);
+            scene.getStylesheets().add("TableViewCSS.css");
+            stage.setScene(scene);
+
+            ControleTelaEstenderReserva controller = loader.getController();
+            controller.setReserva(reservaMain);
+
+            stage.show();
+
+            //customNovaJanelaSobreposta("/sistemahotel/view/reserva/TelaEstenderReserva.fxml", reservaMain);
         }
 
     }
@@ -227,6 +271,7 @@ public class ControleTelaReserva implements Initializable{
     }
 
     public void btConsumacaoActionHandler(ActionEvent event) throws IOException{
+
         Stage stage = new Stage();
         stage.initStyle(StageStyle.UNDECORATED);
         stage.initModality(Modality.APPLICATION_MODAL);

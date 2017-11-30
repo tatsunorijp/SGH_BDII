@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 
 
 @Entity
-public class Reserva {
+public class Reserva implements Comparable<Reserva>{
     @Id
     @GeneratedValue
     private Long id;
@@ -29,6 +29,11 @@ public class Reserva {
     @Override
     public String toString(){
         return cliente.getNome();
+    }
+
+    @Override
+    public int compareTo(Reserva reserva) {
+        return dataCheckIn.compareTo(reserva.dataCheckOut);
     }
 
     public Long getId() {

@@ -2,22 +2,27 @@ package sistemahotel.control.reserva;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDatePicker;
+import com.jfoenix.controls.JFXTextField;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 import sistemahotel.control.ControleTelas;
 import sistemahotel.model.reserva.Reserva;
 import sistemahotel.model.reserva.ReservaDAO;
 
+import java.awt.*;
 import java.net.URL;
+import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 
 public class ControleTelaEstenderReserva implements Initializable{
 
     @FXML
-    JFXDatePicker dpCheckInAtual;
+    JFXTextField tfCheckInAtual;
     @FXML
-    JFXDatePicker dpCheckOutAtual;
+    JFXTextField tfCheckOutAtual;
     @FXML
     JFXDatePicker dpNovoCheckIn;
     @FXML
@@ -30,8 +35,11 @@ public class ControleTelaEstenderReserva implements Initializable{
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        /*dpCheckInAtual.setValue(reservaMain.getDataCheckIn());
-        dpCheckOutAtual.setValue(reservaMain.getDataCheckOut());*/
+        Platform.runLater(() -> {
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/YYYY");
+            tfCheckInAtual.setText(reservaMain.getDataCheckIn().format(formatter));
+            tfCheckOutAtual.setText(reservaMain.getDataCheckOut().format(formatter));
+        });
 
     }
 
@@ -51,7 +59,7 @@ public class ControleTelaEstenderReserva implements Initializable{
         } else {
                 InstanciaReservaDAO.estenderReserva(reservaMain, dpNovoCheckIn.getValue(), dpNovoCheckOut.getValue());
                 janela.notificacao("Reserva alterada", "Voce alterou o período desta reserva");
-                janela.novaJanela("/sistemahotel/view/telaprincipal/TelaPrincipal.fxml", event);
+                janela.fechaJanela(event);
         }
     }
 
