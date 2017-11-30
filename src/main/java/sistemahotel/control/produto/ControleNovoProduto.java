@@ -59,9 +59,16 @@ public class ControleNovoProduto implements Initializable{
                     (!util.apenasNumeros(tfAlertaDeEstoque.getText()))){
                 controleTelas.popupAviso("Campos inválidos", "Verifique campos numéricos");
             }else{
+                if((Float.parseFloat(tfPreco.getText())) < 0 || (Float.parseFloat(tfPreco.getText()) > 1000001) ||
+                   (Float.parseFloat(tfQuantidadeInicial.getText()) < 0) || (Float.parseFloat(tfQuantidadeInicial.getText()) > 1000001)
+                 || (Float.parseFloat(tfAlertaDeEstoque.getText()) < 0) || (Float.parseFloat(tfAlertaDeEstoque.getText()) > 1000001)){
+                    controleTelas.popupAviso("Valores inválidos", "Os valores devem de estar entre [0,1000000]");
+                }else{
+
                 produtoDAO.novo(tfNome.getText(), tfQuantidadeInicial.getText(), tfPreco.getText(), tfAlertaDeEstoque.getText());
                 controleTelas.notificacao("Cadastro efetuado", "novo produto adicionado ao banco de dados");
                 controleTelas.fechaJanela(event);
+                }
             }
         }
     }

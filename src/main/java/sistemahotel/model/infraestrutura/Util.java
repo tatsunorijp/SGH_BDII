@@ -46,7 +46,10 @@ public class Util {
         }
 
         try{
-            Float.parseFloat(string);
+            float num = Float.parseFloat(string);
+//            if(num < 0){
+//                return false;
+//            }
         }catch(NumberFormatException ex){
             return false;
         }
