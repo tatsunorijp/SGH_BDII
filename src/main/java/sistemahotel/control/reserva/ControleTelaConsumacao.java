@@ -96,9 +96,12 @@ public class ControleTelaConsumacao implements Initializable{
             if (a) {
 
 
-                consumacaoDAO.addConsumo(produtoMain, tfQtd.getText(), reservaMain);
-                controleTelas.notificacao("Consumo cadastro", "Novo consumo adicionado a reserva");
-                controleTelas.fechaJanela(event);
+                if(consumacaoDAO.addConsumo(produtoMain, tfQtd.getText(), reservaMain)){
+                    controleTelas.notificacao("Consumo salvo", "Novo consumo adicionado a reserva");
+                    controleTelas.fechaJanela(event);
+                }else{
+                    controleTelas.popupAviso("Operação não efetuada", "Não há estoque suficiente");
+                }
             }
         }
 
