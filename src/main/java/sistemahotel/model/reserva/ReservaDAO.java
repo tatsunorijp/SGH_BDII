@@ -30,7 +30,7 @@ public class ReservaDAO {
         return instancia;
     }
 
-    public void novaReserva(Cliente cliente, Local local, LocalDate dataCheckIn, LocalDate dataCheckOut, String qtdhospede){
+    public Reserva novaReserva(Cliente cliente, Local local, LocalDate dataCheckIn, LocalDate dataCheckOut, String qtdhospede){
         Reserva reserva = new Reserva();
 
         reserva.setCliente(cliente);
@@ -42,6 +42,8 @@ public class ReservaDAO {
         reserva.setQtdhospede(qtdhospede);
 
         persistencia.persistir(reserva);
+
+        return reserva;
     }
 
     public void novaReservaSalao(Cliente cliente, SalaoFestas local, LocalDate dataCheckIn, LocalDate dataCheckOut, String nomeDoEvento){

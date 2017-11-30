@@ -18,13 +18,14 @@ public class ProdutoDAO {
         return instancia;
     }
 
-    public void novo(String nome, String quantidade, String preco, String alertaEstoque){
+    public Produto novo(String nome, String quantidade, String preco, String alertaEstoque){
         produto = new Produto();
         produto.setNome(nome);
         produto.setQuantidade(quantidade);
         produto.setPreco(preco);
         produto.setAlertaEstoque(alertaEstoque);
         persistencia.persistir(produto);
+        return produto;
     }
 
     public Produto alterar(String nome, String quantidade, String preco, String alertaEstoque, Long id){
