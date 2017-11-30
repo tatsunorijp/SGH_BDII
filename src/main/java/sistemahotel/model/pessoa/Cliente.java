@@ -9,6 +9,9 @@ public class Cliente extends Pessoa {
     private String endereco;
     private String email;
     private String cidade;
+    private String bairro;
+    private String CEP;
+    private String estado;
     private String nacionalidade;
     private String placaDoCarro;
     private String informacoesAdicionais;
@@ -64,6 +67,18 @@ public class Cliente extends Pessoa {
     public String getInformacoesAdicionais() {
         return informacoesAdicionais;
     }
+
+    public void setBairro(String bairro) { this.bairro = bairro; }
+
+    public String getBairro() { return bairro; }
+
+    public void setCEP(String cep) { this.CEP = cep; }
+
+    public String getCEP() { return CEP; }
+
+    public void setEstado(String estado) { this.estado = estado; }
+
+    public String getEstado() { return estado; }
 
     public void setInformacoesAdicionais(String informacoesAdicionais) {
         this.informacoesAdicionais = informacoesAdicionais;

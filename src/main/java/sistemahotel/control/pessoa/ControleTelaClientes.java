@@ -21,8 +21,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-
-
 public class ControleTelaClientes implements Initializable {
     @FXML
     TableView tvClientes;
@@ -45,9 +43,15 @@ public class ControleTelaClientes implements Initializable {
     @FXML
     private JFXTextField tfEndereco;
     @FXML
+    private JFXTextField tfBairro;
+    @FXML
     private JFXTextField tfEmail;
     @FXML
     private JFXTextField tfCidade;
+    @FXML
+    private JFXTextField tfEstado;
+    @FXML
+    private JFXTextField tfCEP;
     @FXML
     private JFXTextField tfNacionalidade;
     @FXML
@@ -95,26 +99,51 @@ public class ControleTelaClientes implements Initializable {
     }
 
     public void btAlterarClienteActionHandler(ActionEvent event) throws IOException {
-        if (tfNome.getText().isEmpty() || tfRG.getText().isEmpty()) {
+        if (tfNome.getText().isEmpty() || tfRG.getText().isEmpty() || tfCPF.getText().isEmpty()
+                || dtDataDeNascimento.toString().isEmpty() || tfTelefone.getText().isEmpty()
+                || tfEndereco.getText().isEmpty() || tfCidade.getText().isEmpty()
+                || tfNacionalidade.getText().isEmpty() || tfBairro.getText().isEmpty()
+                || tfCEP.getText().isEmpty() || tfEstado.getText().isEmpty()) {
             controleTelas.popupAviso("Campos inválidos", "Campos com * são obrigatórios");
         } else {
-            list.add(clienteDAO.Alterar(tfNome.getText(), tfEndereco.getText(), tfEmail.getText(),
-                    tfCidade.getText(), tfNacionalidade.getText(), tfPlacaDoCarro.getText(),
-                    tfInformacoesAdicionais.getText(), tfCPF.getText(), tfRG.getText(),
-                    dtDataDeNascimento.getValue(), clienteMain.getId()));
-            list.remove(clienteMain);
-            controleTelas.notificacao("Alteração efetuada", "Alteração do cliente concluída no banco de dados");
-            tvClientes.refresh();
+            boolean ok = true;
+            if (!tfRG.getText().matches("[0-9]+") ) {
+                controleTelas.popupAviso("Campo inválido!",
+                        "O RG deve conter apenas números");
+                ok = false;
+            }
+            if (!ClienteDAO.verificaCPF(tfCPF.getText())) {
+                controleTelas.popupAviso("Campo inválido!",
+                        "Esse CPF não é válido");
+                ok = false;
+            }
+            if (tfEmail.getText().length() > 0
+                    && !tfEmail.getText().matches("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
+                    + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$")) {
+                controleTelas.popupAviso("Campo inválido!",
+                        "Esse email não é válido");
+                ok = false;
+            }
+            if (ok) {
+                list.add(clienteDAO.Alterar(tfNome.getText(), tfEndereco.getText(), tfEmail.getText(),
+                        tfCidade.getText(), tfNacionalidade.getText(), tfPlacaDoCarro.getText(), tfTelefone.getText(),
+                        tfInformacoesAdicionais.getText(), tfCPF.getText(), tfRG.getText(),
+                        dtDataDeNascimento.getValue(), tfBairro.getText(), tfCEP.getText(),
+                        tfEstado.getText(), clienteMain.getId()));
+                list.remove(clienteMain);
+                controleTelas.notificacao("Alteração efetuada", "Alteração do cliente concluída no banco de dados");
+                tvClientes.refresh();
+            }
         }
     }
 
     public void btDeletarClienteActionHandler(ActionEvent event) throws IOException {
-        boolean conf;
+        boolean confirmado;
 
-        conf = controleTelas.continuarOuCancelar("Menssagem de confirmação",
+        confirmado = controleTelas.continuarOuCancelar("Menssagem de confirmação",
                 "Você está excluindo um cliente!",
                 "Você realmente deseja excluir o cliente?");
-        if (conf) {
+        if (confirmado) {
             clienteDAO.Deletar(clienteMain);
             list.remove(clienteMain);
             tvClientes.refresh();
@@ -131,8 +160,11 @@ public class ControleTelaClientes implements Initializable {
         tfEndereco.setText(cliente.getEndereco());
         tfEmail.setText(cliente.getEmail());
         tfCidade.setText(cliente.getCidade());
+        tfCEP.setText(cliente.getCEP());
+        tfEstado.setText(cliente.getEstado());
         tfNacionalidade.setText(cliente.getNacionalidade());
         tfPlacaDoCarro.setText(cliente.getPlacaDoCarro());
         tfInformacoesAdicionais.setText(cliente.getInformacoesAdicionais());
+        tfBairro.setText(cliente.getBairro());
     }
 }

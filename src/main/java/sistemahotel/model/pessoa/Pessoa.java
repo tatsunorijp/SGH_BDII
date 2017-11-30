@@ -23,6 +23,8 @@ public abstract class Pessoa implements Comparable<Pessoa>{
     private LocalDate dataDeNascimento;
     protected Boolean ativo = true;
 
+    public void setAtivo(boolean ativo) { this.ativo = ativo; }
+
     @Override
     public String toString() {
         return getNome();
