@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.effect.DropShadow?>
@@ -65,7 +65,7 @@
                               <TableColumn fx:id="tcLocalNumero" prefWidth="72.0" text="Numero" />
                             <TableColumn fx:id="tcLocalCamasSolteiro" prefWidth="90.0" text="C. solteiro" />
                               <TableColumn fx:id="tcLocalCamasCasal" prefWidth="89.0" text="C. casal" />
-                              <TableColumn fx:id="tcLocalPreco" prefWidth="94.0" text="Preco" />
+                              <TableColumn fx:id="tcLocalPreco" prefWidth="94.0" text="Preco (R$)" />
                           </columns>
                            <BorderPane.margin>
                               <Insets bottom="25.0" right="15.0" top="5.0" />
@@ -94,7 +94,7 @@
                               <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                  <children>
                                     <ImageView fitHeight="29.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true" />
-                                    <JFXTextField fx:id="tfFiltroLocal" prefHeight="23.0" prefWidth="315.0" promptText="Procurar por tipo" />
+                                    <JFXTextField fx:id="tfFiltroLocal" prefHeight="23.0" prefWidth="315.0" promptText="Procurar por tipo" text="Procurar por numero" />
                                  </children>
                               </HBox>
                            </children>
@@ -129,8 +129,8 @@
                                  <GridPane.margin>
                                     <Insets right="20.0" />
                                  </GridPane.margin></JFXTextField>
-                              <DatePicker fx:id="dpDataCheckIn" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                              <DatePicker fx:id="dpDataCheckOut" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                              <JFXDatePicker fx:id="dpDataCheckIn" prefHeight="26.0" prefWidth="238.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <JFXDatePicker fx:id="dpDataCheckOut" prefHeight="26.0" prefWidth="240.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
                            </children>
                         </GridPane>
                      </bottom>

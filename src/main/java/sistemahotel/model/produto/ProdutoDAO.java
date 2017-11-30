@@ -38,6 +38,14 @@ public class ProdutoDAO {
         return produto;
     }
 
+    public void movimentarEstoque(String valor, Produto produto){
+        int num1 = Integer.parseInt(produto.getQuantidade());
+        int num2 = Integer.parseInt(valor);
+        String resultado = Integer.toString(num1 + num2);
+        produto.setQuantidade(resultado);
+        persistencia.alterar(produto);
+    }
+
     public void deletar(Produto produto){
         produto.setAtivo(false);
         persistencia.alterar(produto);

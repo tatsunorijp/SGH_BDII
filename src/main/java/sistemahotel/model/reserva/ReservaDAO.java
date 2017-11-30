@@ -60,17 +60,40 @@ public class ReservaDAO {
 
     }
 
-    public boolean checarIndisponibilidade(Local local, LocalDate dataCheckIn, LocalDate dataCheckOut){ // true = INDISPONIVEL
+    public static boolean checarIndisponibilidade(Local local, LocalDate dataCheckIn, LocalDate dataCheckOut){ // true = INDISPONIVEL
+
+        if(dataCheckIn.compareTo(dataCheckOut) > 0) return true; // período inválido
+
         List<Reserva> lista = RetornaListas.listReservaPorLocal(local);
         if(lista.isEmpty()) return false; // caso a lista de reservas esteja vazia;
         for (Reserva aux : lista) {
             if (aux.getDataCheckOut().compareTo(dataCheckIn) < 0) { // se a data de checkout de aux for menor que a data de checkin da nova reserva, entao OK
-                return false;
+                continue;
             } else if (aux.getDataCheckIn().compareTo(dataCheckOut) > 0) { // caso contrario, OK se a data de checkin de aux for maior que a data de checkout da nova reserva
-                return false;
+                continue;
+            } else return true;
+        }
+        return false;
+    }
+
+    public static boolean checarEstenderReserva(Reserva reserva, Local local, LocalDate dataCheckIn, LocalDate dataCheckOut){ // true = INDISPONIVEL
+
+        if(dataCheckIn.compareTo(dataCheckOut) > 0) return true; // período inválido
+
+        List<Reserva> lista = RetornaListas.listReservaPorLocal(local);
+        if(lista.isEmpty()) return false; // caso a lista de reservas esteja vazia;
+        for (Reserva aux : lista) {
+            if (aux.getDataCheckOut().compareTo(dataCheckIn) < 0) { // se a data de checkout de aux for menor que a data de checkin da nova reserva, entao OK
+                continue;
+            } else if (aux.getDataCheckIn().compareTo(dataCheckOut) > 0) { // caso contrario, OK se a data de checkin de aux for maior que a data de checkout da nova reserva
+                continue;
+            } else {
+                if(aux.getId() == reserva.getId()){
+                    continue;
+                } else return true;
             }
         }
-        return true;
+        return false;
     }
 
     public void cancelarReserva(Reserva reserva){
@@ -78,7 +101,23 @@ public class ReservaDAO {
         persistencia.alterar(reserva);
     }
 
-    public void estenderReserva(Reserva reserva, LocalDateTime novaDataCheckOut){
+    public void fazerCheckIn(Reserva reserva){
+        reserva.setStatus("Em andamento");
+        persistencia.alterar(reserva);
+    }
+
+    public void fazerCheckOut(Reserva reserva){
+        reserva.setStatus("Finalizada");
+        persistencia.alterar(reserva);
+    }
+
+    public void estenderReserva(Reserva reserva, LocalDate novaDataCheckIn, LocalDate novaDataCheckOut){
+        reserva.setDataCheckIn(novaDataCheckIn);
+        reserva.setDataCheckOut(novaDataCheckOut);
+        persistencia.alterar(reserva);
+    }
+
+    public void adicionarConsumacao(Reserva reserva){
 
     }
 

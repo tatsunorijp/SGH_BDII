@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.layout.AnchorPane;
 import sistemahotel.control.ControleTelas;
+import sistemahotel.model.infraestrutura.Util;
 import sistemahotel.model.produto.ProdutoDAO;
 
 import java.net.URL;
@@ -42,6 +43,7 @@ public class ControleNovoProduto implements Initializable{
 
     ControleTelas controleTelas = ControleTelas.getInstancia();
     ProdutoDAO produtoDAO = ProdutoDAO.getInstancia();
+    Util util = Util.getInstancia();
 
     @FXML
     void btCancelarActionHandler(ActionEvent event) {
@@ -50,12 +52,17 @@ public class ControleNovoProduto implements Initializable{
 
     @FXML
     void btConfirmarActionHandler(ActionEvent event) {
-        if (tfNome.getText().isEmpty() || tfPreco.getText().isEmpty()) {
+        if (tfNome.getText().isEmpty() || tfPreco.getText().isEmpty() || tfQuantidadeInicial.getText().isEmpty()) {
             controleTelas.popupAviso("Campos inválidos", "Campos com * são obrigatórios");
         } else {
-            produtoDAO.novo(tfNome.getText(), tfQuantidadeInicial.getText(), tfPreco.getText(), tfAlertaDeEstoque.getText());
-            controleTelas.notificacao("Cadastro efetuado", "novo produto adicionado ao banco de dados");
-            controleTelas.fechaJanela(event);
+            if( (!util.apenasNumeros(tfPreco.getText())) || (!util.apenasNumeros(tfQuantidadeInicial.getText())) ||
+                    (!util.apenasNumeros(tfAlertaDeEstoque.getText()))){
+                controleTelas.popupAviso("Campos inválidos", "Verifique campos numéricos");
+            }else{
+                produtoDAO.novo(tfNome.getText(), tfQuantidadeInicial.getText(), tfPreco.getText(), tfAlertaDeEstoque.getText());
+                controleTelas.notificacao("Cadastro efetuado", "novo produto adicionado ao banco de dados");
+                controleTelas.fechaJanela(event);
+            }
         }
     }
 

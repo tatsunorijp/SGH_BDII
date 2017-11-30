@@ -1,5 +1,6 @@
 package sistemahotel.control.reserva;
 
+import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXTextField;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -47,9 +48,9 @@ public class ControleTelaNovaReservaSalao implements Initializable{
     @FXML
     TableColumn tcLocalPreco;
     @FXML
-    DatePicker dpDataCheckIn;
+    JFXDatePicker dpDataCheckIn;
     @FXML
-    DatePicker dpDataCheckOut;
+    JFXDatePicker dpDataCheckOut;
 
     private Cliente cliente = null;
     private SalaoFestas local = null;

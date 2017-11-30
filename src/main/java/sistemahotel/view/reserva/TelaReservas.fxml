@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.TableColumn?>
@@ -10,10 +11,12 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
+<?import org.controlsfx.control.spreadsheet.SpreadsheetView?>
 
-<AnchorPane fx:id="apReservas" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="720.0" prefWidth="1132.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sistemahotel.control.reserva.ControleTelaReserva">
+<AnchorPane fx:id="apReservas" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="720.0" prefWidth="1132.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sistemahotel.control.reserva.ControleTelaReserva">
 <children>
     <BorderPane layoutX="329.0" layoutY="157.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <top>
@@ -32,15 +35,18 @@
         <bottom>
             <AnchorPane maxWidth="1.7976931348623157E308" prefHeight="41.0" prefWidth="752.0" style="-fx-background-color: #ab0000;" BorderPane.alignment="CENTER">
                 <children>
-                    <HBox prefHeight="41.0" prefWidth="675.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="457.0" AnchorPane.topAnchor="0.0">
+                    <HBox prefHeight="41.0" prefWidth="973.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="159.0" AnchorPane.topAnchor="0.0">
                         <children>
-                            <JFXButton fx:id="btNovaReserva" onAction="#btNovaReservaActionHandler" prefHeight="41.0" prefWidth="179.0" text="Nova Reserva" textFill="WHITE" />
+                            <JFXButton fx:id="btNovaReserva" onAction="#btNovaReservaActionHandler" prefHeight="41.0" prefWidth="117.0" text="Nova Reserva" textFill="WHITE" />
                         <JFXButton fx:id="btNovaReservaSalao" layoutX="367.0" layoutY="10.0" onAction="#btNovaReservaSalaoActionHandler" prefHeight="41.0" prefWidth="178.0" text="Nova Reserva de Salao" textFill="WHITE" />
-                            <JFXButton fx:id="btCancelaReserva" onAction="#btCancelaReservaActionHandler" prefHeight="41.0" prefWidth="178.0" text="Cancelar Reserva" textFill="WHITE" />
-                        <JFXButton prefHeight="43.0" prefWidth="166.0" text="Estender Reserva" textFill="WHITE" />
+                        <JFXButton onAction="#btCheckInActionHandler" prefHeight="41.0" prefWidth="122.0" text="Fazer Check-In" textFill="WHITE" />
+                        <JFXButton layoutX="545.0" layoutY="10.0" onAction="#btCheckOutActionHandler" prefHeight="41.0" prefWidth="132.0" text="Fazer Check-Out" textFill="WHITE" />
+                        <JFXButton layoutX="670.0" layoutY="10.0" onAction="#btConsumacaoActionHandler" prefHeight="41.0" prefWidth="139.0" text="Consumaçao" textFill="WHITE" />
+                            <JFXButton fx:id="btCancelaReserva" onAction="#btCancelaReservaActionHandler" prefHeight="41.0" prefWidth="135.0" text="Cancelar Reserva" textFill="WHITE" />
+                        <JFXButton fx:id="btEstenderReserva" layoutX="723.0" layoutY="10.0" onAction="#btEstenderReservaActionHandler" prefHeight="41.0" prefWidth="137.0" text="Estender Reserva" textFill="WHITE" />
                         </children>
                     </HBox>
-                      <HBox layoutX="942.0" layoutY="3.0" prefHeight="36.0" prefWidth="176.0">
+                      <HBox layoutX="972.0" layoutY="3.0" prefHeight="36.0" prefWidth="158.0">
                           <children>
                               <ImageView fitHeight="20.0" fitWidth="20.0">
                                   <image>
@@ -50,7 +56,7 @@
                                       <Insets top="5.0" />
                                   </HBox.margin>
                               </ImageView>
-                              <JFXTextField fx:id="tfFiltro" focusColor="#ff9d9d" prefHeight="28.0" prefWidth="155.0" promptText="Pesquisar" unFocusColor="WHITE">
+                              <JFXTextField fx:id="tfFiltro" focusColor="#ff9d9d" prefHeight="28.0" prefWidth="155.0" promptText="Pesquisa por cliente" unFocusColor="WHITE">
                                   <HBox.margin>
                                       <Insets />
                                   </HBox.margin>
@@ -60,26 +66,40 @@
                 </children>
             </AnchorPane>
         </bottom>
-        <center>
-            <AnchorPane prefHeight="587.0" prefWidth="798.0" BorderPane.alignment="CENTER">
-                <children>
-                    <AnchorPane layoutX="188.0" prefHeight="587.0" prefWidth="944.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="188.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <center>
+                  <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
                      <children>
-                            <TableView fx:id="tvReservas" layoutX="19.0" prefHeight="587.0" prefWidth="944.0" stylesheets="@../../../../resources/TableViewCSS.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                <columns>
-                                    <TableColumn fx:id="tcStatus" prefWidth="172.0" text="Status" />
-                                    <TableColumn fx:id="tcCliente" prefWidth="212.0" text="Cliente" />
-                              <TableColumn fx:id="tcLocal" prefWidth="157.0" text="Local" />
-                              <TableColumn fx:id="tcQtdhospede" prefWidth="135.0" text="Qtd Hospede" />
-                              <TableColumn fx:id="tcDataCheckIn" prefWidth="132.0" text="Data Check-in" />
-                              <TableColumn fx:id="tcDataCheckOut" prefWidth="135.0" text="Data Check-out" />
-                                </columns>
-                            </TableView>
+                        <SpreadsheetView fx:id="svReservas" prefHeight="274.0" prefWidth="993.0" />
+                     </children>
+                  </VBox>
+               </center>
+               <top>
+                      <TableView fx:id="tvReservas" prefHeight="311.0" prefWidth="944.0" stylesheets="@../../../../resources/TableViewCSS.css" BorderPane.alignment="CENTER">
+                          <columns>
+                              <TableColumn fx:id="tcStatus" prefWidth="172.0" text="Status" />
+                              <TableColumn fx:id="tcCliente" prefWidth="340.0" text="Cliente" />
+                        <TableColumn fx:id="tcLocal" prefWidth="140.0" text="Local" />
+                        <TableColumn fx:id="tcQtdhospede" prefWidth="124.0" text="Qtd Pessoas" />
+                        <TableColumn fx:id="tcDataCheckIn" prefWidth="175.0" text="Data Check-in" />
+                        <TableColumn fx:id="tcDataCheckOut" prefWidth="180.0" text="Data Check-out" />
+                          </columns>
+                      </TableView>
+               </top>
+               <left>
+                  <AnchorPane prefHeight="276.0" prefWidth="169.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <JFXDatePicker fx:id="dpDataInicio" defaultColor="#8f0000" layoutX="20.0" layoutY="44.0" prefHeight="26.0" prefWidth="118.0" />
+                        <JFXDatePicker fx:id="dpDataFim" defaultColor="#9d1818" layoutX="21.0" layoutY="125.0" prefHeight="26.0" prefWidth="121.0" />
+                        <Text fill="#9d1818" layoutX="16.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Início do período:" />
+                        <Text fill="#9d1818" layoutX="16.0" layoutY="112.0" strokeType="OUTSIDE" strokeWidth="0.0" text="FIm do período:" />
+                        <JFXButton layoutX="14.0" layoutY="184.0" onAction="#btRefreshSheetActionHandler" text="Atualizar" />
                      </children>
                   </AnchorPane>
-                </children>
-            </AnchorPane>
-        </center>
+               </left>
+            </BorderPane>
+         </center>
     </BorderPane>
 </children>
 </AnchorPane>

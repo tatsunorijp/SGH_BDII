@@ -7,6 +7,17 @@ import javafx.collections.transformation.SortedList;
 import javafx.scene.control.TableView;
 
 public class Util {
+    private static Util instancia = null;
+
+    private Util(){
+    }
+
+    public static Util getInstancia(){
+        if(instancia == null){
+            instancia = new Util();
+        }
+        return instancia;
+    }
 
     public static <T> void setUpFilter(ObservableList<T> ol, JFXTextField tf, TableView<T> tv) {
         FilteredList<T> filteredData = new FilteredList<>(ol, p -> true);
@@ -27,5 +38,19 @@ public class Util {
         SortedList<T> sortedData = new SortedList<>(filteredData);
         sortedData.comparatorProperty().bind(tv.comparatorProperty());
         tv.setItems(sortedData);
+    }
+
+    public static boolean apenasNumeros(String string){
+        if(string.equals("")){
+            return true;
+        }
+
+        try{
+            Float.parseFloat(string);
+        }catch(NumberFormatException ex){
+            return false;
+        }
+
+        return true;
     }
 }
