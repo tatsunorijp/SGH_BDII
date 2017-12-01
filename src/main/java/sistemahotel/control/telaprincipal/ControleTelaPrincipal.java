@@ -30,6 +30,11 @@ public class ControleTelaPrincipal implements Initializable{
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        try {
+            window.setFragment("/sistemahotel/view/reserva/TelaReservas.fxml",apPrincipal);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
     public void showClientes(ActionEvent event) throws IOException {
         window.setFragment("/sistemahotel/view/pessoa/Clientes.fxml",apPrincipal);

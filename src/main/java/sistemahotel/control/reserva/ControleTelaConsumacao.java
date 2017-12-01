@@ -130,7 +130,7 @@ public class ControleTelaConsumacao implements Initializable{
             tcNomeConsumidos.setCellValueFactory( new PropertyValueFactory<>("produto"));
             tcQuantidadeConsumidos.setCellValueFactory(new PropertyValueFactory<>("quantidade"));
             tvConsumidos.setItems(FXCollections.observableList(listConsumacao));
-            tvProdutos.getSelectionModel().selectedItemProperty().addListener(
+            tvConsumidos.getSelectionModel().selectedItemProperty().addListener(
                     (observable, oldvalue, newValue) -> selecaoDeItensConsumo((Consumacao) newValue)
             );
 
