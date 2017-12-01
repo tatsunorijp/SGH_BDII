@@ -10,7 +10,7 @@
         <property name="hibernate.connection.url">jdbc:mysql://localhost/sgh</property>
         <property name="hibernate.connection.username">gerente</property>
         <property name="hibernate.connection.password">iss123</property>
-        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="hibernate.hbm2ddl.auto">create-drop</property>
 
 
         <!-- List of XML mapping files -->
@@ -24,6 +24,7 @@
         <mapping class="sistemahotel.model.pessoa.Cliente"/>
         <mapping class="sistemahotel.model.local.Habitacao"/>
         <mapping class="sistemahotel.model.pessoa.Pessoa"/>
+        <mapping class="sistemahotel.model.reserva.Consumacao"/>
 
     </session-factory>
 </hibernate-configuration>

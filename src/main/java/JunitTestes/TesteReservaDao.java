@@ -9,7 +9,9 @@ import org.junit.Assert;
 import org.junit.Test;
 import sistemahotel.model.infraestrutura.Persistencia;
 import sistemahotel.model.local.Habitacao;
+import sistemahotel.model.local.LocalDAO;
 import sistemahotel.model.pessoa.Cliente;
+import sistemahotel.model.pessoa.ClienteDAO;
 import sistemahotel.model.reserva.Reserva;
 import sistemahotel.model.reserva.ReservaDAO;
 
@@ -26,18 +28,22 @@ public class TesteReservaDao{
 
     @Test
     public void novaReserva() throws Exception {
-
         Persistencia.getInstancia().startSsf();
 
         Cliente cliente = new Cliente();
         Habitacao hab = new Habitacao();
+        Persistencia.getInstancia().persistir(cliente);
+        Persistencia.getInstancia().persistir(hab);
+
+        Reserva reserva = null;
         LocalDate in = LocalDate.now();
         LocalDate out = LocalDate.now().plusDays(1);
 
-        Reserva reservahab = reservadao.novaReserva(cliente, hab, in, out,"5");
+
+        reserva = reservadao.novaReserva(cliente, hab, in, out,"5");
 
         IdentifierLoadAccess<Reserva> multiLoadAccess = session.byId(Reserva.class);
-        Reserva reservahabBd = multiLoadAccess.load(reservahab.getId());
+        Reserva reservahabBd = multiLoadAccess.load(reserva.getId());
         Assert.assertNotNull(reservahabBd);
 
     }
@@ -49,6 +55,8 @@ public class TesteReservaDao{
 
         Cliente cliente = new Cliente();
         Habitacao hab = new Habitacao();
+        Persistencia.getInstancia().persistir(cliente);
+        Persistencia.getInstancia().persistir(hab);
         LocalDate in = LocalDate.now();
         LocalDate out = LocalDate.now().plusDays(5);
         reservadao.novaReserva(cliente, hab, in, out,"5");
@@ -64,9 +72,12 @@ public class TesteReservaDao{
 
     @Test
     public void cancelarReserva() throws Exception {
+        Persistencia.getInstancia().startSsf();
 
         Cliente cliente = new Cliente();
         Habitacao hab = new Habitacao();
+        Persistencia.getInstancia().persistir(cliente);
+        Persistencia.getInstancia().persistir(hab);
         LocalDate in = LocalDate.now();
         LocalDate out = LocalDate.now().plusDays(1);
 
@@ -81,9 +92,12 @@ public class TesteReservaDao{
 
     @Test
     public void fazerCheckIn() throws Exception {
+        Persistencia.getInstancia().startSsf();
 
         Cliente cliente = new Cliente();
         Habitacao hab = new Habitacao();
+        Persistencia.getInstancia().persistir(cliente);
+        Persistencia.getInstancia().persistir(hab);
         LocalDate in = LocalDate.now();
         LocalDate out = LocalDate.now().plusDays(1);
 
@@ -98,9 +112,12 @@ public class TesteReservaDao{
 
     @Test
     public void fazerCheckOut() throws Exception {
+        Persistencia.getInstancia().startSsf();
 
         Cliente cliente = new Cliente();
         Habitacao hab = new Habitacao();
+        Persistencia.getInstancia().persistir(cliente);
+        Persistencia.getInstancia().persistir(hab);
         LocalDate in = LocalDate.now();
         LocalDate out = LocalDate.now().plusDays(1);
 
@@ -116,8 +133,13 @@ public class TesteReservaDao{
     @Test
     public void estenderReserva() throws Exception {
 
+        Persistencia.getInstancia().startSsf();
+
+
         Cliente cliente = new Cliente();
         Habitacao hab = new Habitacao();
+        Persistencia.getInstancia().persistir(cliente);
+        Persistencia.getInstancia().persistir(hab);
         LocalDate in = LocalDate.now();
         LocalDate out = LocalDate.now().plusDays(1);
 
