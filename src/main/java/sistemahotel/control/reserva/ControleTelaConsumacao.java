@@ -70,7 +70,7 @@ public class ControleTelaConsumacao implements Initializable{
     ObservableList listProdutos;
     ObservableList listConsumacao;
     RetornaListas pegaListas;
-
+    Consumacao consumacaoMain;
 
 
     public void setReserva(Reserva reserva){
@@ -130,6 +130,9 @@ public class ControleTelaConsumacao implements Initializable{
             tcNomeConsumidos.setCellValueFactory( new PropertyValueFactory<>("produto"));
             tcQuantidadeConsumidos.setCellValueFactory(new PropertyValueFactory<>("quantidade"));
             tvConsumidos.setItems(FXCollections.observableList(listConsumacao));
+            tvProdutos.getSelectionModel().selectedItemProperty().addListener(
+                    (observable, oldvalue, newValue) -> selecaoDeItensConsumo((Consumacao) newValue)
+            );
 
         });
 
@@ -137,5 +140,19 @@ public class ControleTelaConsumacao implements Initializable{
 
     public void selecaoDeItens(Produto produto){
         produtoMain = produto;
+    }
+    public void selecaoDeItensConsumo(Consumacao consumacao){ consumacaoMain = consumacao;}
+    @FXML
+    public void btExcluirConsumacaoActionHandler(ActionEvent event){
+        a = controleTelas.continuarOuCancelar("Menssagem de confirmação",
+                "Você está excluindo uma consumação!",
+                "Você realmente deseja excluir o item?");
+        if (a) {
+            consumacaoDAO.deleteConsumacao(consumacaoMain);
+            listConsumacao.remove(consumacaoMain);
+            tvConsumidos.refresh();
+        }
+
+
     }
 }
