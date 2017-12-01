@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="apRelatorio" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="538.0" prefWidth="776.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sistemahotel.control.telaprincipal.ControleRelatorios">
+    <children>
+        <BorderPane layoutX="329.0" layoutY="157.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <top>
+                <AnchorPane prefHeight="92.0" prefWidth="752.0" style="-fx-background-color: #ab0000;" BorderPane.alignment="CENTER">
+                    <children>
+                        <Text fill="WHITE" layoutX="19.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Usuário conectado:" AnchorPane.leftAnchor="19.0" AnchorPane.topAnchor="11.0" />
+                        <Text fill="WHITE" layoutX="45.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Relatório" AnchorPane.bottomAnchor="16.7255859375" AnchorPane.leftAnchor="45.0">
+                            <font>
+                                <Font size="25.0" />
+                            </font>
+                        </Text>
+                        <Text fill="WHITE" layoutX="154.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="O maior hacker do mundo" />
+                    </children>
+                </AnchorPane>
+            </top>
+            <bottom>
+                <AnchorPane maxWidth="1.7976931348623157E308" prefHeight="41.0" prefWidth="752.0" style="-fx-background-color: #ab0000;" BorderPane.alignment="CENTER">
+                    <children>
+                        <HBox layoutY="-18.0" prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-0.0">
+                            <children>
+                                <JFXButton fx:id="btImprimir" onAction="#btImprimirActionHandler" prefHeight="41.0" text="Imprimir" textFill="WHITE" />
+                                <JFXButton fx:id="btVoltar" onAction="#btVoltarActionHandler" prefHeight="41.0" text="Voltar" textFill="WHITE" />
+                            </children>
+                        </HBox>
+                    </children>
+                </AnchorPane>
+            </bottom>
+            <center>
+                <AnchorPane BorderPane.alignment="CENTER">
+                    <children>
+                        <AnchorPane layoutX="537.0" layoutY="-1.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="587.0" prefWidth="374.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <AnchorPane prefHeight="587.0" prefWidth="759.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <children>
+                                <GridPane layoutX="50.0" layoutY="43.0" prefHeight="320.0" prefWidth="685.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="24.0" AnchorPane.topAnchor="43.0">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" prefWidth="100.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <Text fill="#ab0000" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantidade de clientes:" />
+                                        <JFXTextField fx:id="tfQtClientes" disable="true" focusColor="#ff5c5c" prefHeight="22.0" prefWidth="298.0" unFocusColor="#ab0000" GridPane.columnIndex="1" />
+                              <Text fill="#ab0000" strokeType="OUTSIDE" strokeWidth="0.0" text="Reservas ativas:" GridPane.rowIndex="1" />
+                              <Text fill="#ab0000" strokeType="OUTSIDE" strokeWidth="0.0" text="Reservas no próximo mês:" GridPane.rowIndex="2" />
+                              <Text fill="#ab0000" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantidade de quartos:" GridPane.rowIndex="3" />
+                              <JFXTextField fx:id="tfReservasAtivas" disable="true" unFocusColor="#ab0000" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <JFXTextField fx:id="tfReservasProxMes" disable="true" unFocusColor="#ab0000" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <JFXTextField fx:id="tfQtQuartos" disable="true" unFocusColor="#ab0000" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <Text fill="#ab0000" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantidade de salões de eventos:" GridPane.rowIndex="4" />
+                              <JFXTextField fx:id="tfQtSaloes" disable="true" unFocusColor="#ab0000" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                    </children>
+                                </GridPane>
+                            </children>
+                        </AnchorPane>
+                    </children>
+                </AnchorPane>
+            </center>
+        </BorderPane>
+    </children>
+</AnchorPane>
