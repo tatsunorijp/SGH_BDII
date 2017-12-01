@@ -68,9 +68,9 @@ public class ControleNovoCliente implements Initializable {
             controleTelas.popupAviso("Campos inválidos",
                                      "Campos com * são obrigatórios");
         } else {
-            if (!tfRG.getText().matches("[0-9]+") ) {
+            if (!(tfRG.getText().matches("[0-9]+")) || !(tfRG.getText().length() == 9)) {
                 controleTelas.popupAviso("Campo inválido!",
-                        "O RG deve conter apenas números");
+                        "O RG deve conter 9 números");
                 ok = false;
             }
             if (!ClienteDAO.verificaCPF(tfCPF.getText())) {
@@ -91,6 +91,10 @@ public class ControleNovoCliente implements Initializable {
                             "A data esta fora do intervalo aceito. O usuário"
                         + " deve ter ao menos 18 anos de idade e não pode ter nascido antes de 1899");
                 ok = false;
+            }
+            if (tfTelefone.getText().length() > 11 || tfTelefone.getText().matches("[0-9]+")) {
+                controleTelas.popupAviso("Campo inválido",
+                        "O número de telefone pode ter no máximo 11 digitos, e não deve ser usada pontuação");
             }
             if (ok) {
                 clienteDAO.Novo(tfNome.getText(), tfEndereco.getText(), tfEmail.getText(), tfCidade.getText(),
