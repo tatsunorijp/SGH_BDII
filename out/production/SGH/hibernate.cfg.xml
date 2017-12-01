@@ -10,7 +10,7 @@
         <property name="hibernate.connection.url">jdbc:mysql://localhost/sgh</property>
         <property name="hibernate.connection.username">gerente</property>
         <property name="hibernate.connection.password">iss123</property>
-        <property name="hibernate.hbm2ddl.auto">create-drop</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
 
 
         <!-- List of XML mapping files -->
