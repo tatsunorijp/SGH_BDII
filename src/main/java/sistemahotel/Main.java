@@ -21,7 +21,7 @@ import static sistemahotel.model.infraestrutura.RetornaListas.persistencia;
  */
 public class Main extends  Application{
     public static void main(String[] args){
-        Persistencia.getInstancia().startSsf();
+ //       Persistencia.getInstancia().startSsf();
         launch(args);
     }
 
