@@ -8,8 +8,8 @@
         <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
         <property name="hibernate.id.new_generator_mappings">true</property>
         <property name="hibernate.connection.url">jdbc:mysql://localhost/sgh</property>
-        <property name="hibernate.connection.username">gerente</property>
-        <property name="hibernate.connection.password">iss123</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">Iphone7+</property>
         <property name="hibernate.hbm2ddl.auto">update</property>
 
 

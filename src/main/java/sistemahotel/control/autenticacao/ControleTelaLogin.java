@@ -33,22 +33,22 @@ public class ControleTelaLogin implements Initializable{
         String login = tfUser.getText();
         String password = tfPassword.getText();
         Autenticacao autenticacao = new Autenticacao();
-        user = autenticacao.Autenticar(login, password);
+        /*user = autenticacao.Autenticar(login, password);
         if (user == null){
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Erro");
             alert.setContentText("Usuario invalido");
             alert.showAndWait();
         }
-        else if(user.getTipo().equals("Admin")){
+        else if(user.getTipo().equals("Admin")){*/
             controleTelas.novaJanela("/sistemahotel/view/telaprincipal/TelaPrincipalAdmin.fxml", event);
-        }
+        /*}
         else if(user.getTipo().equals("Gerente")){
             controleTelas.novaJanela("/sistemahotel/view/telaprincipal/TelaPrincipalGerente.fxml", event);
         }
         else if(user.getTipo().equals("Recepcionista")){
             controleTelas.novaJanela("/sistemahotel/view/telaprincipal/TelaPrincipal.fxml", event);
-        }
+        }*/
     }
     public void sair(ActionEvent event){
         System.exit(0);
